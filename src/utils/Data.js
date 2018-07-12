@@ -4,7 +4,7 @@ import * as DevourUrl from '../Images/Devour.png';
 
 let posts = [
   {
-    id: 'myReads',
+    id: 'MyReads',
     name: 'My Reads Book Tracker',
     datePosted: 'June 14, 2018',
     image: MyReadsUrl,
@@ -13,8 +13,8 @@ let posts = [
     link: 'http://www.myreadswebsite.com1.s3-us-west-2.amazonaws.com/index.html#/',
   },
   {
-    id: 'jamming',
-    name: 'Jamming Music Web App',
+    id: 'Jamming',
+    name: 'Jamming, A Music Web App',
     datePosted: 'June 14, 2018',
     image: JammingUrl,
     description: 'This app is used with the Spotify api. When you go to the web page there will be a redirect login to sign in to spotify so that the app can get and post data to your account. The first feature you will see is the search field where you can type in names of artists or songs to get a list of tracks queried from the Spotify api. You can then add songs you like to the ‘new playlist’ feature, give it a name, and save that playlist directly to your Spotify account. This web app also shows all of your current playlists on Spotify as well as the songs in each of your playlists. Every track, whether it is in the search query or your current playlists, has an onclick feature to play a thirty second preview audio of the specific song you press.',

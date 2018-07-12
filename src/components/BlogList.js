@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Blog from './Blog';
+import '../styles/BlogList.css'
 
 class BlogList extends Component {
   render() {
-
     return (
-      <div>
+      <div className='blog_list'>
         {this.props && this.props.blogs
         ?
           this.props.blogs.map((blog) => {
