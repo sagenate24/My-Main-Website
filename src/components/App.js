@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { getPosts, getMe } from '../utils/Data';
 import '../styles/App.css';
-import { getPosts } from '../utils/Data';
 
+import Nav from './Nav';
+import AboutList from './AboutList';
 import BlogList from './BlogList';
 
 class App extends Component {
@@ -11,14 +14,30 @@ class App extends Component {
     getPosts().then((blogs) => {
       this.setState(() => ({
         blogs
-      }))
-    })
+      }));
+    });
+    getMe().then((meData) => {
+      this.setState(() => ({
+        meData
+      }));
+    });
   }
 
   render() {
     return (
-      <div className="App">
-        <BlogList blogs={this.state.blogs} />
+      <div className='app'>
+        <div className='app_header'>
+          <h3 className='header'>The Pesonal Site Of Nathan Sage</h3>
+          <Nav />
+        </div>
+        <div className='app_content'>
+          <Route exact path='/' render={() => (
+            <BlogList blogs={this.state.blogs} />
+          )} />
+          <Route path='/about' render={() => (
+            <AboutList meData={this.state.meData} />
+          )} />
+        </div>
       </div>
     );
   }

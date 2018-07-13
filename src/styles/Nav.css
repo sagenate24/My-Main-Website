@@ -1,0 +1,33 @@
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  list-style-type: none;
+  padding-left: 100px;
+}
+
+.nav li {
+  padding-left: 20px;
+}
+
+.nav:after {
+  border-bottom: 1px solid grey;
+}
+
+.link {
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.749);
+  font-weight: 100;
+  font-size: 13px;
+  transition-duration: 400ms;
+}
+
+.link:hover {
+  color: rgb(35, 35, 255);
+  cursor: pointer;
+}
+
+.active {
+  color: rgba(84, 84, 84, 0.845);
+}
