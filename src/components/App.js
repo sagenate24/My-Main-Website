@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div className='app_header'>
-          <h3 className='header'>The Pesonal Site Of Nathan Sage</h3>
+          <h3 className='header'>Projects By Nathan Sage</h3>
           <Nav />
         </div>
         <div className='app_content'>
@@ -38,6 +38,7 @@ class App extends Component {
             <AboutList meData={this.state.meData} />
           )} />
         </div>
+        <p className='app_footer'>Ⓒ<a href='nathansageprojects.com'> nathansageprojects.com </a>2018.</p>
       </div>
     );
   }

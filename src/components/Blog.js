@@ -28,7 +28,7 @@ class Blog extends React.Component {
   }
 
   render() {
-    const { datePosted, description, image, link, name, techUsed, id } = this.props.blog;
+    const { datePosted, description, image, link, name, techUsed, id, gitHubLink } = this.props.blog;
     return (
       <div className='blog'>
         <div className='blog_header'>
@@ -48,7 +48,8 @@ class Blog extends React.Component {
             <div>
               <span>{description}</span>
               <br />
-              <p>Technologies Used: {techUsed}</p>
+              <p><b>Technologies Used: </b>{techUsed}</p>
+              <p><b>Github Repository: </b><a href={gitHubLink}>{gitHubLink}</a></p>
               <p className='read_more' onClick={this.renderMoreDescription}>Read less</p>
             </div>
             :

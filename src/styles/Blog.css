@@ -51,6 +51,10 @@
   text-decoration: none;
 }
 
+.blog_description b {
+  font-size: 15px;
+}
+
 .blog_description:after {
   content: '';
   display: block;

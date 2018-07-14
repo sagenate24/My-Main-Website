@@ -9,12 +9,12 @@ export default function Nav() {
         <li>
           <NavLink className='link' to='/' exact activeClassName='active'>
             Home
-            </NavLink>
+          </NavLink>
         </li>
         <li>
           <NavLink className='link' to='/about' exact activeClassName='active'>
             About Me
-            </NavLink>
+          </NavLink>
         </li>
       </ul>
     </nav>

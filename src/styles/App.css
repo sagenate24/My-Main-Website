@@ -8,7 +8,7 @@
 .app_header {
   text-align: left;
   margin: 0 auto;
-  width: 700px;
+  width: 740px;
 }
 
 .app_header:after {
@@ -26,6 +26,24 @@
 
 .header {
   text-align: left;
-  padding: 5px;
   color: rgba(0, 0, 0, 0.797);
+}
+
+.app_footer {
+  font-size: 12px;
+  /* text-align: left; */
+  margin: 0 auto;
+  padding: 30px;
+  width: 620px;
+}
+
+.app_footer a {
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(35, 35, 255);
+  transition-duration: 400ms;
+}
+
+.app_footer a:hover {
+  color: rgba(101, 101, 101, 0.783);
 }

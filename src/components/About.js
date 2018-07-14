@@ -7,7 +7,6 @@ class About extends Component {
   }
 
   render() {
-    console.log(this.props.result);
     const { description, frameWorks, gitHubUrl, image, languages } = this.props.result;
     return (
       <div className='blog'>

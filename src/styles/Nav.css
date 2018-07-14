@@ -4,11 +4,11 @@
   justify-content: flex-start;
   text-decoration: none;
   list-style-type: none;
-  padding-left: 100px;
+  padding: 0;
 }
 
 .nav li {
-  padding-left: 20px;
+  padding-right: 35px;
 }
 
 .nav:after {
