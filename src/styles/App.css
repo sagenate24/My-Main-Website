@@ -1,21 +1,28 @@
 .app {
   text-align: center;
   color: #222;
-  padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
 }
 
 .app_header {
   text-align: left;
   margin: 0 auto;
-  width: 740px;
+  max-width: 840px;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 700px) {
+  .app_header {
+    padding: 15px;
+  }
 }
 
 .app_header:after {
   content: '';
   display: block;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 900px;
   padding-top: 15px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.256);
 }
@@ -31,10 +38,9 @@
 
 .app_footer {
   font-size: 12px;
-  /* text-align: left; */
   margin: 0 auto;
   padding: 30px;
-  width: 620px;
+  max-width: 720px;
 }
 
 .app_footer a {

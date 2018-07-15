@@ -38,7 +38,7 @@ class App extends Component {
             <AboutList meData={this.state.meData} />
           )} />
         </div>
-        <p className='app_footer'>Ⓒ<a href='nathansageprojects.com'> nathansageprojects.com </a>2018.</p>
+        <p className='app_footer'>Ⓒ nathansageprojects.com 2018.</p>
       </div>
     );
   }

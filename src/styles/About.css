@@ -1,14 +1,30 @@
 .me_image {
-  height: 400px;
+  max-height: 400px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
+}
+
+.about {
+  padding-top: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .about {
+    width: 78%;
+    margin: 0 auto;
+  }
+  .me_image {
+    height: 340px;
+  }
 }
 
 .me_description {
   padding-top: 30px;
   text-align: left;
   margin: 0 auto;
-  width: 620px;
+  max-width: 720px;
   line-height: 1.5rem;
   font-size: 14px;
   font-family: sans-serif;
@@ -23,7 +39,7 @@
   content: '';
   display: block;
   margin: 0 auto;
-  max-width: 641px;
+  max-width: 741px;
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.256);
 }

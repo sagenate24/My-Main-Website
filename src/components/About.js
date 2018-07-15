@@ -9,7 +9,7 @@ class About extends Component {
   render() {
     const { description, frameWorks, gitHubUrl, image, languages } = this.props.result;
     return (
-      <div className='blog'>
+      <div className='about'>
         <div className='me_header'>
           <h1>About Me</h1>
         </div>
@@ -24,7 +24,7 @@ class About extends Component {
           <span>{description}</span>
         </div>
         <div className='me_description'>
-          <h3>languages:</h3>
+          <h3>Languages:</h3>
           <span>{languages}</span>
         </div>
         <div className='me_description'>
