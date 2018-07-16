@@ -3,13 +3,14 @@
   color: #222;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  cursor: default;
 }
 
 .app_header {
   text-align: left;
   margin: 0 auto;
   max-width: 840px;
-  padding: 15px;
+  padding: 20px 15px 15px 15px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -27,13 +28,21 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.256);
 }
 
-.app_content {
-  padding-top: 15px;
+.headerh1 {
+  color: rgba(0, 0, 0, 0.769);
+  transition-duration: 200ms;
 }
 
 .header {
   text-align: left;
-  color: rgba(0, 0, 0, 0.797);
+  color: rgba(0, 0, 0, 0.927);
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.headerh1:hover {
+  cursor: pointer;
 }
 
 .app_footer {

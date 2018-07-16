@@ -1,50 +1,7 @@
 .blog {
-  padding-top: 15px;
-  width: 100%;
+  padding-top: 5px;
+  width: 85%;
   margin: 0 auto;
-}
-
-.drop_down_project {
-  -moz-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
-  -webkit-transition: all .1s ease-in;
-  transition: all .1s ease-in;
-  width: 26px;
-  height: 26px;
-  margin-left: 4px;
-  border-radius: 50%;
-  background: rgb(9, 122, 244);
-  background-image: url('../Images/arrow-drop-down.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 21px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  cursor: pointer;
-}
-
-.drop_down_project:hover {
-  cursor: pointer;
-}
-
-.drop_down_project_with_h1 {
-  -moz-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
-  -webkit-transition: all .1s ease-in;
-  transition: all .1s ease-in;
-  width: 26px;
-  height: 26px;
-  margin-left: 4px;
-  border-radius: 50%;
-  background-image: url('../Images/arrow-drop-down.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: rgb(39, 144, 255);
-  box-shadow: 0 4px 7px rgba(0,0,0,0.16), 0 4px 7px rgba(0,0,0,0.23);
-  background-size: 30px;
-}
-
-.drop_down_project_with_h1:hover {
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {
@@ -62,43 +19,29 @@
   .blog_description:after {
     max-width: 660px;
   }
+  .h1_active {
+    font-size: 22.8px;
+  }
+  .h1_not_active {
+    font-size: 18px;
+  }
 }
 
-.h1_not_active {
+.blogh1 {
   transition: all .2s ease-in;
   font-size: 26px;
   font-weight: 100;
   color: rgba(0, 0, 0, 0.797);
 }
 
-.h1_not_active:hover {
-  -moz-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
-  -webkit-transition: all .1s ease-in;
-  transition: all .1s ease-in;
-  cursor: pointer;
-  color: rgb(39, 144, 255);
-}
-
-.h1_active {
-  font-size: 26.8px;
-  font-weight: 100;
-  color: rgba(39, 143, 255, 0.858);
-  text-shadow: 1px 1px 2px rgba(0, 109, 211, 0.173);
-}
-
-.h1_active:hover {
-  cursor: pointer;
-}
-
 .blog_header {
   text-align: left;
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 650px;
 }
 
 .blog_image {
-  max-height: 700px;
+  max-width: 650px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
 }
@@ -108,10 +51,10 @@
 }
 
 .blog_description {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: left;
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 630px;
   line-height: 1.5rem;
   font-size: 14px;
   font-family: sans-serif;

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../styles/About.css';
 
 class About extends Component {
+
   generateID() {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   }
 
   render() {
@@ -35,7 +36,7 @@ class About extends Component {
                 <li key={this.generateID()}>
                   {framework}
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
@@ -46,4 +47,5 @@ class About extends Component {
     );
   }
 }
+
 export default About;

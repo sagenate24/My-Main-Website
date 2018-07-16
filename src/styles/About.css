@@ -6,7 +6,8 @@
 
 .about {
   padding-top: 15px;
-  width: 100%;
+  width: 85%;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -24,7 +25,7 @@
   padding-top: 30px;
   text-align: left;
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 650px;
   line-height: 1.5rem;
   font-size: 14px;
   font-family: sans-serif;
@@ -46,7 +47,6 @@
 
 .me_description h3 {
   color: rgba(0, 0, 0, 0.797);
-  font-weight: 400;
   font-size: 18px;
 }
 

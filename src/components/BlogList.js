@@ -10,12 +10,12 @@ class BlogList extends Component {
         {this.props && this.props.blogs
           ?
           this.props.blogs.map((blog) => {
-            return <Blog key={blog.id} blog={blog} />
+            return <Blog key={blog.id} blog={blog} id={blog.id} />
           })
           : null
         }
       </div>
-    )
+    );
   }
 }
 

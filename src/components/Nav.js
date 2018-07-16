@@ -16,6 +16,11 @@ export default function Nav() {
             About Me
           </NavLink>
         </li>
+        <li>
+          <NavLink className='link' to='/contact' exact activeClassName='active'>
+            Contact
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
