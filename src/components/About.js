@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/About.css';
+import FadeIn from 'react-fade-in';
 
 class About extends Component {
-
   generateID() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   }
@@ -11,6 +11,7 @@ class About extends Component {
     const { description, frameWorks, gitHubUrl, image, languages } = this.props.result;
     return (
       <div className='about'>
+        <FadeIn delay='200'>
         <div className='me_header'>
           <h1>About Me</h1>
         </div>
@@ -43,6 +44,7 @@ class About extends Component {
         <div className='me_description'>
           <span>GitHub: <a href={gitHubUrl}>{gitHubUrl}</a></span>
         </div>
+        </FadeIn>
       </div>
     );
   }

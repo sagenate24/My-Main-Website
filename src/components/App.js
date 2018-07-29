@@ -54,7 +54,7 @@ class App extends Component {
       <div className='app'>
         {this.showLoading()}
         <div className='app_header'>
-        <NavLink className='header' to='/' exact ><h3 className='headerh1'>Personal Site Of Nathan Sage</h3></NavLink>
+          <NavLink className='header' to='/' exact ><h3 className='headerh1'>Personal Site Of Nathan Sage</h3></NavLink>
           <Nav />
         </div>
         <div className='app_content'>
@@ -71,7 +71,10 @@ class App extends Component {
             <ContactMap results={this.state.contacts} />
           )} />
         </div>
-        <p className='app_footer'>Ⓒ nathansageprojects.com 2018.</p>
+        {this.state.loading
+          ? null
+          : <p className='app_footer'>Ⓒ nathansageprojects.com 2018.</p>
+          }
       </div>
     );
   }
