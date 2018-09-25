@@ -4,11 +4,8 @@ import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import { getContactInfo } from '../utils/SecuredData';
 import { getPosts, getMe } from '../utils/Data';
-// import SideNav, {MenuIcon} from 'react-simple-sidenav';
-// import { Link } from 'react-scroll';
 import '../styles/App.css';
 
-// import HyperLink from './hyperlink';
 import Nav from './Nav';
 import AboutList from './AboutList';
 import BlogList from './BlogList';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FadeIn from 'react-fade-in';
+// import FadeIn from 'react-fade-in';
 import '../styles/BlogList.css';
 
 import Blog from './Blog';
