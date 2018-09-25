@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FadeIn from 'react-fade-in';
 import '../styles/BlogList.css';
 
 import Blog from './Blog';
@@ -10,7 +11,11 @@ class BlogList extends Component {
         {this.props && this.props.blogs
           ?
           this.props.blogs.map((blog) => {
-            return <Blog key={blog.id} blog={blog} id={blog.id} />
+            return (
+              // <FadeIn>
+                <Blog key={blog.id} blog={blog} id={blog.id} />
+              // </FadeIn>
+              );
           })
           : null
         }

@@ -1,22 +1,20 @@
 .app {
-  text-align: center;
-  color: #222;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
   cursor: default;
+  background-color: rgb(254, 254, 254);
+  color: rgba(0, 0, 0, 0.769);
 }
-
 .app_header {
   text-align: left;
   margin: 0 auto;
-  max-width: 840px;
-  padding: 20px 15px 15px 15px;
+  max-width: 800px;
+  padding: 20px 15px 0 15px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.112), 0 0 6px rgba(0, 0, 0, 0.098); */
 }
-
-@media only screen and (max-width: 700px) {
-  .app_header {
-    padding: 15px;
-  }
+.app_content {
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .app_header:after {
@@ -25,11 +23,11 @@
   margin: 0 auto;
   max-width: 900px;
   padding-top: 15px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.256);
 }
 
 .headerh1 {
   color: rgba(0, 0, 0, 0.769);
+  padding-left: 8px;
   transition-duration: 200ms;
 }
 
@@ -38,7 +36,6 @@
   color: rgba(0, 0, 0, 0.927);
   font-size: 17px;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .headerh1:hover {
@@ -47,9 +44,8 @@
 
 .app_footer {
   font-size: 12px;
-  margin: 0 auto;
-  padding: 30px;
-  max-width: 720px;
+  text-align: center;
+  padding: 30px 0 30px 0;
 }
 
 .app_footer a {
@@ -58,7 +54,14 @@
   color: rgb(35, 35, 255);
   transition-duration: 400ms;
 }
-
 .app_footer a:hover {
   color: rgba(101, 101, 101, 0.783);
+}
+
+button:focus {outline:0;}
+
+@media only screen and (max-width: 700px) {
+  .app_header {
+    padding: 15px;
+  }
 }

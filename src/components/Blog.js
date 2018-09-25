@@ -1,76 +1,95 @@
 import React from 'react';
 import '../styles/Blog.css';
-import FadeIn from 'react-fade-in';
+import * as Icon from '../Images/GIcon.png';
+
+import BlogInfo from './BlogInfo';
 
 class Blog extends React.Component {
-  state = {
-    readMore: false,
+  constructor(props) {
+    super(props);
+    this.modal = null;
   }
 
-  handleStringLength(str) {
-    const length = 350;
-    const ending = '....';
-
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending;
-    } else { return str; }
+  state = {
+    modalIsOpen: false,
   }
 
   imageLinkToProject = (url) => {
     window.open(url, '_blank');
   }
 
-  renderMoreDescription = () => {
-    if (!this.state.readMore) {
-      this.setState({ readMore: true });
-    } else {
-      this.setState({ readMore: false });
+  openModal = () => {
+    setTimeout(() => {
+      this.animateModal('open');
+    }, 1);
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal = () => {
+    setTimeout(() => {
+      this.animateModal('close');
+    }, 1);
+    this.setState({ modalIsOpen: false });
+  }
+
+  animateModal = (status) => {
+    const modal = document.getElementsByClassName('Modal');
+
+    const animateModal = () => {
+      if (status === 'open') {
+        if (increment > 1) {
+          clearInterval(id);
+        }
+        increment += 0.05;
+        modal[0].style.opacity = increment;
+      } else {
+        if (increment < 0) {
+          clearInterval(id);
+        }
+        increment -= 0.05;
+        modal[0].style.opacity = increment;
+      }
     }
+    let increment = 0;
+    const id = setInterval(animateModal, 1);
   }
 
   render() {
-    const { datePosted, description, image, link, name, techUsed, gitHubLink } = this.props.blog;
-    const { readMore } = this.state;
+    const { datePosted, image, link, name, shortDescripion, gitHubLink } = this.props.blog;
+    const { modalIsOpen } = this.state;
     return (
       <div className='blog' name={this.props.blog.id}>
-        <FadeIn delay='200'>
-          <div className='blog_header'>
-            <h1
-              className={'blogh1'}
-              onMouseEnter={this.handleMouseEnter}
-              onMouseLeave={this.handleMouseLeave}
-            >{name}</h1>
-            <p className='blog_date'>Completed: {datePosted}</p>
+        <div className='blog_left_container'>
+          <h2
+            className='blogh1'
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseLeave}
+          >{name}</h2>
+          <p className='blog_short_desc'>{shortDescripion}</p>
+          <div className='btns_container'>
+            {this.props.blog && this.props.blog.links
+                ? <div>
+                    <button className='view_btn' onClick={() => { this.imageLinkToProject(this.props.blog.links[0].url) }}>Apple Store</button>
+                    <button className='view_btn_android' onClick={() => { this.imageLinkToProject(this.props.blog.links[1].url) }}>Android Store</button>
+                </div>
+                :<button className='view_btn' onClick={() => { this.imageLinkToProject(link) }}>VIEW</button>}
           </div>
+          <div className='blog_footer'>
+            <span>{datePosted}</span>
+            <a href={gitHubLink} target='_blank'><img alt='Github Icon' className='github_icon' src={Icon} /></a>
+          </div>
+        </div>
+        <div className='blog_right_container'>
           <img
             src={image}
-            alt={'post'}
+            alt='post'
             className='blog_image'
-            onClick={() => { this.imageLinkToProject(link) }}
           />
-          <div className='blog_description'>
-            <p><b>Technologies Used: </b>{techUsed}</p>
-            <p><b>Github Repository: </b><a href={gitHubLink}>{gitHubLink}</a></p>
-            {readMore
-              ? <div>
-                <FadeIn delay='.01'>
-                  <span>{description}</span>
-                  <p className='read_more' onClick={this.renderMoreDescription}>Read less</p>
-                </FadeIn>
-              </div>
-              :
-              <FadeIn delay='.01'>
-                <div>
-                  <span>{this.handleStringLength(description)}</span>
-                  <p className='read_more' onClick={this.renderMoreDescription}>Read more</p>
-                </div>
-              </FadeIn>
-            }
-            <br />
-            <span>See this in action! <a href={link} target='_blank'>Link to {this.props.blog.name}</a></span>
-            <br />
-          </div>
-        </FadeIn>
+          <button className='more_btn' onClick={this.openModal}>Read More</button>
+        </div>
+        <div ref={(modalP) => modalP ? this.modal = modalP.children[0] : null}>
+          <BlogInfo modalIsOpen={modalIsOpen} blog={this.props.blog} closeModal={this.closeModal} />
+        </div>
       </div>
     );
   }

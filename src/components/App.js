@@ -4,9 +4,11 @@ import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import { getContactInfo } from '../utils/SecuredData';
 import { getPosts, getMe } from '../utils/Data';
+// import SideNav, {MenuIcon} from 'react-simple-sidenav';
+// import { Link } from 'react-scroll';
 import '../styles/App.css';
 
-import HyperLink from './hyperlink';
+// import HyperLink from './hyperlink';
 import Nav from './Nav';
 import AboutList from './AboutList';
 import BlogList from './BlogList';
@@ -15,7 +17,8 @@ import ContactMap from './ContactMap';
 class App extends Component {
   state = {
     percent: 1,
-    loading: true
+    loading: true,
+    showNav: false,
   }
 
   componentDidMount() {
@@ -31,7 +34,7 @@ class App extends Component {
       this.setState({ percent: 100 });
       setTimeout(() => {
         this.setState({ loading: false });
-      }, 1100);
+      }, 200);
     });
   }
 
@@ -60,7 +63,6 @@ class App extends Component {
         <div className='app_content'>
           <Route exact path='/' render={() => (
             <div>
-              <HyperLink />
               <BlogList blogs={this.state.blogs} />
             </div>
           )} />

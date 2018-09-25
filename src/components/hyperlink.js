@@ -8,7 +8,7 @@ class HyperLink extends Component {
       <nav className='hyper_nav'>
         <ul>
           <li>
-            <Link href='#wouldYouRather' className='hyper_link' to='wouldYouRather' spy={true} smooth={true} offset={10} duration={600}>Would You Rather ⚓️</Link>
+            <Link href='#wouldYouRather' className='hyper_link' to='wouldYouRather' spy={true} smooth={true} offset={10} duration={600}>Would You Rather</Link>
           </li>
           <li>
             <Link href='#MyReads' className='hyper_link' title='hah get it?' to='MyReads' spy={true} smooth={true} offset={10} duration={600}>MyReads ⚓️</Link>

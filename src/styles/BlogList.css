@@ -1,3 +1,7 @@
+.blog_list {
+  max-width: 800px;
+}
+
 .blog_list h3 {
   font-weight: 100;
   text-align: left;

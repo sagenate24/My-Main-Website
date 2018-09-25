@@ -3,12 +3,17 @@ import '../styles/Contact.css';
 import FadeIn from 'react-fade-in';
 
 class Contact extends Component {
+  handleClick = (url) => {
+    window.open(url, '_blank');
+  }
+
   render() {
     const { email, gmailIcon, linkedinImage, linkedinURL, pIcon, pNumber } = this.props.contact;
+
     return (
       <div className='contact'>
         <FadeIn delay='200'>
-          <div className='contact_container'>
+          <div className='contact_container' onClick={() => this.handleClick(linkedinURL)}>
             <img
               src={linkedinImage}
               className='icon'
@@ -16,10 +21,10 @@ class Contact extends Component {
             />
             <div className='contact_description'>
               <h4>Linkedin:</h4>
-              <a href={linkedinURL} target='_blank'>Link to my profile!</a>
+              <a href={linkedinURL} target='_blank'>https://www.linkedin.com/in/nathan-sage-689296163</a>
             </div>
           </div>
-          <div className='contact_container'>
+          <div className='contact_container' onClick={() => this.handleClick('tel:1-360-349-6448')}>
             <img
               src={pIcon}
               className='icon'
@@ -30,7 +35,7 @@ class Contact extends Component {
               <a href={`tel:1-360-349-6448`}>{pNumber}</a>
             </div>
           </div>
-          <div className='contact_container'>
+          <div className='contact_container' onClick={() => this.handleClick(`mailto:${email}`)}>
             <img
               src={gmailIcon}
               className='icon'
