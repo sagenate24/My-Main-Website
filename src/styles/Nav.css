@@ -33,3 +33,9 @@
 .active {
   color: rgba(52, 52, 52, 0.845);
 }
+
+@media only screen and (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+}

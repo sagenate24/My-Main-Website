@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/Contact.css';
-import FadeIn from 'react-fade-in';
 
 class Contact extends Component {
   handleClick = (url) => {
@@ -8,11 +7,11 @@ class Contact extends Component {
   }
 
   render() {
-    const { email, gmailIcon, linkedinImage, linkedinURL, pIcon, pNumber } = this.props.contact;
+    if (this.props && this.props.contact) {
+      const { email, gmailIcon, linkedinImage, linkedinURL, pIcon } = this.props.contact;
 
-    return (
-      <div className='contact'>
-        <FadeIn delay='200'>
+      return (
+        <div className='contact'>
           <div className='contact_container' onClick={() => this.handleClick(linkedinURL)}>
             <img
               src={linkedinImage}
@@ -21,7 +20,7 @@ class Contact extends Component {
             />
             <div className='contact_description'>
               <h4>Linkedin:</h4>
-              <a href={linkedinURL} target='_blank'>https://www.linkedin.com/in/nathan-sage-689296163</a>
+              <a href={linkedinURL} target='_blank'>Link to profile</a>
             </div>
           </div>
           <div className='contact_container' onClick={() => this.handleClick('tel:1-360-349-6448')}>
@@ -32,7 +31,7 @@ class Contact extends Component {
             />
             <div className='contact_description'>
               <h4>Mobile Phone:</h4>
-              <a href={`tel:1-360-349-6448`}>{pNumber}</a>
+              <a href={`tel:1-360-349-6448`}>(360) 349-6448</a>
             </div>
           </div>
           <div className='contact_container' onClick={() => this.handleClick(`mailto:${email}`)}>
@@ -46,9 +45,10 @@ class Contact extends Component {
               <a href={`mailto:${email}`}>{email}</a>
             </div>
           </div>
-        </FadeIn>
-      </div>
-    );
+        </div>
+      );
+    }
+    return null;
   }
 }
 

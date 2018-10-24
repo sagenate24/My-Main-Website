@@ -1,0 +1,16 @@
+.icon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+.icon:hover {
+  transition-duration: 200ms;
+  width: 43px;
+  height: 43px;
+}
+.sidebarcontact {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-around;
+}

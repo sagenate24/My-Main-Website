@@ -1,25 +1,25 @@
 .about {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 0 1px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
-  margin: 0;
   overflow: hidden;
 }
 .about_image {
   height: 460px;
-  background-image: url('../Images/newMe.jpg');
-  background-attachment: fixed;
-  background-position: center;
+  background-image: url('../Images/me.jpg');
+  filter: blur(2px);
+  transition: all 200ms ease-in;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   position: relative;
+  z-index: 1;
+  /* background: transparent; */
   margin-bottom: 60px;
-}
-@media only screen and (min-width: 1200px) {
 }
 .about_image_text {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   text-align: center;
   padding: 13px;
@@ -47,7 +47,7 @@
   font-size: 16px;
   display: block;
 }
-.about_githubLink:hover {
+.about_githubLink:hover, .about_githubLink:active {
   transition-duration: 200ms;
   color: #ffffff;
   background-color: #0673A5;
@@ -73,26 +73,15 @@
   color: #ffffff;
   line-height: 1.5rem;
   padding: 20px 40px 40px 40px;
-  font-family: sans-serif;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.about_lang h2 {
-  text-align: center;
-  font-size: 24px;
-  margin: 0;
-}
-.about_lang span {
-  text-align: center;
-  font-size: 40
-}
 .lang_container {
   display: flex;
-  border-radius: 5px;
+  padding-right: 10px;
   margin-bottom: 50px;
   align-items: center;
-  overflow: hidden;
 }
 .about_icons {
   width: 50px;
@@ -136,5 +125,38 @@
   font-weight: 100;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
+  .about {
+    box-shadow: none;
+    margin: 0;
+    overflow: none;
+  }
+  .about_content {
+    padding: 20px;
+    /* text-align: center; */
+  }
+  .about_image {
+    height: 350px;
+    background-attachment: local;
+    margin-bottom: 60px;
+  }
+  .about_image_text {
+    margin-left: -11px;
+  }
+  .about_lang {
+    display: block;
+    margin: 0 auto;
+  }
+  .lang_container {
+    margin: 0 auto;
+    width: 200px;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .about_githubLink {
+    width: 200px;
+  }
+  .frames {
+    width: 250px;
+  }
 }
