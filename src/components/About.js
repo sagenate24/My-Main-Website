@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
-import { getLanguagesInfo } from '../utils/LangData';
 import '../styles/About.css';
 
 class About extends Component {
-  state = {
-    ready: false,
-    langs: [],
+  constructor(props) {
+    super(props);
+
+    this.parallax = React.createRef();
   }
 
   componentDidMount() {
-    getLanguagesInfo().then((results) => {
-      this.setState({ langs: results });
-    }).then(() => {
-      this.setState({ ready: true });
-    })
+      this.loadImage();
   }
 
-  generateID() {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  loadImage = () => {
+    const image = new Image();
+    const node = this.parallax.current;
+    image.onload = (() => {
+      node.style.filter = 'blur(0)'
+    });
+    image.src = this.props.aboutMe.image;
   }
 
   render() {
-    const { shortDesk, description, frameWorks, gitHubUrl, image, languages } = this.props.result;
-    const { langs, ready } = this.state;
-    if (ready) {
+    if (this.props && this.props.aboutMe) {
+      const { shortDesk, description, frameWorks, gitHubUrl } = this.props.aboutMe;
+      const { langs } = this.props;
+
       return (
         <div className='about'>
-          <div className='about_image'>
+          <div className='about_image' ref={this.parallax}>
             <div className='about_image_text'>
               <h2>NATHAN SAGE</h2>
               <span>{shortDesk}</span>
@@ -51,20 +53,19 @@ class About extends Component {
             <h2>Frameworks and Libraries</h2>
             <div className='about_frame'>
               {frameWorks.map((framework) => {
-                  return (
-                    <div className='frames' key={framework.title}>
-                      <h4 className='frame_title'>{framework.title}</h4>
-                      <p className='frame_name'>{framework.name}</p>
-                    </div>
-                  );
-                })}
+                return (
+                  <div className='frames' key={framework.title}>
+                    <h4 className='frame_title'>{framework.title}</h4>
+                    <p className='frame_name'>{framework.name}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       );
     }
     return null;
-
   }
 }
 

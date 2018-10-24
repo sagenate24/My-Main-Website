@@ -1,18 +1,18 @@
-import * as javaScript from '../Images/Languages/js.jpg';
-import * as react from '../Images/Languages/react.png';
-import * as reduxPic from '../Images/Languages/redux.png';
-import * as html from '../Images/Languages/HMTL5.png';
-import * as css from '../Images/Languages/css3.png';
-import * as node from '../Images/Languages/node.png';
+import * as javaScriptImg from '../Images/js.jpg';
+import * as reactImg from '../Images/react.png';
+import * as reduxImg from '../Images/redux.png';
+import * as htmlImg from '../Images/html.png';
+import * as cssImg from '../Images/css.png';
+import * as nodeImg from '../Images/node.png';
 
 const languages = [
-  {title: 'JavaScript', img: javaScript},
-  {title: 'React', img: react},
-  {title: 'React Native', img: react},
-  {title: 'Redux', img: reduxPic},
-  {title: 'HTML5', img: html},
-  {title: 'CSS/CSS3', img: css},
-  {title: 'Node', img: node},
+  {title: 'JavaScript', img: javaScriptImg},
+  {title: 'React', img: reactImg},
+  {title: 'React Native', img: reactImg},
+  {title: 'Redux', img: reduxImg},
+  {title: 'HTML5', img: htmlImg},
+  {title: 'CSS/CSS3', img: cssImg},
+  {title: 'Node', img: nodeImg},
 ];
 
 export function getLanguagesInfo() {

@@ -21,17 +21,13 @@ class BlogInfo extends Component {
           <div className='blogInfo'>
             <div className='blogInfo_header'>
               <h2>{blog.name}</h2>
+              <span onClick={closeModal}>✕</span>
             </div>
             <div className='blogInfo_content'>
+              <h3>Description</h3>
               <p className='blogInfo_desc'>{blog.description}</p>
-              <br />
-              <p><b>Technologies Used: </b>{blog.techUsed}</p>
-              <div className='blogInfo_footer'>
-                <span
-                  className='blogInfo_close'
-                  onClick={closeModal}
-                >CLOSE</span>
-              </div>
+              <h3>Technologies Used</h3>
+              <p className='blogInfo_tech'>{blog.techUsed}</p>
             </div>
           </div>
         </Modal>

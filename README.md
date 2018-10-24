@@ -2,4 +2,4 @@
 
 This web application was created using React.JS
 
-The Website shows projects I have completed, background of my experience, and contact information.
+The site shows projects I have completed, background of my experience, and contact information!
