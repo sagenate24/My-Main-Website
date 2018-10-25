@@ -2,16 +2,19 @@ import * as flashImg from '../Images/flashcards.jpg';
 import * as flashSmallImg from '../Images/flashcardssmall.png';
 import * as wyrImg from '../Images/wyr.jpg';
 import * as wyrSmallImg from '../Images/wyrsmall.png';
-import * as myReadsImg from '../Images/myreads.jpg';
+import * as myReadsImg from '../Images/MyReads.jpg';
 import * as myReadsSmallImg from '../Images/myreadssmall.png';
-import * as jammingImg from '../Images/jamming.png';
+import * as jammingImg from '../Images/Jamming.png';
 import * as jammingSmallImg from '../Images/jammingsmall.png';
-import * as devourImg from '../Images/devour.png';
+import * as devourImg from '../Images/Devour.png';
 import * as devourSmallImg from '../Images/devoursmall.png';
 import * as linkdinImg from '../Images/linkedin.png';
 import * as gmailImg from '../Images/gmail.png';
 import * as phoneImg from '../Images/phone.png';
 import * as meImg from '../Images/me.jpg';
+import * as udacityImg from '../Images/Education/udacityLogo.png';
+import * as codecademyImg from '../Images/Education/codecademyLogo.png';
+import * as SPSCCImg from '../Images/Education/spsccLogo.png';
 
 const posts = [
   {
@@ -24,8 +27,8 @@ const posts = [
     description: 'Mobile application that allows users to study collections of flashcards. The app allows users to create different categories of flashcards called "decks", add flashcards to those decks, take quizzes on those decks, and create a profile.',
     techUsed: 'React, React Native, Redux, JavaScript, Babel, HTML5, CSS3, Expo, Xcode.',
     links: [
-      {store: 'Apple', url: 'https://itunes.apple.com/us/app/flashcards-study-more/id1436666696?ls=1&mt=8'},
-      {store: 'Android', url: 'https://play.google.com/store/apps/details?id=org.nathansage.flashcards'}
+      { store: 'Apple', url: 'https://itunes.apple.com/us/app/flashcards-study-more/id1436666696?ls=1&mt=8' },
+      { store: 'Android', url: 'https://play.google.com/store/apps/details?id=org.nathansage.flashcards' }
     ],
     gitHubLink: 'https://github.com/sagenate24/Flash-Cards',
   },
@@ -80,31 +83,55 @@ const posts = [
 ];
 
 const aboutMe = {
-    id: 'Nathan',
-    shortDesk: 'Motivated Developer From Seattle Washington',
-    description: 'Fast learner motivated to make a difference in the tech industry. For the past four years I have explored around HTML5 and CSS/CSS3 to build simple static websites for my own personal enjoyment. During the past year I have taken the initiative to further my knowledge in software development. I am now currently enrolled in Udacity’s React Nanodegree Program, completed a Codecademy course on building front end web applications, as well as creating my own personal projects in my freetime.',
-    image: meImg,
-    frameWorks: [
-      {title:'Mobile', name:'React Native'},
-      {title:'Web', name:'React, Redux, ES6'},
-      {title:'Web Dev', name:'Webpack, Babel, jsx'},
-      {title:'Backend', name:'Node, Express'},
-      {title:'REST API', name:'Yelp, Spotify, AWS S3'},
-      {title:'Test', name:'Jest, Nightwatch'},
-    ],
-    gitHubUrl: 'https://github.com/sagenate24',
-  }
+  id: 'Nathan',
+  shortDesk: 'Motivated Developer From Seattle Washington',
+  description: 'Fast learner motivated to make a difference in the tech industry. For the past four years I have explored around HTML5 and CSS/CSS3 to build simple static websites for my own personal enjoyment. During the past year I have taken the initiative to further my knowledge in software development. I am now currently enrolled in Udacity’s React Nanodegree Program, completed a Codecademy course on building front end web applications, as well as creating my own personal projects in my freetime.',
+  image: meImg,
+  frameWorks: [
+    { title: 'Mobile', name: 'React Native' },
+    { title: 'Web', name: 'React, Redux, ES6' },
+    { title: 'Web Dev', name: 'Webpack, Babel, jsx' },
+    { title: 'Backend', name: 'Node, Express' },
+    { title: 'REST API', name: 'Yelp, Spotify, AWS S3' },
+    { title: 'Test', name: 'Jest, Nightwatch' },
+  ],
+  gitHubUrl: 'https://github.com/sagenate24',
+}
 
 const contactInfo = {
-    email: 'sagenate24@gmail.com',
-    linkedinURL: 'https://www.linkedin.com/in/nathan-sage-689296163/',
-    linkedinImage: linkdinImg,
-    gmailIcon: gmailImg,
-    pIcon: phoneImg,
-  }
+  email: 'sagenate24@gmail.com',
+  linkedinURL: 'https://www.linkedin.com/in/nathan-sage-689296163/',
+  linkedinImage: linkdinImg,
+  gmailIcon: gmailImg,
+  pIcon: phoneImg,
+}
+
+const education = [
+  {
+    name: 'Udacity',
+    program: 'React Nanodegree Program',
+    completed: 'September 2018',
+    certifricate: 'https://graduation.udacity.com/confirm/PKRHMRQK',
+    imageUrl: udacityImg,
+  },
+  {
+    name: 'Codecademy',
+    program: 'Build Front-End Web Apps',
+    completed: 'May 2018',
+    certifricate: 'https://www.credential.net/z3qn7seh',
+    imageUrl: codecademyImg,
+  },
+  {
+    name: 'SPSCC',
+    link: 'https://spscc.edu/',
+    program: 'Associates Degree',
+    completed: 'In Progress',
+    imageUrl: SPSCCImg,
+  },
+];
 
 export function getMe() {
-  return new Promise((res) => res({...aboutMe}));
+  return new Promise((res) => res({ ...aboutMe }));
 }
 
 export function getPosts() {
@@ -112,5 +139,9 @@ export function getPosts() {
 }
 
 export function getContactInfo() {
-  return new Promise((res) => res({...contactInfo}));
+  return new Promise((res) => res({ ...contactInfo }));
+}
+
+export function getEducationData() {
+  return new Promise((res) => res([ ...education ]));
 }
