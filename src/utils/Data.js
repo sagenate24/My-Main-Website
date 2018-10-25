@@ -2,11 +2,11 @@ import * as flashImg from '../Images/flashcards.jpg';
 import * as flashSmallImg from '../Images/flashcardssmall.png';
 import * as wyrImg from '../Images/wyr.jpg';
 import * as wyrSmallImg from '../Images/wyrsmall.png';
-import * as myReadsImg from '../Images/myreads.jpg';
+import * as myReadsImg from '../Images/MyReads.jpg';
 import * as myReadsSmallImg from '../Images/myreadssmall.png';
-import * as jammingImg from '../Images/jamming.png';
+import * as jammingImg from '../Images/Jamming.png';
 import * as jammingSmallImg from '../Images/jammingsmall.png';
-import * as devourImg from '../Images/devour.png';
+import * as devourImg from '../Images/Devour.png';
 import * as devourSmallImg from '../Images/devoursmall.png';
 import * as linkdinImg from '../Images/linkedin.png';
 import * as gmailImg from '../Images/gmail.png';
@@ -24,8 +24,8 @@ const posts = [
     description: 'Mobile application that allows users to study collections of flashcards. The app allows users to create different categories of flashcards called "decks", add flashcards to those decks, take quizzes on those decks, and create a profile.',
     techUsed: 'React, React Native, Redux, JavaScript, Babel, HTML5, CSS3, Expo, Xcode.',
     links: [
-      {store: 'Apple', url: 'https://itunes.apple.com/us/app/flashcards-study-more/id1436666696?ls=1&mt=8'},
-      {store: 'Android', url: 'https://play.google.com/store/apps/details?id=org.nathansage.flashcards'}
+      { store: 'Apple', url: 'https://itunes.apple.com/us/app/flashcards-study-more/id1436666696?ls=1&mt=8' },
+      { store: 'Android', url: 'https://play.google.com/store/apps/details?id=org.nathansage.flashcards' }
     ],
     gitHubLink: 'https://github.com/sagenate24/Flash-Cards',
   },
