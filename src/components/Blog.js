@@ -13,7 +13,6 @@ class Blog extends React.Component {
   state = {
     modalIsOpen: false,
     screenWidth: 0,
-    
   }
 
   componentDidMount() {
@@ -34,8 +33,9 @@ class Blog extends React.Component {
   }
 
   openModal = () => {
-    const app = document.querySelector('.blog_list');
-    app.style.overflowY = 'hidden';
+    const body = document.body;
+    body.style.overflow = 'hidden';
+
     setTimeout(() => {
       this.animateModal('open');
     }, 1);
@@ -43,35 +43,26 @@ class Blog extends React.Component {
   }
 
   closeModal = () => {
-    setTimeout(() => {
-      this.animateModal('close');
-    }, 1);
+    const body = document.body;
+    body.style.overflow = 'auto';
+
+    this.animateModal('close');
+
     setTimeout(() => {
       this.setState({ modalIsOpen: false });
     }, 300);
   }
 
   animateModal = (status) => {
-    const modal = document.getElementsByClassName('Modal');
+    const modal = document.querySelector('.Modal');
 
-    const animateModal = () => {
-      if (status === 'open') {
-        if (this.modalOpacity < 1) {
-          this.modalOpacity += 0.2;
-          modal[0].style.opacity = this.modalOpacity;
-          window.requestAnimationFrame(animateModal);
-        }
-      } else {
-        if (this.modalOpacity > 0) {
-          this.modalOpacity -= 0.2;
-          modal[0].style.opacity = this.modalOpacity;
-          window.requestAnimationFrame(animateModal);
-        }
-      }
+    if (status === 'open') {
+      modal.classList.remove('fadeOut');
+      modal.classList.add('fadein');
+    } else {
+      modal.classList.remove('fadein');
+      modal.classList.add('fadeOut');
     }
-    // let increment = 0;
-    // const id = setInterval(animateModal, 1);
-    window.requestAnimationFrame(animateModal);
   }
 
   render() {

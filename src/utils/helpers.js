@@ -1,4 +1,4 @@
-import { getMe, getPosts, getContactInfo } from './Data';
+import { getMe, getPosts, getContactInfo, getEducationData } from './Data';
 import { getLanguagesInfo } from './LangData';
 
 export const handleInitialData = () => {
@@ -7,10 +7,12 @@ export const handleInitialData = () => {
    getPosts(),
    getContactInfo(),
    getLanguagesInfo(),
- ]).then(([aboutMe, posts, contactInfo, languages]) => ({
+   getEducationData(),
+ ]).then(([aboutMe, posts, contactInfo, languages, education]) => ({
    aboutMe,
    posts,
    contactInfo,
    languages,
+   education,
  }));
 }
