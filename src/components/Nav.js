@@ -17,6 +17,11 @@ export default function Nav() {
           </NavLink>
         </li>
         <li>
+          <NavLink className='link' to='/resume' exact activeClassName='active'>
+            Resume
+          </NavLink>
+        </li>
+        <li>
           <NavLink className='link' to='/contact' exact activeClassName='active'>
             Contact
           </NavLink>

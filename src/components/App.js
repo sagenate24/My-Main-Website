@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, NavLink, Switch, withRouter, IndexRedirect } from 'react-router-dom';
+import { Route, NavLink, Switch, withRouter } from 'react-router-dom';
 import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import { handleInitialData } from '../utils/helpers';
@@ -10,6 +10,7 @@ import About from './About';
 import BlogList from './BlogList';
 import Contact from './Contact';
 import SideBar from './SideBar';
+import Resume from './Resume';
 
 class App extends Component {
   state = {
@@ -20,7 +21,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.history.push('/');
     handleInitialData().then((results) => {
       this.setState({ data: results });
     }).then(() => {
@@ -84,11 +84,11 @@ class App extends Component {
                   <Route path='/about' render={() => (
                     <About aboutMe={data.aboutMe} langs={data.languages} />
                   )} />
+                  <Route path='/resume' render={() => (
+                    <Resume education={data.education} aboutMe={data.aboutMe}/>
+                  )} />
                   <Route path='/contact' render={() => (
                     <Contact contact={data.contactInfo} />
-                  )} />
-                  <Route render={() => (
-                    <BlogList blogs={data.posts} />
                   )} />
                 </Switch>
               </div>

@@ -9,10 +9,6 @@ class SideBar extends Component {
 
     this.sidebarContainer = React.createRef();
     this.dropDown = React.createRef();
-    this.dropDownAcceleration = 1;
-    this.dropDownPosition = 0;
-    this.acceleration = 1;
-    this.position = -300;
   }
 
   state = {
@@ -21,17 +17,8 @@ class SideBar extends Component {
 
   componentDidMount() {  
     const sideBar = this.sidebarContainer.current;
-
-    const animateIn = () => {
-      if (this.position < -5) {
-        this.acceleration += this.acceleration * 0.305
-        this.position += this.acceleration;
-        sideBar.style.left = `${this.position}px`;
-        window.requestAnimationFrame(animateIn);
-      }
-    }
-    sideBar.style.left = '-300px';
-    window.requestAnimationFrame(animateIn);
+    sideBar.classList.remove('slideOut')
+    sideBar.classList.add('slidein')
     window.addEventListener('resize', this.checkWidth);
   }
 
@@ -50,50 +37,25 @@ class SideBar extends Component {
   animateOut = () => {
     const { closeSideBar } = this.props;
     const sideBar = this.sidebarContainer.current;
-
-    const animateOut = () => {
-      if (this.position >= -300) {
-        this.acceleration += this.acceleration * 0.305;
-        this.position -= this.acceleration;
-        sideBar.style.left = `${this.position}px`;
-        window.requestAnimationFrame(animateOut);
-      } else {
-        closeSideBar();
-      }
-    }
-    this.acceleration = 1;
-    window.requestAnimationFrame(animateOut);
+    sideBar.classList.remove('slidein')
+    sideBar.classList.add('slideOut')
+    setTimeout(() => {
+      closeSideBar();
+    }, 350);
   }
 
   showDropDown = () => {
     const node = this.dropDown.current;
     const { showHypes } = this.state;
-    this.dropDownAcceleration = 1;
 
     if (!showHypes) {
-      const animateDown = () => {
-        if (this.dropDownPosition < 180) {
-          this.dropDownAcceleration += this.dropDownAcceleration * 0.45;
-          this.dropDownPosition += this.dropDownAcceleration;
-          node.style.height = `${this.dropDownPosition}px`;
-          window.requestAnimationFrame(animateDown);
-        }
-      }
-      this.dropDownAcceleration = 1;
+      node.classList.remove('dropDownClose');
+      node.classList.add('dropDownOpen');
       this.setState({ showHypes: true });
-      window.requestAnimationFrame(animateDown);
     } else {
-      const animateUp = () => {
-        if (this.dropDownPosition >= 0) {
-          this.dropDownAcceleration += this.dropDownAcceleration * 0.45;
-          this.dropDownPosition -= this.dropDownAcceleration;
-          node.style.height = `${this.dropDownPosition}px`;
-          window.requestAnimationFrame(animateUp);
-        }
-      }
-      this.dropDownAcceleration = 1;
+      node.classList.remove('dropDownOpen');
+      node.classList.add('dropDownClose');
       this.setState({ showHypes: false });
-      window.requestAnimationFrame(animateUp);
     }
   }
 
@@ -114,7 +76,7 @@ class SideBar extends Component {
       <div className='sidebar' ref={this.sidebarContainer}>
         <div className='sidebar_header'>
           <h2>Portfolio</h2>
-          <span onClick={this.animateOut}>✕</span>
+          <ion-icon name='menu' onClick={this.animateOut}></ion-icon>
         </div>
         <ul className='sidebar_ul'>
           <li onClick={() => this.handleNavigation('/')}>
@@ -153,6 +115,12 @@ class SideBar extends Component {
             <ion-icon className='sidebar_icon' name="contact"></ion-icon>
             <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
               About Me
+              </NavLink>
+          </li>
+          <li onClick={() => this.handleNavigation('/resume')}>
+            <ion-icon className='sidebar_icon' name="paper"></ion-icon>
+            <NavLink onClick={this.checkLocation} className='sidebar_link' to='/resume' exact activeClassName='active'>
+              Resume
               </NavLink>
           </li>
           <li onClick={() => this.handleNavigation('/contact')}>

@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -300px;
   width: 300px;
   height: 100%;
   background-color: #323232;
@@ -11,6 +11,7 @@
 .sidebar_header h2 {
   margin: 0;
   font-weight: 400;
+  padding-top: 5px;
 }
 
 .sidebar_header {
@@ -19,18 +20,18 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px 15px 20px;
+  padding: 15px 20px 10px 20px;
   text-align: center;
 }
 
-.sidebar_header span {
+.sidebar_header ion-icon {
   transition-duration: 200ms;
-  margin-top: -2px;
-  padding: 6px 10px 6px 10px;
-  border-radius: 30px;
-  font-size: 18px;
-  color: #ffffff;
   cursor: pointer;
+  padding: 5px;
+}
+
+.sidebar_header ion-icon:hover {
+  background-color: rgba(0, 0, 0, 0.125);
 }
 
 .sidebar_header span:hover {
@@ -96,6 +97,43 @@
  }
 
  .bottom_section {
-   /* position: abs÷÷÷olute; */
    bottom: 20px;
  }
+
+ /* SideBar animations */
+
+.slidein {
+  animation: slide-in 300ms;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-in {
+  from { left: -300px; }
+  to { left: 0px; }
+}
+
+.slideOut {
+  animation: slide-out 400ms;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-out {
+  from { left: 0px; }
+  to { left: -300px; }
+}
+
+.dropDownOpen {
+  animation: drop-down-open 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes drop-down-open {
+  from { height: 0px; }
+  to { height: 190px; }
+}
+
+.dropDownClose {
+  animation: drop-down-close 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes drop-down-close {
+  from { height: 190px; }
+  to { height: 0px; }
+}
