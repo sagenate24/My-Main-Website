@@ -17,7 +17,7 @@
 .sidebar_header {
   background-color: #0673A5;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.555), 0 0 1px rgba(0, 0, 0, 0.23);
-  color: white;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   padding: 15px 20px 10px 20px;
