@@ -126,7 +126,7 @@
 }
 @keyframes drop-down-open {
   from { height: 0px; }
-  to { height: 190px; }
+  to { height: 208px; }
 }
 
 .dropDownClose {
@@ -134,6 +134,6 @@
   animation-fill-mode: forwards;
 }
 @keyframes drop-down-close {
-  from { height: 190px; }
+  from { height: 208px; }
   to { height: 0px; }
 }
