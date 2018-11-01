@@ -82,7 +82,7 @@ const posts = [
 const aboutMe = {
   id: 'Nathan',
   shortDesk: 'Motivated Developer From Seattle Washington',
-  description: 'Fast learner motivated to make a difference in the tech industry. For the past four years I have explored around HTML5 and CSS/CSS3 to build simple static websites for my own personal enjoyment. During the past year I have taken the initiative to further my knowledge in software development. I have graduated from Udacity’s React Nanodegree Program, and Codecademy’s Build Front End Web Apps - Pro Intensive course. I am now currently enrolled In Udacity’s Full Stack Web Developer Nanodegree, as well as creating my own personal projects in my free time.',
+  description: 'Fast learner motivated to make a difference in the tech industry. For the past four years I have explored around HTML5 and CSS/CSS3 to build simple static websites for my own personal enjoyment. During the past year I have taken the initiative to further my knowledge in software development. I have graduated from Udacity’s React Nanodegree Program and Codecademy’s Build Front End Web Apps Pro Intensive course. I am now currently enrolled In Udacity’s Full Stack Web Developer Nanodegree, as well as creating my own personal projects in my free time.',
   image: meImg,
   frameWorks: [
     { title: 'Mobile', name: 'React Native' },
