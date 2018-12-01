@@ -8,6 +8,8 @@ html, body {
 }
 
 .app {
+  font-family: 'Futura', 'Helvetica', sans-serif;
+  font-weight: normal;
   cursor: default;
   background-color: rgb(254, 254, 254);
   color: rgba(0, 0, 0, 0.769);
@@ -16,44 +18,43 @@ html, body {
   overflow: scroll;
 }
 .app_header {
-  text-align: left;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 20px 15px 0 15px;
-  z-index: 2;
-  background-color: #ffffff;
-  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.112), 0 1px 1px -1px rgba(0, 0, 0, 0.098);
-}
-.app_content {
-  margin: 0 auto;
-  margin-top: 40px;
-  max-width: 800px;
-  padding: 0 10px 10px 10px;
-}
-
-.app_header:after {
-  content: '';
-  display: block;
-  margin: 0 auto;
-  max-width: 900px;
-  padding-top: 15px;
-}
-
-.headerh1 {
-  color: rgba(0, 0, 0, 0.769);
-  padding-left: 8px;
-  transition-duration: 200ms;
+  padding: 15px 15px 5px 15px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .header {
-  text-align: left;
-  color: rgba(0, 0, 0, 0.927);
-  font-size: 17px;
-  text-decoration: none;
+  font-size: 15px;
 }
 
-.headerh1:hover {
+.first_span {
+  float: left;
+  display: block;
   cursor: pointer;
+
+}
+.last_span {
+  float: right;
+  display: block;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.headerh1 {
+  display: inline-block;
+  margin-top: 7px;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.app_content {
+  margin-top: 105px;
 }
 
 .app_footer {
@@ -72,15 +73,6 @@ html, body {
   color: rgba(101, 101, 101, 0.783);
 }
 
-.first_span {
-  display: none;
-  cursor: pointer;
-}
-.last_span {
-  display: none;
-  border-radius: 40px;
-  cursor: pointer;
-}
 .first_span ion-icon {
   transition-duration: 200ms;
   padding: 5px;
@@ -104,35 +96,3 @@ ion-icon {
 }
 
 button:focus {outline:0;}
-
-@media only screen and (max-width: 700px) {
-  .app_header {
-    padding: 15px 15px 5px 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 1px rgba(0, 0, 0, 0.23);
-    text-align: center;
-    position: fixed;
-    max-width: 700px;
-    top: 0;
-    right: 0;
-    left: 0;
-  }
-  .header {
-    font-size: 15px;
-  }
-  .first_span {
-    float: left;
-    display: block;
-  }
-  .last_span {
-    float: right;
-    display: block;
-  }
-  .headerh1 {
-    display: inline-block;
-    margin-top: 7px;
-    margin-bottom: 0;
-  }
-  .app_content {
-    margin-top: 105px;
-  }
-}

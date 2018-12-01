@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Blog from './Blog';
+import '../styles/BlogList.css';
 
 class BlogList extends Component {
   render() {
