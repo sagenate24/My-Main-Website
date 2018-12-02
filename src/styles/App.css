@@ -1,11 +1,11 @@
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
-.ReactModal__Body--open {
+/* .ReactModal__Body--open {
   overflow-y: hidden;
-}
+} */
 
 .app {
   font-family: 'Futura', 'Helvetica', sans-serif;
@@ -96,3 +96,8 @@ ion-icon {
 }
 
 button:focus {outline:0;}
+
+
+.introLandingWrapper {
+  height: 100vh;
+}

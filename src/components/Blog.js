@@ -12,20 +12,6 @@ class Blog extends React.Component {
   }
   state = {
     modalIsOpen: false,
-    screenWidth: 0,
-  }
-
-  componentDidMount() {
-    this.updateScreenWidth();
-    window.addEventListener('resize', this.updateScreenWidth);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateScreenWidth);
-  }
-
-  updateScreenWidth = () => {
-    this.setState({ screenWidth: window.innerWidth });
   }
 
   imageLinkToProject = (url) => {
@@ -66,8 +52,8 @@ class Blog extends React.Component {
   }
 
   render() {
-    const { datePosted, image, smallImage, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
-    const { modalIsOpen, screenWidth } = this.state;
+    const { datePosted, image, bgColor, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
+    const { modalIsOpen } = this.state;
 
     return (
       <div className='blog' name={id}>
@@ -91,11 +77,13 @@ class Blog extends React.Component {
             <a href={gitHubLink} target='_blank'><img alt='Github Icon' className='github_icon' src={gitImg} /></a>
           </div>
         </div>
-        <div className='blog_right_container'>
-          <img src={screenWidth <= 609 ? smallImage : image} alt='project_image' className='blog_image'/>
-          <button className='more_btn' onClick={this.openModal}>Read More</button>
+        <div className='blog_right_container' style={{background: bgColor}}>
+          <img 
+            src={image}
+            alt='project_image'
+            />
         </div>
-          <BlogInfo modalIsOpen={modalIsOpen} blog={this.props.blog} closeModal={this.closeModal} />
+        <BlogInfo modalIsOpen={modalIsOpen} blog={this.props.blog} closeModal={this.closeModal} />
       </div>
     );
   }

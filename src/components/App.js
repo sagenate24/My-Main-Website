@@ -78,7 +78,6 @@ class App extends Component {
                   <span className="last_span">
                     <ion-icon name="logo-github" onClick={this.navigateGit} />
                   </span>
-                  {/* <Nav /> */}
                 </div>
               </div>
               <div className="app_content">
@@ -95,7 +94,9 @@ class App extends Component {
                     exact
                     render={() => (
                       <div>
+                        <div className='introLandingWrapper'>
                         <IntroLanding />
+                        </div>
                         <BlogList blogs={data.posts} />
                       </div>
                     )}

@@ -10,13 +10,11 @@
 .hero-image {
   width: 100vw;
   height: 100vh;
-  background-size: cover; 
   opacity: 0.8;
   background-repeat: no-repeat; 
   background-position: top center;
 }
 .avatar-img {
-  width: 150px;
   height: 150px;
   border: 6px solid #fff;
   border-radius: 80px;
@@ -34,10 +32,10 @@
   justify-content: center;
 }
 
-h1 {
+.hero-children h1 {
   font-weight: normal;
-  font-size: 3vw;
+  font-size: 55px;
   margin-left: 10px;
   color: #ffffff;
-  text-shadow: 1px 1px #000000;
+  text-shadow: 1px 1px #cecece;
 }
