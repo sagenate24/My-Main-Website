@@ -5,13 +5,14 @@ import "react-progress-bar-plus/lib/progress-bar.css";
 import { handleInitialData } from "../utils/helpers";
 import "../styles/App.css";
 
-import Nav from "./Nav";
+import NavBar from "./NavBar";
 import About from "./About";
 import BlogList from "./BlogList";
 import Contact from "./Contact";
 import SideBar from "./SideBar";
 import Resume from "./Resume";
 import IntroLanding from "./IntroLanding";
+import Footer from "./shared/Footer";
 
 class App extends Component {
   state = {
@@ -68,17 +69,7 @@ class App extends Component {
           {!loading ? (
             <div>
               <div className="app_header_container">
-                <div className="app_header">
-                  <span className="first_span">
-                    <ion-icon name="menu" onClick={this.handleMenuClick} />
-                  </span>
-                  <NavLink className="header" to="/" exact>
-                    <h2 className="headerh1">Nathan Sage</h2>
-                  </NavLink>
-                  <span className="last_span">
-                    <ion-icon name="logo-github" onClick={this.navigateGit} />
-                  </span>
-                </div>
+                <NavBar />
               </div>
               <div className="app_content">
                 {showSideBar ? (
@@ -125,6 +116,7 @@ class App extends Component {
               <p className="app_footer">Ⓒ nathansageprojects.com 2018.</p>
             </div>
           ) : null}
+          <Footer />
         </div>
       </Fragment>
     );

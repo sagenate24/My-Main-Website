@@ -17,34 +17,85 @@ html, body {
   height: 100%;
   overflow: scroll;
 }
-.app_header {
+
+.nav_container {
   padding: 15px 15px 5px 15px;
   color: #fff;
-  text-align: center;
-  position: relative;
   z-index: 3;
+  text-align: center;
   max-width: 100%;
   top: 0;
   right: 0;
   left: 0;
 }
 
+.nav_absolute {
+  position: absolute;
+}
+
+.nav_fixed {
+  animation: show 400ms forwards;
+  height: 0px;
+  background: #254c66;
+  position: fixed;
+}
+
+.hide_nav {
+  animation: hide 400ms forwards;
+  height: 50px;
+  background: #254c66;
+  position: fixed;
+  overflow: hidden;
+  opacity: 1;
+}
+
+@keyframes show {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 50px;
+  }
+}
+
+@keyframes hide {
+  0% {
+    height: 50px;
+    opacity: 1;
+  }
+  80% {
+    opactiy: 0.8;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
 .header {
   font-size: 15px;
 }
 
-.first_span {
-  float: left;
+.nav_logo {
   display: block;
   cursor: pointer;
+  font-size: 27px;
+  transition-duration: 200ms;
+  padding: 5px;
+}
 
+.nav_logo:hover {
+  transition-duration: 200ms;
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.first_span {
+  float: left;
 }
 .last_span {
   float: right;
-  display: block;
-  border-radius: 40px;
-  cursor: pointer;
 }
+
 .headerh1 {
   display: inline-block;
   margin-top: 7px;
@@ -73,31 +124,11 @@ html, body {
   color: rgba(101, 101, 101, 0.783);
 }
 
-.first_span ion-icon {
-  transition-duration: 200ms;
-  padding: 5px;
-}
-.first_span ion-icon:hover {
-  transition-duration: 200ms;
-  background-color: rgba(0, 0, 0, 0.125);
-}
-.last_span ion-icon {
-  transition-duration: 200ms;
-  border-radius: 20px;
-  padding: 5px;
-}
-.last_span ion-icon:hover {
-  transition-duration: 200ms;
-  background-color: rgba(0, 0, 0, 0.125);
-}
 
-ion-icon {
-  font-size: 27px;
-}
 
 button:focus {outline:0;}
 
 
 .introLandingWrapper {
-  height: 100vh;
+  min-height: 100vh;
 }
