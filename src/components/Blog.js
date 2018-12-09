@@ -77,7 +77,7 @@ class Blog extends React.Component {
             <a href={gitHubLink} target='_blank'><img alt='Github Icon' className='github_icon' src={gitImg} /></a>
           </div>
         </div>
-        <div className='blog_right_container' style={{background: bgColor}}>
+        <div className='blog_right_container' style={{background: '#02b3e4'}}>
           <img 
             src={image}
             alt='project_image'

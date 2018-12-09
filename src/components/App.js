@@ -41,8 +41,8 @@ class App extends Component {
     }));
   };
 
-  navigateGit = () => {
-    window.open("https://github.com/sagenate24", "_blank");
+  openLink = (href) => {
+    window.open(href, "_blank");
   };
 
   showLoading() {
@@ -61,6 +61,7 @@ class App extends Component {
 
   render() {
     const { loading, showSideBar, data } = this.state;
+    const currentPath = this.props.history.location.pathname;
 
     return (
       <Fragment>
@@ -69,7 +70,7 @@ class App extends Component {
           {!loading ? (
             <div>
               <div className="app_header_container">
-                <NavBar />
+                <NavBar currentPath={currentPath} openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick}/>
               </div>
               <div className="app_content">
                 {showSideBar ? (
@@ -84,7 +85,7 @@ class App extends Component {
                     path="/"
                     exact
                     render={() => (
-                      <div>
+                      <div className='home_container'>
                         <div className='introLandingWrapper'>
                         <IntroLanding />
                         </div>
@@ -95,7 +96,9 @@ class App extends Component {
                   <Route
                     path="/about"
                     render={() => (
-                      <About aboutMe={data.aboutMe} langs={data.languages} />
+                      <div className='about_container'>
+                        <About aboutMe={data.aboutMe} langs={data.languages} />
+                      </div>
                     )}
                   />
                   <Route
@@ -113,10 +116,9 @@ class App extends Component {
                   />
                 </Switch>
               </div>
-              <p className="app_footer">Ⓒ nathansageprojects.com 2018.</p>
+              {/* <Footer /> */}
             </div>
           ) : null}
-          <Footer />
         </div>
       </Fragment>
     );

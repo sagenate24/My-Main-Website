@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
+import { IoMdMenu, IoMdMail, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io'
 import { Link } from 'react-scroll';
 import '../styles/SideBar.css';
 
@@ -15,7 +16,7 @@ class SideBar extends Component {
     showHypes: false,
   }
 
-  componentDidMount() {  
+  componentDidMount() {
     const sideBar = this.sidebarContainer.current;
     sideBar.classList.remove('slideOut')
     sideBar.classList.add('slidein')
@@ -28,7 +29,7 @@ class SideBar extends Component {
 
   checkWidth = () => {
     const { closeSideBar } = this.props;
-  
+
     if (window.innerWidth >= 700) {
       closeSideBar();
     }
@@ -75,12 +76,14 @@ class SideBar extends Component {
     return (
       <div className='sidebar' ref={this.sidebarContainer}>
         <div className='sidebar_header'>
-          <h2>Portfolio</h2>
-          <ion-icon name='menu' onClick={this.animateOut}></ion-icon>
+          <IoMdMenu className='sidebar_logo sidebar_menu' onClick={() => this.animateOut()} />
+          <div className='sidebar_title'>
+            <h2>Nathan Sage</h2>
+            <p>Front End Developer</p>
+          </div>
         </div>
         <ul className='sidebar_ul'>
           <li onClick={() => this.handleNavigation('/')}>
-            <ion-icon className='sidebar_icon' name="apps"></ion-icon>
             <NavLink className='sidebar_link' to='/' exact activeClassName='active'>
               Projects
               </NavLink>
@@ -112,22 +115,14 @@ class SideBar extends Component {
             </ul>
           </nav>
           <li onClick={() => this.handleNavigation('/about')}>
-            <ion-icon className='sidebar_icon' name="contact"></ion-icon>
             <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
               About Me
-              </NavLink>
-          </li>
-          <li onClick={() => this.handleNavigation('/resume')}>
-            <ion-icon className='sidebar_icon' name="paper"></ion-icon>
-            <NavLink onClick={this.checkLocation} className='sidebar_link' to='/resume' exact activeClassName='active'>
-              Resume
-              </NavLink>
+            </NavLink>
           </li>
           <li onClick={() => this.handleNavigation('/contact')}>
-            <ion-icon className='sidebar_icon' name="at"></ion-icon>
             <NavLink onClick={this.checkLocation} className='sidebar_link' to='/contact' exact activeClassName='active'>
               Contact
-              </NavLink>
+            </NavLink>
           </li>
         </ul>
       </div>

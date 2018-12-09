@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: #254c66; 
+  background-color: #02b3e4; 
   overflow: hidden;
 }
 
@@ -23,9 +23,13 @@
 
 .hero-children {
   position: absolute;
-  top: 0;
+  background: #343434ab;
+  border-radius: 200px;
+  width: 44%;
+  height: 200px;
+  top: 35%;
   bottom: 0;
-  left: 0;
+  left: 25%;
   right: 0;
   display: flex;
   align-items: center;

@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import * as avatar from '../Images/avatar.jpeg';
+import * as meInMexico from '../Images/mePortrait.jpeg';
+import { SectionTitle } from './shared/SectionTitle'
+import { myWork } from '../utils/LangData';
 import '../styles/About.css';
 
 class About extends Component {
@@ -8,43 +12,30 @@ class About extends Component {
     this.parallax = React.createRef();
   }
 
-  componentDidMount() {
-      this.loadImage();
-  }
-
-  loadImage = () => {
-    const image = new Image();
-    const node = this.parallax.current;
-    image.onload = (() => {
-      node.style.filter = 'blur(0)'
-    });
-    image.src = this.props.aboutMe.image;
-  }
-
   render() {
     if (this.props && this.props.aboutMe) {
       const { shortDesk, description, frameWorks, gitHubUrl } = this.props.aboutMe;
-      const { langs } = this.props;
 
       return (
         <div className='about'>
-          <div className='about_image' ref={this.parallax}>
-            <div className='about_image_text'>
-              <h2>NATHAN SAGE</h2>
-              <span>{shortDesk}</span>
+          <div className='about_intro'>
+            <div className='about_avatar_container'>
+              <img className='about_avatar' src={avatar} alt='selfie' />
+              <h2>Motivated Developer From Seattle Washington</h2>
             </div>
           </div>
-          <button className='about_githubLink' onClick={() => window.open(gitHubUrl, '_blank')}>VIEW GITHUB</button>
-          <div className='about_content'>
-            <span>{description}</span>
+          <div className='about_background_content'>
+            <img className='about_me_in_mexico' src={meInMexico} alt='Me in mexico' />
+            <span>Hello there! Nice to meet you 😁, I am a Front End Developer based out of Seattle Washington with a passion for web and mobile development. I have worked for The Creative Group and The Committee For Children as a front end developer. I have many hobbies such as hiking, music and most of all development. I am always looking to grow my skills as well as helping others grow there's through great relationships, collaboration and positivity.</span>
           </div>
-          <div className='lang_and_stuff'>
-            <h2>Languages</h2>
-            <div className='about_lang'>
-              {langs.map(item => (
-                <div key={item.title} className='lang_container'>
-                  <img alt='lang_icons' className='about_icons' src={item.img} />
-                  <p className='about_icon_desc'>{item.title}</p>
+          <div className='my_work_container'>
+          <SectionTitle color='#fff'>MY WORK</SectionTitle>
+            <div className='my_work_cards_container'>
+              {myWork.map(card => (
+                <div className='my_work_card' key={card.id}>
+                  <img className='my_work_icon' src={card.imageUrl} alt={card.alt} />
+                  <h2>{card.title}</h2>
+                  <p>{card.text}</p>
                 </div>
               ))}
             </div>

@@ -16,6 +16,7 @@
 .blog_right_container {
   display: flex;
   width: 40%;
+  opacity: 0.6;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   justify-content: center;
@@ -23,7 +24,7 @@
 }
 .blog_right_container:hover .blog_image {
   transition-duration: 200ms;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 .blog_right_container:hover .more_btn {
   transition-duration: 200ms;
