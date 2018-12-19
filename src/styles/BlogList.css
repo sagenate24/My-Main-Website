@@ -1,4 +1,4 @@
 .blog_list {
-  max-width: 800px;
-  margin: 120px auto 0;
+  padding: 100px;
+  background: linear-gradient(rgb(27, 27, 27), rgb(46, 55, 109), rgb(27, 27, 27));
 }

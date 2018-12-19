@@ -12,8 +12,7 @@ export const SectionTitle = (props) => {
       <h1
         style={{
           color: `${props.color ? props.color : '#3A3A3A'}`,
-          fontSize: '43px',
-          fontWeight: '100',
+          fontSize: '50px',
           padding: 0,
           margin: 0,
         }}
@@ -22,7 +21,7 @@ export const SectionTitle = (props) => {
         style={{
           width: '80px',
           height: '5px',
-          background: `${props.bgColor ? props.bgColor : '#F03C3C'}`
+          background: `${props.color ? props.color : '#3A3A3A'}`
         }} />
     </div>
   );

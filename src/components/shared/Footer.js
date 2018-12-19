@@ -6,15 +6,9 @@ class Footer extends Component {
   render() {
     return (
       <div className='footer_container'>
-        <div className='footer_top'>
-          <IoLogoLinkedin className='footer_icon'/>
-          <IoMdMail className='footer_icon'/>
-          <IoLogoGithub className='footer_icon'/>
-          <IoMdPhonePortrait className='footer_icon'/>
-        </div>
-        <div className='footer_bottom'>
-          <span>NATHAN SAGE </span>
-          <span>©2018</span>
+        <div className='footer_background_info'>
+          <h2>Nathan Sage</h2>
+          <p>As a developer, I have a a passion for creating. Lets create together.</p>
         </div>
       </div>
     );

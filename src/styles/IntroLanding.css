@@ -1,16 +1,14 @@
-.hero-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.IntroLanding-container {
+  width: 100vw;
   height: 100vh;
-  background-color: #02b3e4; 
+  background-color: #000000; 
   overflow: hidden;
 }
 
 .hero-image {
   width: 100vw;
   height: 100vh;
-  opacity: 0.6;
+  opacity: 0.3;
   background-repeat: no-repeat; 
   background-position: top center;
 }
@@ -23,11 +21,9 @@
 
 .hero-children {
   position: absolute;
-  background: #343434ab;
-  border-radius: 200px;
-  width: 44%;
-  height: 200px;
-  top: 35%;
+  width: 58%;
+  height: 400px;
+  top: 30%;
   bottom: 0;
   left: 25%;
   right: 0;

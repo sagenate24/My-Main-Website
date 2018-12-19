@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import { IoMdMenu, IoMdMail, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io'
+import * as me from '../Images/me.png';
+import * as resumePdf from '../Images/Resume/NathanSageResume.pdf'
+import { IoMdMenu } from 'react-icons/io'
+import { MdOpenInNew } from 'react-icons/md'
 import { Link } from 'react-scroll';
 import '../styles/SideBar.css';
 
@@ -20,19 +23,6 @@ class SideBar extends Component {
     const sideBar = this.sidebarContainer.current;
     sideBar.classList.remove('slideOut')
     sideBar.classList.add('slidein')
-    window.addEventListener('resize', this.checkWidth);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.checkWidth);
-  }
-
-  checkWidth = () => {
-    const { closeSideBar } = this.props;
-
-    if (window.innerWidth >= 700) {
-      closeSideBar();
-    }
   }
 
   animateOut = () => {
@@ -78,12 +68,12 @@ class SideBar extends Component {
         <div className='sidebar_header'>
           <IoMdMenu className='sidebar_logo sidebar_menu' onClick={() => this.animateOut()} />
           <div className='sidebar_title'>
-            <h2>Nathan Sage</h2>
+            <img alt='funny head' className='sidebar_head' src={me} />
             <p>Front End Developer</p>
           </div>
         </div>
         <ul className='sidebar_ul'>
-          <li onClick={() => this.handleNavigation('/')}>
+          <li className='sidebar_li' onClick={() => this.handleNavigation('/')}>
             <NavLink className='sidebar_link' to='/' exact activeClassName='active'>
               Projects
               </NavLink>
@@ -94,8 +84,8 @@ class SideBar extends Component {
               }
             </div>
           </li>
-          <nav className='sidebar_hypes' ref={this.dropDown}>
-            <ul className='sidebar_ul'>
+          <nav className='sidebar_hyper' ref={this.dropDown}>
+            <ul className='sidebar_hyper_ul'>
               {blogs.map(item => (
                 <li key={item.id}>
                   <Link
@@ -114,16 +104,20 @@ class SideBar extends Component {
               ))}
             </ul>
           </nav>
-          <li onClick={() => this.handleNavigation('/about')}>
+          <li className='sidebar_li' onClick={() => this.handleNavigation('/about')}>
             <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
               About Me
             </NavLink>
           </li>
-          <li onClick={() => this.handleNavigation('/contact')}>
+          <li className='sidebar_li' onClick={() => this.handleNavigation('/contact')}>
             <NavLink onClick={this.checkLocation} className='sidebar_link' to='/contact' exact activeClassName='active'>
               Contact
             </NavLink>
           </li>
+          <a className='resume_container' href={resumePdf} target="_blank">
+            <p>Resume (pdf)</p>
+            <MdOpenInNew className='download_icon' />
+          </a>
         </ul>
       </div>
     );

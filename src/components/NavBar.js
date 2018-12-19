@@ -16,7 +16,7 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    this._addListener()
+    // this._addListener()
   }
 
   static getDerivedStateFromProps(props, state) {

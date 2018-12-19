@@ -1,29 +1,20 @@
 .about {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 0 1px rgba(0, 0, 0, 0.23);
-  border-radius: 5px;
-  overflow: hidden;
+  background: #F8F8F8;
 }
 .about_intro {
-  height: 510px;
+  height: 700px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: #02b3e4;
-
+  background: linear-gradient(#1C1C1C, rgb(46, 55, 109));
+  align-items: center;  
 }
 .about_avatar_container {
   text-align: center;
   padding: 13px;
+  font-size: 28px;
   color: #ffffff;
-}
-
-.about_avatar {
-  width: 150px;
-  height: 150px;
-  border: 3px solid #fff;
-  border-radius: 75px;
 }
 
 .about_background_content {
@@ -31,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #F8F8F8;
   text-align: left;
 }
 
@@ -43,7 +35,7 @@
 .about_background_content span {
   font-weight: 100;
   line-height: 40px;
-  font-size: 18px;
+  font-size: 24px;
   margin-left: 100px;
 }
 
@@ -81,97 +73,55 @@
 }
 .my_work_cards_container {
   color: #ffffff;
-  /* padding: 60px; */
   display: flex;
-  /* justify-content: space-evenly; */
   flex-wrap: wrap;
 }
 
 .my_work_card {
   display: flex;
   box-sizing: border-box;
-  flex: 1 0 33.3333%;
+  flex: 1 0 22%;
+  padding: 80px 0;
+  margin: 0 30px;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#1C1C1C 70%, rgb(34, 41, 80));
+  border-radius: 20px; 
+}
+
+.my_work_card h1 {
+  color: #fff;
+  margin-top: 30px;
+}
+
+.my_work_card p {
+  width: 300px;
+  font-size: 20px;
+  color: #f8f8f8b7;
+  margin: 0;
+}
+
+.my_skills_container {
+  box-sizing: border-box;
+  width: 80%;
+  background: #fff;
+  margin: 0 auto;
+  padding: 100px 0 160px;
+  box-shadow: 3px 0 rgba(28, 28, 28, 0.075), -3px 0 0 rgba(28, 28, 28, 0.075);
+}
+
+.my_skills_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my_skills_card {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 1 25%;
   padding: 20px;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
-.my_work_icon {
-  height: 100px;
-}
-
-.my_work_card h2 {
-  font-weight: 100;
-  align-self: center;
-}
-
-.about_frameworks {
-  text-align: center;
-}
-.about_frameworks h2{
-  font-size: 32px;
-  padding: 30px;
-}
-.about_frame {
-  line-height: 1.7rem;
-  padding: 20px 40px 40px 40px;
-  font-size: 14px;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.frames {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
-  width: 200px;
-  overflow: hidden;
-  margin-bottom: 70px;
-  border-radius: 5px;
-}
-.frame_title {
-  padding: 10px;
-  font-size: 20px;
-  color: #ffffff;
-  background-color: #0673A5;
-  margin: 0;
-}
-.frame_name {
-  font-weight: 100;
-}
-
-@media only screen and (max-width: 500px) {
-  .about {
-    box-shadow: none;
-    margin: 0;
-    overflow: none;
-  }
-  .about_background_content {
-    padding: 30px;
-    /* text-align: center; */
-  }
-  .about_image {
-    height: 350px;
-    background-attachment: local;
-    margin-bottom: 60px;
-  }
-  .about_image_text {
-    margin-left: -11px;
-  }
-  .about_lang {
-    display: block;
-    margin: 0 auto;
-  }
-  .lang_container {
-    margin: 0 auto;
-    width: 200px;
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-  .about_githubLink {
-    width: 200px;
-  }
-  .frames {
-    width: 250px;
-  }
-}
+@media only screen and (max-width: 767px) {}
