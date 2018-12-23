@@ -2,7 +2,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 100px 0 160px;
-  background: #EEEEEE;
+  background: linear-gradient(to left, #1c1c1c, #1c1c1c 50%, rgb(32, 32, 32) 75%, #1c1c1c 75%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,34 +42,40 @@
 .contact h2 {
   font-weight: 400;
   margin-bottom: 60px; 
-  color: #24334b;
+  color: rgb(219, 219, 219);
 }
 
 .send_button {
   font-size: 19px;
-  transition: 200ms ease-in;
+  transition-duration: 150ms;
   cursor: pointer;
-  padding: 10px 40px;
-  background: #24334b;
-  color: #fff;
-  border: 2px solid #fff;
+  padding: 10px 60px;
+  background: #ff5a60;
+  color: #f8f8f8;
+  border: none;
   align-self: flex-end;
 }
 
 .send_button:hover {
-  background: #fff;
-  color: #24334b;
-  border: 2px solid #24334b;
+  background: #f8f8f8;
+  color: #ff5a60;
 }
 
 .send_button:disabled{
-  background: #24334b;
-  color: #fff;
-  border: 2px solid #fff;
+  background: #ff5a60;
+  color: #f8f8f8;
+  border: none;
   opacity: 0.6;
   cursor: inherit;
 }
 
 .send_logo {
   font-size: 18px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #f8f8f8 inset;
 }

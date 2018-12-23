@@ -116,7 +116,7 @@ class App extends Component {
                   />
                 </Switch>
               </div>
-              <Footer />
+              <Footer openLink={(href) => this.openLink(href)} />
             </div>
           ) : null}
         </div>
