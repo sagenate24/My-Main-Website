@@ -1,9 +1,24 @@
+import * as ssImg from '../Images/secondStep.png'
+import * as cfc1 from '../Images/cfc1.jpeg';
+import * as cfc2 from '../Images/cfc2.jpeg';
+import * as cfc3 from '../Images/cfc3.jpeg';
 import * as flashImg from '../Images/flashcardsphones.png';
 import * as wyrImg from '../Images/wyr.png';
+import * as wyr1 from '../Images/wyr1.jpeg';
+import * as wyr2 from '../Images/wyr2.jpeg';
+import * as wyr3 from '../Images/wyr3.jpeg';
 import * as myReadsImg from '../Images/myreads.png';
+import * as myReads1 from '../Images/myReads1.jpeg';
+import * as myReads2 from '../Images/myReads2.jpeg';
+import * as myReads3 from '../Images/myReads3.jpeg';
 import * as jammingImg from '../Images/jamming.png';
+import * as jamming1 from '../Images/jamming1.jpeg';
+import * as jamming2 from '../Images/jamming2.jpeg';
+import * as jamming3 from '../Images/jamming3.jpeg';
 import * as devourImg from '../Images/devour.png';
-import * as ssImg from '../Images/secondStep.png'
+import * as devour1 from '../Images/devour1.jpeg';
+import * as devour2 from '../Images/devour2.jpeg';
+import * as devour3 from '../Images/devour3.jpeg';
 
 import * as flashcardsImg1 from '../Images/flashcards1.jpeg';
 import * as flashcardsImg2 from '../Images/flashcards2.png';
@@ -15,24 +30,24 @@ const posts = [
     type: 'Front End Developer',
     datePosted: '3 Months',
     image: ssImg,
-    shortDescripion: 'I was a Front End Developer for the CFC helping re-brand their new website Second Step.',
+    shortDescripion: 'Front End Developer for the CFC helping re-brand their new website Second Step.',
     description: '',
     link: 'https://www.secondstep.org/',
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: cfc1,
+        alt: 'second step 1'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: cfc2,
+        alt: 'second step 2'
       },
       {
         id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: cfc3,
+        alt: 'second step 3'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/Flash-Cards',
@@ -81,18 +96,18 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: wyr1,
+        alt: 'would you rather 1'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: wyr2,
+        alt: 'would you rather 2'
       },
       {
         id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: wyr3,
+        alt: 'would you rather 3'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/Would-You-Rather',
@@ -109,18 +124,18 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: myReads1,
+        alt: 'my reads 1'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: myReads2,
+        alt: 'my reads 2'
       },
       {
         id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: myReads3,
+        alt: 'my reads 3'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/My-Reads-Project',
@@ -137,18 +152,18 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: jamming1,
+        alt: 'jamming 1'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: jamming2,
+        alt: 'jamming 2'
       },
       {
         id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: jamming3,
+        alt: 'jamming 3'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/React-web-apps/tree/master/jammingnew',
@@ -165,78 +180,24 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: devour1,
+        alt: 'devour 1'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: devour2,
+        alt: 'devour 2'
       },
       {
         id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: devour3,
+        alt: 'devour 3'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/React-web-apps/tree/master/ravenous',
   }
 ];
 
-// const aboutMe = {
-//   id: 'Nathan',
-//   shortDesk: 'Motivated Developer From Seattle Washington',
-//   description: 'Fast learner motivated to make a difference in the tech industry. For the past four years I have explored around HTML5 and CSS/CSS3 to build simple static websites for my own personal enjoyment. During the past year I have taken the initiative to further my knowledge in software development. I have graduated from Udacity’s React Nanodegree Program and Codecademy’s Build Front End Web Apps Pro Intensive course. I am now currently enrolled In Udacity’s Full Stack Web Developer Nanodegree, as well as creating my own personal projects in my free time.',
-//   image: meImg,
-//   frameWorks: [
-//     { title: 'Mobile', name: 'React Native' },
-//     { title: 'Web', name: 'React, Redux, ES6' },
-//     { title: 'Web Dev', name: 'Webpack, Babel, jsx' },
-//     { title: 'Backend', name: 'Node, Express' },
-//     { title: 'REST API', name: 'Yelp, Spotify, AWS S3' },
-//     { title: 'Test', name: 'Jest, Nightwatch' },
-//   ],
-//   gitHubUrl: 'https://github.com/sagenate24',
-// }
-
-const contactInfo = {
-  email: 'sagenate24@gmail.com',
-  linkedinURL: 'https://www.linkedin.com/in/nathan-sage-689296163/',
-}
-
-const education = [
-  {
-    name: 'Udacity',
-    program: 'React Nanodegree Program',
-    completed: 'September 2018',
-    certifricate: 'https://graduation.udacity.com/confirm/PKRHMRQK',
-  },
-  {
-    name: 'Codecademy',
-    program: 'Build Front-End Web Apps',
-    completed: 'May 2018',
-    certifricate: 'https://www.credential.net/z3qn7seh',
-  },
-  {
-    name: 'SPSCC',
-    link: 'https://spscc.edu/',
-    program: 'Associates Degree',
-    completed: 'In Progress',
-  },
-];
-
-// export function getMe() {
-//   return new Promise((res) => res({ ...aboutMe }));
-// }
-
 export function getPosts() {
-  return new Promise((res) => res([...posts]));
-}
-
-export function getContactInfo() {
-  return new Promise((res) => res({ ...contactInfo }));
-}
-
-export function getEducationData() {
-  return new Promise((res) => res([ ...education ]));
+  return new Promise((res) => res({posts: posts}));
 }

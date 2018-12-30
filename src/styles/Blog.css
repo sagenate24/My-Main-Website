@@ -3,7 +3,7 @@
 /* Blog Component Styles*/
 .blog {
   display: flex;
-  width: 70%;
+  max-width: 1130px;
   color: #ffffff;
   margin: 0 auto 100px;
   box-sizing: border-box;
@@ -11,6 +11,7 @@
 .blog_left_container {
   width: 60%;
   padding: 20px;
+  box-sizing: border-box;
 }
 .blog_left_container h1 {
   font-size: 41px;
@@ -19,6 +20,7 @@
   display: flex;
   width: 40%;
   margin: 0 20px;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
 }
@@ -32,12 +34,13 @@
 }
 
 .project_image {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 .blog_short_desc {
   font-size: 16px;
   font-weight: 100;
-  height: 90px;
+  margin: 0 0 80px;
 }
 
 .btns_container button {
@@ -96,53 +99,38 @@
   background-color: rgba(0, 0, 0, 0.125);
 }
 .blog_footer {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 16px;
   padding: 20px 0;
   display: flex;
   align-items: center;
 }
 
-/* ----------------------------------------------------- */
-/* Mobile Device styles */
-@media only screen and (max-width: 609px) {
+@media only screen and (max-width: 767px) {
   .blog {
-    height: 300px;
+    flex-direction: column;
   }
-  .blog_short_desc {
-    font-size: 13px;
-    height: 85px;
-  }
-
   .blog_left_container {
-    padding: 20px;
-    height: 300px;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 100%;
   }
-
+  .blog_right_container {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+  }
   .btns_container {
-    margin-top: 0px;
-    height: 90px;
-  }
-  .view_btn {
-    width: 120px;
-  }
-  .view_btn_android {
-    width: 120px;
-  }
-  .view_btn_android {
-    margin: 0;
-    margin-top: 10px;
-    display: block;
-  }
-  .more_btn {
-    bottom: 60%;
+    display: flex;
   }
   .blog_footer {
-    height: 50px;
-    margin-top: 0px;
-    padding: 10px 0 10px 0;
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+  .project_image {
+    width: 100%;
+    max-width: 600px;
+  }
+  .blog_left_container h1 {
+    font-size: 30px;
+    white-space: normal;
   }
 }
 

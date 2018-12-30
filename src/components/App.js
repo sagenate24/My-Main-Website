@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
-import { Route, NavLink, Switch, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import ProgressBar from "react-progress-bar-plus";
 import "react-progress-bar-plus/lib/progress-bar.css";
-import { handleInitialData } from "../utils/helpers";
+import { getPosts } from '../utils/Data';
 import "../styles/App.css";
 
 import NavBar from "./NavBar";
@@ -10,7 +10,6 @@ import About from "./About";
 import BlogList from "./BlogList";
 import Contact from "./Contact";
 import SideBar from "./SideBar";
-import Resume from "./Resume";
 import IntroLanding from "./IntroLanding";
 import Footer from "./shared/Footer";
 
@@ -23,8 +22,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    handleInitialData()
+    getPosts()
       .then(results => {
+        console.log(results)
         this.setState({ data: results });
       })
       .then(() => {
@@ -70,7 +70,7 @@ class App extends Component {
           {!loading ? (
             <div>
               <div className="app_header_container">
-                <NavBar currentPath={currentPath} openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick}/>
+                <NavBar location={currentPath} openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick}/>
               </div>
               <div className="app_content">
                 {showSideBar ? (
@@ -89,7 +89,7 @@ class App extends Component {
                         <div className='introLandingWrapper'>
                         <IntroLanding />
                         </div>
-                        <BlogList blogs={data.posts} />
+                        <BlogList blogs={data.posts} location={currentPath}/>
                       </div>
                     )}
                   />
@@ -97,26 +97,21 @@ class App extends Component {
                     path="/about"
                     render={() => (
                       <div className='about_container'>
-                        <About aboutMe={data.aboutMe} langs={data.languages} />
+                        <About aboutMe={data.aboutMe} langs={data.languages} location={currentPath}/>
                       </div>
                     )}
                   />
                   <Route
-                    path="/resume"
-                    render={() => (
-                      <Resume
-                        education={data.education}
-                        aboutMe={data.aboutMe}
-                      />
-                    )}
-                  />
-                  <Route
                     path="/contact"
-                    render={() => <Contact contact={data.contactInfo} />}
+                    render={() => <Contact contact={data.contactInfo} location={currentPath}/>}
                   />
                 </Switch>
               </div>
-              <Footer openLink={(href) => this.openLink(href)} />
+              <Footer 
+                openLink={(href) => this.openLink(href)}
+                location={this.props.location}
+                history={this.props.history}
+              />
             </div>
           ) : null}
         </div>

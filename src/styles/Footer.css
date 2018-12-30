@@ -10,6 +10,7 @@
 
 .footer_left {
   margin: 0 100px 0 40px;
+  white-space: nowrap;
 }
 
 .footer_left h2{
@@ -32,12 +33,16 @@
 .footer_right_body {
   margin-top: 100px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer_rb_content {
   display: flex;
+  flex: 1 0 21%;
+  white-space: nowrap;
   flex-direction: column;
+  margin-right: 30px;
+  width: 174px;
 }
 
 .footer_rb_content p {
@@ -47,16 +52,114 @@
 .footer_rb_content a {
   color: #f8f8f8;
   text-decoration: none;
+  transition-duration: 200ms;
 }
 
 .footer_rb_content_links {
   margin: 22px 0;
+  cursor: pointer;
 }
 
 .footer_icon {
   font-size: 23px;
+  transition-duration: 200ms; 
 }
 
 .footer_icon:nth-child(-n+3) {
   margin-right: 8px;
+}
+
+.footer_icon:hover {
+  color: #f8f8f8;
+  cursor: pointer;
+}
+
+.footer_container a {
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.footer_container a:hover {
+  color: #707070;
+}
+
+.footer_resume_image {
+  width: 150px;
+  margin-top: 30px;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+}
+
+.footer_resume_image:hover {
+  opacity: 0.5;
+}
+
+.footer_resume_text {
+  margin: 0;
+}
+
+.quick_links {
+  transition-duration: 200ms; 
+}
+
+.quick_links:hover {
+ color: #707070;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer_right {
+    margin: 0 40px 0 0;
+  }
+  .footer_right br {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .footer_rb_content {
+    flex: 1 1 45%;
+    margin-right: 0;
+    width: auto;
+  }
+
+  .footer_left {
+    margin: 0 100px 0 0;
+    white-space: nowrap;
+  }
+  .footer_right {
+    margin: 0 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer_container {
+    flex-direction: column;
+  }
+  .footer_left {
+    margin: 0 auto 30px;
+  }
+  .footer_right {
+    text-align: center;
+  }
+  .footer_resume_image {
+    margin: 15px 0 0 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer_right_body {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: none;
+  }
+  
+  .footer_rb_content {
+    flex: none;
+    width: 100%;
+  }
+
+  .footer_rb_content p {
+    margin: 22px 0 5px;
+  }
 }

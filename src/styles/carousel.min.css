@@ -44,8 +44,9 @@
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 700px;
   height: 450px;
+  background: #f8f8f8;
   border-bottom: 3px solid #24334b;
 }
 

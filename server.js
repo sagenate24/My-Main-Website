@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/build/index.html'))
+  res.sendFile(path.join(__dirname + '/build/index.html'))
 });
 
 app.use(bodyParser.json());
@@ -44,14 +44,12 @@ app.post('/api/form', (req, res) => {
       html: htmlEmail
     }
 
-    console.log(req.body)
-
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
-        return console.log(err)
+        res.status(400).send('error');
       }
 
-      console.log('Message sent: %s', info.messageId)
+      res.status(200).send('success');
     })
   })
 })

@@ -1,14 +1,11 @@
 import React from 'react';
 import { IoLogoGithub } from 'react-icons/io'
 import '../styles/Blog.css';
+import '../styles/modal.css';
 
 import ProjectModal from './projectModal';
 
 class Blog extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
   state = {
     modalIsOpen: false,
   }
@@ -50,34 +47,39 @@ class Blog extends React.Component {
     const { modalIsOpen } = this.state;
 
     return (
-      <div className='blog' name={id}>
+      <div className='blog' name={name} id={id}>
         <div className='blog_left_container'>
           <h1>{name}</h1>
           <p className='blog_short_desc'>{shortDescripion}</p>
-          <p>{}</p>
-          <div className='btns_container'>
-            {this.props.blog && this.props.blog.links
-              ? <div>
-                <button className='view_btn' onClick={() => { this.imageLinkToProject(this.props.blog.links[0].url) }}>App Store</button>
-                <button className='view_btn_android' onClick={() => { this.imageLinkToProject(this.props.blog.links[1].url) }}>Google Play</button>
-                <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
-              </div>
-              : <div>
-                <button className='view_btn' onClick={() => { this.imageLinkToProject(link) }}>View</button>
-                <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
-              </div>}
-          </div>
-          <div className='blog_footer'>
-            <span>{datePosted}</span>
-            <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
+          <div className='blog_btns_and_footer'>
+            <div className='btns_container'>
+              {this.props.blog && this.props.blog.links
+                ? <div className='btns_container'>
+                  <button className='view_btn' onClick={() => { this.imageLinkToProject(this.props.blog.links[0].url) }}>App Store</button>
+                  <button className='view_btn_android' onClick={() => { this.imageLinkToProject(this.props.blog.links[1].url) }}>Google Play</button>
+                  <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
+                </div>
+                : <div className='btns_container'>
+                  <button className='view_btn' onClick={() => { this.imageLinkToProject(link) }}>View</button>
+                  <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
+                </div>}
+            </div>
+            <div className='blog_footer'>
+              <span>{datePosted}</span>
+              {
+                id !== 'secondStep' && (
+                  <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
+                )
+              }
+            </div>
           </div>
         </div>
         <div className='blog_right_container'>
-          <img 
+          <img
             src={image}
             className='project_image'
-            alt='project_image'
-            />
+            alt='project image'
+          />
         </div>
         {modalIsOpen && (
           <ProjectModal blog={this.props.blog} closeModal={this.closeModal} />

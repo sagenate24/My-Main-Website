@@ -1,4 +1,10 @@
 .blog_list {
-  padding: 100px;
+  padding: 100px 30px;
   background: linear-gradient(rgb(27, 27, 27), rgb(46, 55, 109), rgb(27, 27, 27));
+}
+
+@media only screen and (max-width: 767px) {
+  .blog_list {
+    padding: 100px 10px;
+  }
 }

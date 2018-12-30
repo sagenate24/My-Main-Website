@@ -12,15 +12,19 @@
 .contact_form {
   display: flex;
   flex-direction: column;
+  width: 600px;
+  max-width: 600px;
 }
 
 .contact_input_fields {
   padding: 10px;
   box-sizing: border-box;
-  width: 600px;
+  font-family: 'Futura', 'Helvetica', sans-serif;
+  width: 100%;
   font-size: 17px;
   margin-bottom: 10px;
   outline: none;
+  border: none;
 }
 
 .error_label {
@@ -31,7 +35,8 @@
 .contact_textarea {
   padding: 10px;
   box-sizing: border-box;
-  width: 600px;
+  font-family: 'Futura', 'Helvetica', sans-serif;
+  width: 100%;
   font-size: 17px;
   margin-bottom: 10px;
   height: 300px;
@@ -41,7 +46,8 @@
 
 .contact h2 {
   font-weight: 400;
-  margin-bottom: 60px; 
+  margin: 10px 30px 60px;
+  text-align: center;
   color: rgb(219, 219, 219);
 }
 
@@ -61,12 +67,39 @@
   color: #ff5a60;
 }
 
-.send_button:disabled{
+.send_button:disabled,
+.show_button:disabled {
   background: #ff5a60;
   color: #f8f8f8;
   border: none;
   opacity: 0.6;
   cursor: inherit;
+}
+
+.remove_button {
+  animation: removeBtn 200ms ease-out forwards;
+}
+
+@keyframes removeBtn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.show_button {
+  animation: showBtn 250ms ease-in;
+}
+
+@keyframes showBtn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
 }
 
 .send_logo {
@@ -77,5 +110,17 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #f8f8f8 inset;
+    -webkit-box-shadow: 0 0 0 30px #ebebeb inset;
+}
+
+@media only screen and (max-width: 767px) {
+  .contact h2 {
+    font-size: 20px;
+  }
+
+  .contact_form {
+    width: calc(100% - 60px);
+    margin: 0 30px;
+    box-sizing: border-box;
+  }
 }

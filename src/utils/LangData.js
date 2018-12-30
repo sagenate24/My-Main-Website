@@ -5,20 +5,9 @@ import * as htmlImg from '../Images/html.png';
 import * as cssImg from '../Images/css.png';
 import * as nodeImg from '../Images/node.png';
 import * as awsImg from '../Images/aws.png';
-
 import * as responsive from '../Images/responsive.png';
 import * as performance from '../Images/performance.png';
 import * as design from '../Images/design.png';
-
-const languages = [
-  {title: 'JavaScript', img: javaScriptImg},
-  {title: 'React', img: reactImg},
-  {title: 'React Native', img: reactImg},
-  {title: 'Redux', img: reduxImg},
-  {title: 'HTML5', img: htmlImg},
-  {title: 'CSS/CSS3', img: cssImg},
-  {title: 'Node', img: nodeImg},
-];
 
 export const myWork = [
   {
@@ -94,7 +83,3 @@ export const mySkills = [
     text: 'AWS'
   },
 ]
-
-export function getLanguagesInfo() {
-  return new Promise((res) => res([...languages]));
-}
