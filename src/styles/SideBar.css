@@ -4,7 +4,7 @@
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: #323232;
+  background-color: #24334b;
   z-index: 3;
 }
 
@@ -15,13 +15,39 @@
 }
 
 .sidebar_header {
-  background-color: #0673A5;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.555), 0 0 1px rgba(0, 0, 0, 0.23);
+  background: linear-gradient(#1C1C1C, #9198e5);
   color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px 10px 20px;
   text-align: center;
+}
+
+.sidebar_title {
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  padding: 10px 0 40px;
+}
+
+.sidebar_head {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.sidebar_title {
+  font-size: 20px;
+}
+
+.sidebar_logo {
+  cursor: pointer;
+  font-size: 30px;
+  transition-duration: 200ms;
+  padding: 5px;
+}
+
+.sidebar_menu {
+  float: right;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .sidebar_header ion-icon {
@@ -47,93 +73,149 @@
   list-style-type: none;
   padding: 0;
 }
-.sidebar_ul li {
+
+.sidebar_li {
   color: #ffffff;
-  padding: 10px;
   cursor: pointer;
+  padding: 25px 10px;
 }
 
-.sidebar_ul li:hover {
-  transition-duration: 200ms; 
-  background-color: #242424;
+.sidebar_li:hover{
+  transition-duration: 200ms;
+  color: rgb(139, 139, 139);
 }
+
+.sidebar_li:hover > .sidebar_link {
+  transition-duration: 200ms;
+  color: rgb(139, 139, 139);
+}
+
 .sidebar_icon {
   color: #fff;
 }
+
 .sidebar_link {
   transition-duration: 200ms;
   text-decoration: none;
   color: #e0e0e0;
   font-weight: 100;
   margin-left: 10px;
-  padding: 10px;
-  position: relative;
-  top: -5px;
-  border-radius: 20px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .dropdown_icon {
-  margin-top: 2px; 
+  margin-top: 2px;
   float: right;
 }
-.sidebar_hypes {
-  background-color: #242424;
+
+.sidebar_hyper {
+  background-color: #1c1c1c;
+  height: 0;
   overflow: hidden;
-  height: 0px;
 }
-.hypers {
-  background-color: #242424;
+
+.sidebar_hyper_ul {
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
 }
+
 .hyper_link {
   transition-duration: 200ms;
- text-decoration: none;
- color: #e0e0e0
+  text-decoration: none;
+  color: #e0e0e0
 }
+
 .hyper_link:hover {
   transition-duration: 200ms;
   text-decoration: none;
   color: #707070
- }
+}
 
- .bottom_section {
-   bottom: 20px;
- }
+.bottom_section {
+  bottom: 20px;
+}
 
- /* SideBar animations */
+/* SideBar animations */
 
 .slidein {
-  animation: slide-in 300ms;
-  animation-fill-mode: forwards;
+  animation: slide-in 200ms forwards;
 }
+
 @keyframes slide-in {
-  from { left: -300px; }
-  to { left: 0px; }
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0px;
+  }
 }
 
 .slideOut {
-  animation: slide-out 400ms;
-  animation-fill-mode: forwards;
+  animation: slide-out 200ms forwards;
 }
+
 @keyframes slide-out {
-  from { left: 0px; }
-  to { left: -300px; }
+  from {
+    left: 0px;
+  }
+  to {
+    left: -300px;
+  }
 }
 
 .dropDownOpen {
-  animation: drop-down-open 200ms;
-  animation-fill-mode: forwards;
+  animation: drop-down-open 200ms forwards;
 }
+
 @keyframes drop-down-open {
-  from { height: 0px; }
-  to { height: 208px; }
+  from {
+    height: 0px;
+  }
+  to {
+    height: 208px;
+  }
 }
 
 .dropDownClose {
-  animation: drop-down-close 200ms;
-  animation-fill-mode: forwards;
+  animation: drop-down-close 200ms forwards;
 }
+
 @keyframes drop-down-close {
-  from { height: 208px; }
-  to { height: 0px; }
+  from {
+    height: 208px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.resume_container {
+  display: flex;
+  align-items: center;
+  color: #F8F8F8;
+  padding: 25px 0 25px 20px;
+  font-size: 22px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resume_container:hover {
+  transition: 200ms ease-in-out;
+  color: #ff5a60;
+}
+
+.resume_container p {
+  margin: 0;
+}
+
+.download_icon {
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: 10px;
 }

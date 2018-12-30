@@ -1,0 +1,81 @@
+.loader_container {
+  opacity: 0;
+  animation: fadeIn 200ms ease-in forwards;
+  animation-delay: 200ms;
+  align-self: flex-end;
+  margin-top: -45px;
+  margin-right: 70px;
+  padding: 5.5px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loader {
+  background: transparent !important;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-right: -8px;
+  border-radius: 100%;
+  border: 2px solid;
+  border-color: #fff;
+  border-bottom-color: transparent;
+  display: block;
+  animation: rotate 500ms 0s infinite linear both;
+  align-self: flex-end;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.checkmark {
+  background: #689f38;
+  width: 6px;
+  height: 4px;
+  margin: 15px 5px 15px 0;
+  transform: rotate(45deg);
+  animation: checkmark-width 150ms linear forwards;
+}
+
+.checkmark:after {
+  background: #689f38;
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 0;
+  animation: checkmark-height 150ms linear 150ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes checkmark-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15px;
+  }
+}
+
+@keyframes checkmark-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30px;
+  }
+}

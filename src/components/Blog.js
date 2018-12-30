@@ -1,31 +1,13 @@
 import React from 'react';
-import * as gitImg from '../Images/github.png';
+import { IoLogoGithub } from 'react-icons/io'
 import '../styles/Blog.css';
+import '../styles/modal.css';
 
-import BlogInfo from './BlogInfo';
+import ProjectModal from './projectModal';
 
 class Blog extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.modalOpacity = 0;
-  }
   state = {
     modalIsOpen: false,
-    screenWidth: 0,
-  }
-
-  componentDidMount() {
-    this.updateScreenWidth();
-    window.addEventListener('resize', this.updateScreenWidth);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateScreenWidth);
-  }
-
-  updateScreenWidth = () => {
-    this.setState({ screenWidth: window.innerWidth });
   }
 
   imageLinkToProject = (url) => {
@@ -36,17 +18,12 @@ class Blog extends React.Component {
     const body = document.body;
     body.style.overflow = 'hidden';
 
-    setTimeout(() => {
-      this.animateModal('open');
-    }, 1);
     this.setState({ modalIsOpen: true });
   }
 
   closeModal = () => {
     const body = document.body;
     body.style.overflow = 'auto';
-
-    this.animateModal('close');
 
     setTimeout(() => {
       this.setState({ modalIsOpen: false });
@@ -66,36 +43,47 @@ class Blog extends React.Component {
   }
 
   render() {
-    const { datePosted, image, smallImage, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
-    const { modalIsOpen, screenWidth } = this.state;
+    const { datePosted, image, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
+    const { modalIsOpen } = this.state;
 
     return (
-      <div className='blog' name={id}>
+      <div className='blog' name={name} id={id}>
         <div className='blog_left_container'>
-          <h2
-            className='blogh1'
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-          >{name}</h2>
+          <h1>{name}</h1>
           <p className='blog_short_desc'>{shortDescripion}</p>
-          <div className='btns_container'>
-            {this.props.blog && this.props.blog.links
-              ? <div>
-                <button className='view_btn' onClick={() => { this.imageLinkToProject(this.props.blog.links[0].url) }}>App Store</button>
-                <button className='view_btn_android' onClick={() => { this.imageLinkToProject(this.props.blog.links[1].url) }}>Google Play</button>
-              </div>
-              : <button className='view_btn' onClick={() => { this.imageLinkToProject(link) }}>VIEW</button>}
-          </div>
-          <div className='blog_footer'>
-            <span className='date_posted'>{datePosted}</span>
-            <a href={gitHubLink} target='_blank'><img alt='Github Icon' className='github_icon' src={gitImg} /></a>
+          <div className='blog_btns_and_footer'>
+            <div className='btns_container'>
+              {this.props.blog && this.props.blog.links
+                ? <div className='btns_container'>
+                  <button className='view_btn' onClick={() => { this.imageLinkToProject(this.props.blog.links[0].url) }}>App Store</button>
+                  <button className='view_btn_android' onClick={() => { this.imageLinkToProject(this.props.blog.links[1].url) }}>Google Play</button>
+                  <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
+                </div>
+                : <div className='btns_container'>
+                  <button className='view_btn' onClick={() => { this.imageLinkToProject(link) }}>View</button>
+                  <button className='learn_more_button' onClick={this.openModal}>Learn More</button>
+                </div>}
+            </div>
+            <div className='blog_footer'>
+              <span>{datePosted}</span>
+              {
+                id !== 'secondStep' && (
+                  <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
+                )
+              }
+            </div>
           </div>
         </div>
         <div className='blog_right_container'>
-          <img src={screenWidth <= 609 ? smallImage : image} alt='project_image' className='blog_image'/>
-          <button className='more_btn' onClick={this.openModal}>Read More</button>
+          <img
+            src={image}
+            className='project_image'
+            alt='project image'
+          />
         </div>
-          <BlogInfo modalIsOpen={modalIsOpen} blog={this.props.blog} closeModal={this.closeModal} />
+        {modalIsOpen && (
+          <ProjectModal blog={this.props.blog} closeModal={this.closeModal} />
+        )}
       </div>
     );
   }
