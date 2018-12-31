@@ -1,0 +1,138 @@
+@import '_Animations';
+@import '_Base';
+.footer_container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $blackColor;
+  color: $fadedTextColor;
+  padding: 100px 60px;
+  display: flex;
+  justify-content: center;
+  a {
+    transition-duration: 200ms;
+    cursor: pointer;
+    &:hover {
+      color: $fadedTextColor;
+    }
+  }
+  @media screen and (max-width: $mediumDevices) {
+    flex-direction: column;
+  }
+}
+
+.footer_left {
+  margin: 0 100px 0 40px;
+  white-space: nowrap;
+  h2 {
+    color: $whiteColor;
+  }
+  p {
+    color: $fadedTextColor;
+  }
+  @media screen and (max-width: $largeDevices) {
+    margin: 0 100px 0 0;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    margin: 0 auto 30px;
+  }
+}
+
+.footer_right {
+  margin: 0 40px;
+  p {
+    font-size: 20px;
+    color: $whiteColor;
+  }
+  @media screen and (max-width: $extraLargeDevices) {
+    margin: 0 40px 0 0;
+    br {
+      display: none;
+    }
+  }
+  @media screen and (max-width: $largeDevices) {
+    margin: 0;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    text-align: center;
+  }
+}
+
+.footer_right_body {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: $smallDevices) {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: none;
+  }
+}
+
+.footer_rb_content {
+  display: flex;
+  flex: 1 0 21%;
+  white-space: nowrap;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 174px;
+  p {
+    color: $fadedTextColor;
+  }
+  a {
+    color: $whiteColor;
+    text-decoration: none;
+    transition-duration: 200ms;
+  }
+  @media screen and (max-width: $smallDevices) {
+    flex: none;
+    width: 100%;
+    p {
+      margin: 22px 0 5px;
+    }
+  }
+}
+
+.footer_rb_content_links {
+  margin: 22px 0;
+  cursor: pointer;
+}
+
+.footer_icon {
+  font-size: 23px;
+  transition-duration: $transitionDuration;
+  cursor: pointer;
+  &:hover {
+    color: $whiteColor;
+  }
+}
+
+.footer_icon:nth-child(-n+3) {
+  margin-right: 8px;
+}
+
+.footer_resume_image {
+  width: 150px;
+  margin-top: 30px;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    margin: 15px 0 0 15px;
+  }
+}
+
+.footer_resume_text {
+  margin: 0;
+}
+
+.quick_links {
+  transition-duration: $transitionDuration; 
+}
+
+.quick_links:hover {
+ color: $fadedTextColor;
+}

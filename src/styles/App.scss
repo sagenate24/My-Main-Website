@@ -1,0 +1,24 @@
+@import '_Base';
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.app {
+  font-family: $fontFamily;
+  font-weight: normal;
+  color: $blackColor;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: $blackColor;
+}
+
+.introLandingWrapper {
+  min-height: 100vh;
+}
+
+
+

@@ -1,48 +1,44 @@
 import React, { Component } from "react";
-import * as needle from "../Images/needle.jpg";
+import { isPassive } from '../utils/helpers';
+import * as needle from "../Images/needle-4.jpg";
 import * as avatar from "../Images/meWithGlasses.png";
-import "../styles/IntroLanding.css";
+import '../styles/IntroLanding.scss'
 
 class IntroLanding extends Component {
   constructor() {
     super();
 
     this.heroChildren = React.createRef();
+    this.paralaxAnimation = null;
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    const supportsPassive = isPassive();
+
+    window.removeEventListener('scroll', this.handleScroll, supportsPassive ? { passive: true } : false);
   }
 
   setListener = () => {
-    let supportsPassive = false;
-
-    try {
-      var opts = Object.defineProperty({}, 'passive', {
-        get: function () {
-          supportsPassive = true;
-        }
-      });
-      window.addEventListener("test", null, opts);
-    } catch (e) { }
+    const supportsPassive = isPassive();
 
     window.addEventListener('scroll', this.handleScroll, supportsPassive ? { passive: true } : false);
   }
 
   handleScroll = () => {
-    if (window.pageYOffset < window.innerHeight) {
+    requestAnimationFrame(() => {
+      if (window.pageYOffset < window.innerHeight && this.heroChildren.current !== null) {
+        const setTranslate = (yPos) => {
+          this.heroChildren.current.style.transform = "translate(0, " + yPos + "px)";
+          this.heroChildren.current.style.transition = "transform 50ms";
+        }
 
-      const setTranslate = (yPos) => {
-        this.heroChildren.current.style.transform = "translate3d(0, " + yPos + "px, 0";
+        let yScrollPos;
+        yScrollPos = window.pageYOffset * -0.3;
+        yScrollPos = yScrollPos.toFixed(3);
+
+        setTranslate(yScrollPos);
       }
-
-      let yScrollPos;
-      yScrollPos = window.pageYOffset * -0.15;
-      yScrollPos = yScrollPos.toFixed(3);
-
-      setTranslate(yScrollPos);
-      requestAnimationFrame(this.handleScroll);
-    }
+    })
   }
 
   render() {
@@ -58,7 +54,6 @@ class IntroLanding extends Component {
             alt='avatar-img'
             className='avatar-img'
             onLoad={this.setListener}
-            // onScroll={this.handleScroll}
           />
           <h1>Front End Developer</h1>
         </div>

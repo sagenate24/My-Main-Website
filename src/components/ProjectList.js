@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Blog from './Blog';
-import '../styles/BlogList.css';
+import Project from './Project';
+import '../styles/ProjectStyles.scss';
 
-class BlogList extends Component {
+class ProjectList extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -10,12 +10,12 @@ class BlogList extends Component {
   render() {
     const { blogs } = this.props;
     return (
-      <div className='blog_list'>
+      <div className='project_list'>
         {this.props && this.props.blogs
           ?
           blogs.map((blog) => {
             return (
-              <Blog key={blog.id} blog={blog} id={blog.id} />
+              <Project key={blog.id} blog={blog} id={blog.id} />
             );
           })
           : null
@@ -25,4 +25,4 @@ class BlogList extends Component {
   }
 }
 
-export default BlogList;
+export default ProjectList;

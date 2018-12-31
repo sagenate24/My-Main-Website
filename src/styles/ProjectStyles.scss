@@ -1,0 +1,128 @@
+@import '_Base';
+
+.project_list {
+  padding: 100px 30px;
+  background: linear-gradient(rgb(27, 27, 27), #2A184D, rgb(27, 27, 27));
+  @media screen and (max-width: $mediumDevices) {
+    padding: 100px 10px;
+  }
+}
+
+.project {
+  display: flex;
+  max-width: 1130px;
+  color: $whiteColor;
+  margin: 0 auto 100px;
+  box-sizing: border-box;
+  @media screen and (max-width: $mediumDevices) {
+    flex-direction: column;
+  }
+}
+
+.project_left_container {
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+  h1 {
+    font-size: $LargeFontSize;
+  }
+  p {
+    font-size: $smallFontSize;
+    font-weight: $fontWeightThin;
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    width: 100%;
+    h1 {
+      font-size: $mediumFontSize;
+      white-space: normal;
+    }
+  }
+}
+
+.project_right_container {
+  display: flex;
+  width: 40%;
+  margin: 0 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $mediumDevices) {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+  }
+}
+
+.project_image {
+  width: 100%;
+  max-width: 400px;
+  @media screen and (max-width: $mediumDevices) {
+    max-width: 600px;
+  }
+}
+
+.btns_container {
+  button {
+    border: none;
+    cursor: pointer;
+    padding: $buttonPadding;
+    color: $whiteColor;
+    font-size: $buttonFontSize;
+    transition-duration: $transitionDuration;
+    &:hover {
+      transition-duration: $transitionDuration;
+    }
+  }
+  @media screen and (max-width: $mediumDevices) {
+    display: flex;
+  }
+}
+
+.view_btn {
+  background-color: $blueColor;
+  &:hover {
+    color: $blueColor;
+    background-color: $whiteColor;
+  }
+}
+
+.view_btn_android {
+  background-color: $greenColor;
+  margin-left: 20px;
+  &:hover {
+    color: $greenColor;
+    background-color: $whiteColor;
+  }
+}
+
+.learn_more_btn {
+  background: $redColor;
+  margin-left: 20px;
+  &:hover {
+    color: $redColor;
+    background-color: $whiteColor;
+  }
+}
+
+.project_footer {
+  margin-top: 10px;
+  font-size: $smallFontSize;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: $mediumDevices) {
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+}
+
+.github_icon {
+  transition-duration: $transitionDuration;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  &:hover {
+    transition-duration: $transitionDuration;
+    background-color: $iconHoverBGColor;
+  }
+}

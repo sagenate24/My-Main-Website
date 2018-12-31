@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { SectionTitle } from './shared/SectionTitle'
 import Loader from './shared/loader'
 import ContactModal from './ContactModal'
-import '../styles/Contact.css';
-import axios from 'axios'
+import '../styles/Contact.scss';
 
 class Contact extends Component {
   constructor(props) {
@@ -46,21 +45,26 @@ class Contact extends Component {
 
     this.setState({ loading: true });
 
-    const form = await axios.post('/api/form', {
-      name,
-      email,
-      message
-    }).then(() => {
-      document.querySelector('.loader').classList.replace('loader', 'checkmark');
-
-      setTimeout(() => {
-        this.openModal()
-      }, 500)
-    })
-      .catch((error) => {
-        alert('Sorry, your message did not go through ☹️. Please try again!')
-        this.resetElements(true)
+    try {
+      const response = await fetch('/api/form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
       })
+
+      const status = await response.json();
+
+      if (status === 'success') {
+        document.querySelector('.loader').classList.replace('loader', 'checkmark');
+        setTimeout(() => { this.openModal() }, 500);
+      }
+    }
+
+    catch (err) {
+      alert('Sorry, your message did not go through ☹️. Please try again!')
+      this.resetElements(true)
+      console.log(err);
+    }
   }
 
   checkEmail = (e) => {

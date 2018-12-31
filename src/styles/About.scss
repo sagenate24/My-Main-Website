@@ -1,6 +1,9 @@
+@import '_Animations';
+@import '_Base';
 .about {
-  background: #F8F8F8;
+  background: $whiteColor;
 }
+
 .about_intro {
   height: 700px;
   width: 100%;
@@ -10,11 +13,18 @@
   background: linear-gradient(#1C1C1C, rgb(46, 55, 109));
   align-items: center;  
 }
-.about_avatar_container {
+
+.about_title_container {
   text-align: center;
   padding: 13px;
-  font-size: 26px;
-  color: #ffffff;
+  font-size: $mediumFontSize;
+  color: $whiteColor;
+  @media screen and (max-width: $mediumDevices) {
+    h1 {
+      padding: 13px 10px;
+      font-size: $mediumFontSize;
+    }
+  }
 }
 
 .about_background_content {
@@ -22,48 +32,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #F8F8F8;
+  background: $whiteColor;
   text-align: left;
+  @media screen and (max-width: $mediumDevices) {
+    flex-direction: column;
+  }
 }
 
 .about_me_in_mexico {
   border-radius: 5px;
   width: 50%;
   height: auto;
+  @media screen and (max-width: $mediumDevices) {
+    display: none;
+  }
 }
 
 .about_me_desc {
-  font-weight: 100;
+  font-weight: $fontWeightThin;
   line-height: 40px;
-  font-size: 24px;
+  font-size: $mediumLargeFontSize;
   margin-left: 100px;
-}
-
-@media only screen and (max-width: 1000px) {
-  .about_me_desc {
+  @media screen and (max-width: $largeDevices) {
     line-height: 30px;
-    font-size: 16px;
-    margin-left: 100px;
+    font-size: $buttonFontSize;
   }
-}
-
-@media only screen and (max-width: 767px) {
-  .about_background_content {
-    flex-direction: column;
-  }
-
-  .about_me_in_mexico {
-    display: none;
-  }
-
-  .about_me_desc {
-    font-weight: 100;
+  @media screen and (max-width: $mediumDevices) {
     line-height: 40px;
-    font-size: 18px;
     margin-left: 0;
     text-align: left;
   }
-  
 }
 
 .my_work_container {
@@ -74,7 +72,7 @@
 }
 
 .my_work_cards_container {
-  color: #ffffff;
+  color: $whiteColor;
   display: flex;
   flex-wrap: wrap;
 }
@@ -88,32 +86,49 @@
   flex-direction: column;
   align-items: center;
   background: linear-gradient(#1C1C1C 70%, rgb(34, 41, 80));
-  border-radius: 20px; 
+  border-radius: 20px;
+  h1 {
+    color: $whiteColor;
+    margin-top: 30px;
+  }
+  p {
+    max-width: 300px;
+    font-size: $buttonFontSize;
+    color: $fadedTextColor;
+    margin: 0;
+  }
+  @media screen and (max-width: $largeDevices) {
+    margin: 0 15px;
+    h1 {
+      font-size: $mediumFontSize;
+    }
+  }
+  @media screen and (max-width: $mediumDevices) {
+    flex: 1 1 100%;
+    margin: 0 30px 30px;
+  }
 }
 
 .my_work_img {
   height: 180px;
-}
-
-.my_work_card h1 {
-  color: #fff;
-  margin-top: 30px;
-}
-
-.my_work_card p {
-  max-width: 300px;
-  font-size: 20px;
-  color: #f8f8f8b7;
-  margin: 0;
+  @media screen and (max-width: $largeDevices) {
+    height: 150px;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    height: 180px;
+  }
 }
 
 .my_skills_container {
   box-sizing: border-box;
   width: 80%;
-  background: #fff;
+  background: $whiteColor;
   margin: 0 auto;
   padding: 100px 0 160px;
   box-shadow: 3px 0 rgba(28, 28, 28, 0.075), -3px 0 0 rgba(28, 28, 28, 0.075);
+  @media screen and (max-width: $mediumDevices) {
+    width: 100%;
+  }
 }
 
 .my_skills_cards_container {
@@ -128,47 +143,10 @@
   padding: 20px;
   flex-direction: column;
   align-items: center;
-}
-
-@media only screen and (max-width: 991px) {
-  .my_work_card {
-    margin: 0 15px;
-  }
-  .my_work_card h1 {
-    font-size: 28px;
-  }
-
-  .my_work_img {
-    height: 150px;
+  @media screen and (max-width: $mediumDevices) {
+    h2 {
+      font-size: 20px;
+      white-space: nowrap;
+    }
   }
 }
-
-@media only screen and (max-width: 767px) {
-  .my_work_card {
-    flex: 1 1 100%;
-    margin: 0 30px 30px;
-  }
-  .my_work_card h1 {
-    font-size: 32px;
-  }
-  .my_work_img {
-    height: 180px;
-  }
-  .my_skills_container {
-    width: 100%;
-  }
-  .my_skills_card h2 {
-    font-size: 20px;
-    white-space: nowrap;
-  }
-  .about_avatar_container h1 {
-    padding: 13px 10px;
-    font-size: 28px;
-  }
-}
-
-/* @media only screen and (max-width: 450px) {
-  .about_avatar_container h1 {
-    font-size: 18px;
-  }
-} */

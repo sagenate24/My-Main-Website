@@ -2,7 +2,7 @@ import React from 'react';
 import * as meInMexico from '../Images/mePortrait.jpeg';
 import { SectionTitle } from './shared/SectionTitle'
 import { myWork, mySkills } from '../utils/LangData';
-import '../styles/About.css';
+import '../styles/About.scss'
 
 class About extends React.PureComponent {
   componentDidMount() {
@@ -13,7 +13,7 @@ class About extends React.PureComponent {
     return (
       <div className='about'>
         <div className='about_intro'>
-          <div className='about_avatar_container'>
+          <div className='about_title_container'>
             <h1>Motivated Developer From Seattle Washington</h1>
           </div>
         </div>

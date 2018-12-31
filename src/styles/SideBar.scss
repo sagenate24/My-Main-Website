@@ -1,3 +1,5 @@
+@import '_Animations';
+@import '_Base';
 .sidebar {
   position: fixed;
   top: 0;
@@ -8,16 +10,29 @@
   z-index: 3;
 }
 
-.sidebar_header h2 {
-  margin: 0;
-  font-weight: 400;
-  padding-top: 5px;
-}
-
 .sidebar_header {
   background: linear-gradient(#1C1C1C, #9198e5);
-  color: #ffffff;
+  color: $whiteColor;
   text-align: center;
+  h2 {
+    margin: 0;
+    font-weight: 400;
+    padding-top: 5px;
+  }
+  ion-icon {
+    transition-duration: $transitionDuration;
+    cursor: pointer;
+    padding: 5px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.125);
+    }
+  }
+  span {
+    &:hover {
+      color: $redColor;
+      background-color: $whiteColor;
+    }
+  }
 }
 
 .sidebar_title {
@@ -25,6 +40,7 @@
   clear: both;
   flex-direction: column;
   padding: 10px 0 40px;
+  font-size: $smallMediumFontSize;
 }
 
 .sidebar_head {
@@ -32,14 +48,10 @@
   margin: 0 auto;
 }
 
-.sidebar_title {
-  font-size: 20px;
-}
-
 .sidebar_logo {
   cursor: pointer;
-  font-size: 30px;
-  transition-duration: 200ms;
+  font-size: $mediumFontSize;
+  transition-duration: $transitionDuration;
   padding: 5px;
 }
 
@@ -48,21 +60,6 @@
   padding: 10px;
   margin-top: 10px;
   margin-right: 10px;
-}
-
-.sidebar_header ion-icon {
-  transition-duration: 200ms;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.sidebar_header ion-icon:hover {
-  background-color: rgba(0, 0, 0, 0.125);
-}
-
-.sidebar_header span:hover {
-  color: #ff5a60;
-  background-color: #ffffff;
 }
 
 .sidebar_ul {
@@ -75,32 +72,30 @@
 }
 
 .sidebar_li {
-  color: #ffffff;
+  color: $whiteColor;
   cursor: pointer;
   padding: 25px 10px;
-}
-
-.sidebar_li:hover{
-  transition-duration: 200ms;
-  color: rgb(139, 139, 139);
-}
-
-.sidebar_li:hover > .sidebar_link {
-  transition-duration: 200ms;
-  color: rgb(139, 139, 139);
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
+    .sidebar_link {
+      transition-duration: $transitionDuration;
+      color: $fadedTextColor;
+    }
+  }
 }
 
 .sidebar_icon {
-  color: #fff;
+  color: $whiteColor;
 }
 
 .sidebar_link {
   transition-duration: 200ms;
   text-decoration: none;
-  color: #e0e0e0;
+  color: $whiteColor;
   font-weight: 100;
   margin-left: 10px;
-  font-size: 22px;
+  font-size: $smallMediumFontSize;
 }
 
 .dropdown_icon {
@@ -126,92 +121,51 @@
 }
 
 .hyper_link {
-  transition-duration: 200ms;
+  transition-duration: $transitionDuration;
   text-decoration: none;
-  color: #e0e0e0
-}
-
-.hyper_link:hover {
-  transition-duration: 200ms;
-  text-decoration: none;
-  color: #707070
+  color: $whiteColor;
+  &:hover {
+    transition-duration: $transitionDuration;
+    text-decoration: none;
+    color: $fadedTextColor;
+  }
 }
 
 .bottom_section {
   bottom: 20px;
 }
 
-/* SideBar animations */
-
 .slidein {
-  animation: slide-in 200ms forwards;
-}
-
-@keyframes slide-in {
-  from {
-    left: -300px;
-  }
-  to {
-    left: 0px;
-  }
+  @include animation('slide_in 200ms forwards');
 }
 
 .slideOut {
-  animation: slide-out 200ms forwards;
-}
-
-@keyframes slide-out {
-  from {
-    left: 0px;
-  }
-  to {
-    left: -300px;
-  }
+  @include animation('slide_out 200ms forwards');
 }
 
 .dropDownOpen {
-  animation: drop-down-open 200ms forwards;
-}
-
-@keyframes drop-down-open {
-  from {
-    height: 0px;
-  }
-  to {
-    height: 208px;
-  }
+  @include animation('drop_down_open 200ms forwards');
 }
 
 .dropDownClose {
-  animation: drop-down-close 200ms forwards;
-}
-
-@keyframes drop-down-close {
-  from {
-    height: 208px;
-  }
-  to {
-    height: 0px;
-  }
+  @include animation('drop_down_close 200ms forwards');
 }
 
 .resume_container {
   display: flex;
   align-items: center;
-  color: #F8F8F8;
+  color: $whiteColor;
   padding: 25px 0 25px 20px;
-  font-size: 22px;
+  font-size: $smallMediumFontSize;
   cursor: pointer;
   text-decoration: none;
-}
-
-.resume_container:hover {
-  transition: 200ms ease-in-out;
-  color: #ff5a60;
-}
-
-.resume_container p {
-  margin: 0;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    transition: 200ms ease-in-out;
+    color: $redColor;
+  }
 }
 
 .download_icon {

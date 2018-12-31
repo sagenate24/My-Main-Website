@@ -199,5 +199,5 @@ const posts = [
 ];
 
 export function getPosts() {
-  return new Promise((res) => res({posts: posts}));
+  return new Promise((res) => res({ posts: posts }));
 }

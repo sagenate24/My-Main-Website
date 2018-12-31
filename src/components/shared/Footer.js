@@ -3,7 +3,7 @@ import { IoMdPhonePortrait, IoMdMail, IoLogoGithub, IoLogoLinkedin } from 'react
 import { NavLink, withRouter } from 'react-router-dom';
 import * as pdfAndIcon from '../../Images/pdfAndIcon.png';
 import * as resumePdf from '../../Images/Resume/NathanSageResume.pdf'
-import '../../styles/Footer.css';
+import '../../styles/Footer.scss';
 
 class Footer extends Component {
   render() {

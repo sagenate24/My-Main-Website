@@ -5,7 +5,7 @@ import * as resumePdf from '../Images/Resume/NathanSageResume.pdf'
 import { IoMdMenu } from 'react-icons/io'
 import { MdOpenInNew } from 'react-icons/md'
 import { Link } from 'react-scroll';
-import '../styles/SideBar.css';
+import '../styles/SideBar.scss';
 
 class SideBar extends Component {
   constructor(props) {

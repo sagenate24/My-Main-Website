@@ -1,0 +1,108 @@
+@import '_Animations';
+@import '_Base';
+
+.contact {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 100px 0 160px;
+  background: linear-gradient(to left, #1c1c1c, #1c1c1c 50%, rgb(32, 32, 32) 75%, #1c1c1c 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    font-weight: $fontWeightThin;
+    margin: 10px 30px 60px;
+    text-align: center;
+    color: $fadedTextColor;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    h2 {
+      font-size: $buttonFontSize;
+    }
+  }
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  max-width: 600px;
+  @media screen and (max-width: $mediumDevices) {
+    width: calc(100% - 60px);
+    margin: 0 30px;
+    box-sizing: border-box;
+  }
+}
+
+.contact_input_fields {
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+  width: 100%;
+  font-size: $buttonFontSize;
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+}
+
+.error_label {
+  margin-bottom: 10px;
+  color: $redColor;
+}
+
+.contact_textarea {
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+  width: 100%;
+  font-size: $buttonFontSize;
+  margin-bottom: 10px;
+  height: 300px;
+  outline: none;
+  resize: none;
+}
+
+.send_button {
+  font-size: $buttonFontSize;
+  transition-duration: 200ms;
+  cursor: pointer;
+  padding: 10px 60px;
+  background: $redColor;
+  color: $whiteColor;
+  border: none;
+  align-self: flex-end;
+  &:hover {
+    background: $whiteColor;
+    color: $redColor;
+  }
+  &:disabled {
+    background: $redColor;
+    color: $whiteColor;
+    border: none;
+    opacity: 0.6;
+    cursor: inherit;
+  }
+}
+
+.show_button {
+  @include animation('partial_fade_in 200ms');
+  &:disabled {
+    background: $redColor;
+    color: $whiteColor;
+    border: none;
+    opacity: 0.6;
+    cursor: inherit;
+  }
+}
+
+.remove_button {
+  @include animation('fade_out 200ms forwards');
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #ebebeb inset;
+}
