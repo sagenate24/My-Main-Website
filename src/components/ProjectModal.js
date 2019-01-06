@@ -6,7 +6,7 @@ import '../styles/Modal.scss';
 
 class ProjectModal extends Component {
   closeModal = () => {
-    document.querySelector('.modal_overlay').classList.add('fade_out_modal');
+    document.querySelector('.project_modal').classList.add('fade_out_modal');
     this.props.closeModal();
   }
 
@@ -14,7 +14,7 @@ class ProjectModal extends Component {
     const { blog } = this.props;
 
     return (
-      <div className='modal_overlay'>
+      <div className='project_modal'>
         <div className='modal_container'>
           <Carousel
             infiniteLoop={true}
@@ -52,6 +52,7 @@ class ProjectModal extends Component {
             </div>
           </div>
         </div>
+        <div className='modal_overlay' onClick={this.closeModal} />
       </div>
     )
   }

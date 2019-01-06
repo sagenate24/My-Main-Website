@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: default;
   h2 {
     font-weight: $fontWeightThin;
     margin: 0 30px 60px;
@@ -17,11 +18,35 @@
     color: $fadedTextColor;
   }
   @media screen and (max-width: $mediumDevices) {
-    padding: 160px 0 160px;
+    padding: 100px 0;
     h2 {
       font-size: $buttonFontSize;
+      margin: 0 30px 30px;
     }
   }
+}
+
+.contact_title_container {
+  padding: 60px;
+  @media screen and (max-width: $mediumDevices) {
+    padding: 30px 0;
+  }
+}
+
+.contact_title {
+  @include animation('scale_in 300ms forwards 300ms');
+  transform: scale(0);
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.contact_title_underline {
+  height: 5px;
+  width: 0;
+  background: $blackColor;
+  margin: 0 auto;
+  @include animation('animate_line 300ms forwards 600ms');
 }
 
 .contact_form {

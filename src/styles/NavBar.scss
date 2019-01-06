@@ -37,7 +37,8 @@
   font-size: $iconSize;
   transition-duration: $transitionDuration;
   padding: 5px;
-
+  width: 30px;
+  height: 30px;
   &:hover {
     background: $fadedTextColor;
   }

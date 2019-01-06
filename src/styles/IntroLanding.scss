@@ -1,11 +1,11 @@
 @import '_Animations';
 @import '_Base';
-
 .IntroLanding-container {
   width: 100vw;
   height: 100vh;
-  background-color: $blackColor; 
+  background-color: $blackColor;
   overflow: hidden;
+  cursor: default;
 }
 
 .hero-image {
@@ -15,6 +15,7 @@
   height: 100vh;
   background-size: cover;
 }
+
 .avatar-img {
   height: 150px;
   border: 6px solid $whiteColor;
@@ -37,6 +38,8 @@
     font-weight: normal;
     font-size: 55px;
     margin-left: 10px;
+    transform: scale(0);
+    @include animation('scale_in 300ms forwards 300ms');
     white-space: nowrap;
     color: $whiteColor;
     text-shadow: 1px 1px $fadedTextColor;
@@ -47,7 +50,7 @@
     @media screen and (max-width: $mediumDevices) {
       font-size: 38px;
     }
-    @media screen and (max-width: $smallDevices){
+    @media screen and (max-width: $smallDevices) {
       white-space: normal;
     }
   }
@@ -55,4 +58,31 @@
     flex-direction: column;
     left: 23%;
   }
+}
+
+.go_to_projects {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  @include animation('fade_in 400ms forwards 1s');
+  opacity: 0;
+  transform: translate(-50%, 0);
+  p {
+    color: $whiteColor;
+    font-size: $buttonFontSize;
+    margin: 5px 0 0 5px;
+  }
+}
+
+.arrow_down {
+  width: 60px;
+  height: 60px;
+  transform: rotate(90deg);
+  background-image: url('../Images/chevron-right.svg');
+  background-size: cover; 
+}
+
+.bob_animation {
+  @include animation('bob 2s infinite');
 }

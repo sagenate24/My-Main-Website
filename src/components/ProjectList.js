@@ -10,7 +10,7 @@ class ProjectList extends Component {
   render() {
     const { blogs } = this.props;
     return (
-      <div className='project_list'>
+      <div className='project_list' name='project_list'>
         {this.props && this.props.blogs
           ?
           blogs.map((blog) => {

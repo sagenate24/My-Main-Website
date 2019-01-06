@@ -44,11 +44,8 @@ class Footer extends Component {
             </div>
             <div className='footer_rb_content'>
               <div className='footer_rb_content_links'>
-
                 <IoLogoLinkedin className='footer_icon' onClick={() => this.props.openLink('https://www.linkedin.com/in/nathan-sage-689296163/')} />
-                <a className='footer_icon' href='mailto:sagenate24@gmail.com'>
-                  <IoMdMail />
-                </a>
+                <NavLink to='/contact' exact className='footer_icon'><IoMdMail /></NavLink>
                 <IoLogoGithub className='footer_icon' onClick={() => this.props.openLink('https://github.com/sagenate24')} />
                 <a className='footer_icon' href='tel:1-360-349-6448'>
                   <IoMdPhonePortrait />

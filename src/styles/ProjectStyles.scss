@@ -3,6 +3,7 @@
 .project_list {
   padding: 100px 30px;
   background: #F8F8F8;
+  cursor: default;
   @media screen and (max-width: $mediumDevices) {
     padding: 100px 10px;
   }

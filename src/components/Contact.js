@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { SectionTitle } from './shared/SectionTitle'
 import Loader from './shared/loader'
 import ContactModal from './ContactModal'
 import '../styles/Contact.scss';
@@ -114,7 +113,10 @@ class Contact extends Component {
 
     return (
       <div className='contact'>
-        <SectionTitle padding='60px 0 20px' color='#000'>Contact Me</SectionTitle>
+        <div className='contact_title_container'>
+          <h1 className='contact_title' >Contact Me</h1>
+          <div className='contact_title_underline' />
+        </div>
         <h2>Leave your name, email and a message and i will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
         <form className='contact_form' onSubmit={this.handleSubmit}>
           <input

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { isPassive } from '../utils/helpers';
+import { Link } from 'react-scroll';
 import * as avatar from "../Images/meWithGlasses.png";
 import '../styles/IntroLanding.scss'
 
@@ -50,6 +51,13 @@ class IntroLanding extends Component {
     })
   }
 
+  removeAnimation = () => {
+    if (document.querySelector('.arrow_down').classList.contains('bob_animation')) {
+      document.querySelector('.arrow_down').classList.remove('bob_animation');
+      document.querySelector('.arrow_down').style.display = 'none';
+    }
+  }
+
   render() {
     return (
       <div className='IntroLanding-container'>
@@ -62,6 +70,20 @@ class IntroLanding extends Component {
             onLoad={this.setListener}
           />
           <h1>Front End Developer</h1>
+        </div>
+        <div className='go_to_projects'>
+          <Link
+            onClick={this.removeAnimation}
+            href='project_list'
+            className='hyper_link'
+            to='project_list'
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={600}
+          >
+            <div className='arrow_down bob_animation' />
+          </Link>
         </div>
       </div>
     );

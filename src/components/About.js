@@ -37,7 +37,7 @@ class About extends React.PureComponent {
           </div>
         </div>
         <div className='my_skills_container'>
-          <SectionTitle>MY SKILLS</SectionTitle>
+          <SectionTitle color='#000'>MY SKILLS</SectionTitle>
           <div className='my_skills_cards_container'>
             {mySkills.map(card => (
               <div className='my_skills_card' key={card.id}>
