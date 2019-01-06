@@ -109,3 +109,19 @@
     height: 0px;
   }
 }
+@include keyframes(scale_in) {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@include keyframes(animate_line) {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120px;
+  }
+}

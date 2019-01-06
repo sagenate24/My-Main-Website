@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { isPassive } from '../utils/helpers';
-import * as needle from "../Images/needle-4.jpg";
 import * as avatar from "../Images/meWithGlasses.png";
 import '../styles/IntroLanding.scss'
 
@@ -10,6 +9,11 @@ class IntroLanding extends Component {
 
     this.heroChildren = React.createRef();
     this.paralaxAnimation = null;
+  }
+
+  componentDidMount() {
+    document.querySelector('.nav_container').style.background = 'none';
+    document.querySelector('.nav_container').style.position = 'absolute';
   }
 
   componentWillUnmount() {
@@ -27,6 +31,8 @@ class IntroLanding extends Component {
   handleScroll = () => {
     requestAnimationFrame(() => {
       if (window.pageYOffset < window.innerHeight && this.heroChildren.current !== null) {
+        document.querySelector('.nav_container').style.position = 'absolute';
+        document.querySelector('.nav_container').style.background = 'none';
         const setTranslate = (yPos) => {
           this.heroChildren.current.style.transform = "translate(0, " + yPos + "px)";
           this.heroChildren.current.style.transition = "transform 50ms";
@@ -37,6 +43,9 @@ class IntroLanding extends Component {
         yScrollPos = yScrollPos.toFixed(3);
 
         setTranslate(yScrollPos);
+      } else {
+        document.querySelector('.nav_container').style.position = 'fixed';
+        document.querySelector('.nav_container').style.background = '#1D252E';
       }
     })
   }
@@ -44,10 +53,7 @@ class IntroLanding extends Component {
   render() {
     return (
       <div className='IntroLanding-container'>
-        <div
-          className='hero-image'
-          style={{ backgroundImage: `url(${needle})` }}
-        />
+        <div className='hero-image' />
         <div ref={this.heroChildren} className='hero-children'>
           <img
             src={avatar}

@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import ProgressBar from "react-progress-bar-plus";
-import "react-progress-bar-plus/lib/progress-bar.css";
+import "../styles/reactProgressBar.min.css";
 import { getPosts } from '../utils/Data';
-// import "../styles/App.css";
 import "../styles/App.scss";
 
 import NavBar from "./NavBar";
@@ -25,7 +24,6 @@ class App extends Component {
   componentDidMount() {
     getPosts()
       .then(results => {
-        console.log(results)
         this.setState({ data: results });
       })
       .then(() => {
@@ -62,7 +60,6 @@ class App extends Component {
 
   render() {
     const { loading, showSideBar, data } = this.state;
-    const currentPath = this.props.history.location.pathname;
 
     return (
       <Fragment>
@@ -70,7 +67,7 @@ class App extends Component {
           {this.showLoading()}
           {!loading ? (
             <div>
-              <NavBar location={currentPath} openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick} />
+              <NavBar openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick} />
               <div className="app_content">
                 {showSideBar ? (
                   <SideBar
@@ -86,9 +83,9 @@ class App extends Component {
                     render={() => (
                       <div className='home_container'>
                         <div className='introLandingWrapper'>
-                          <IntroLanding location={currentPath} />
+                          <IntroLanding />
                         </div>
-                        <ProjectList blogs={data.posts} location={currentPath} />
+                        <ProjectList blogs={data.posts} />
                       </div>
                     )}
                   />
@@ -96,21 +93,17 @@ class App extends Component {
                     path="/about"
                     render={() => (
                       <div className='about_container'>
-                        <About aboutMe={data.aboutMe} langs={data.languages} location={currentPath} />
+                        <About aboutMe={data.aboutMe} langs={data.languages} />
                       </div>
                     )}
                   />
                   <Route
                     path="/contact"
-                    render={() => <Contact contact={data.contactInfo} location={currentPath} />}
+                    render={() => <Contact contact={data.contactInfo} />}
                   />
                 </Switch>
               </div>
-              <Footer
-                openLink={(href) => this.openLink(href)}
-                location={this.props.location}
-                history={this.props.history}
-              />
+              <Footer openLink={(href) => this.openLink(href)} />
             </div>
           ) : null}
         </div>

@@ -5,18 +5,19 @@
   width: 100%;
   box-sizing: border-box;
   padding: 100px 0 160px;
-  background: linear-gradient(to left, #1c1c1c, #1c1c1c 50%, rgb(32, 32, 32) 75%, #1c1c1c 75%);
+  background: $whiteColor;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   h2 {
     font-weight: $fontWeightThin;
-    margin: 10px 30px 60px;
+    margin: 0 30px 60px;
     text-align: center;
     color: $fadedTextColor;
   }
   @media screen and (max-width: $mediumDevices) {
+    padding: 160px 0 160px;
     h2 {
       font-size: $buttonFontSize;
     }
@@ -42,8 +43,8 @@
   width: 100%;
   font-size: $buttonFontSize;
   margin-bottom: 10px;
+  border: 1px solid #737373;
   outline: none;
-  border: none;
 }
 
 .error_label {
@@ -58,6 +59,7 @@
   width: 100%;
   font-size: $buttonFontSize;
   margin-bottom: 10px;
+  border: 1px solid #737373;
   height: 300px;
   outline: none;
   resize: none;
@@ -68,13 +70,14 @@
   transition-duration: 200ms;
   cursor: pointer;
   padding: 10px 60px;
-  background: $redColor;
   color: $whiteColor;
-  border: none;
+  border: 2px solid transparent;
+  background: $redColor;
   align-self: flex-end;
   &:hover {
     background: $whiteColor;
-    color: $redColor;
+    color: $blackColor;
+    border-color: $redColor;
   }
   &:disabled {
     background: $redColor;

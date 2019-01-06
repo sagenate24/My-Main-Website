@@ -51,22 +51,24 @@ class Project extends React.Component {
             </div>}
           <div className='project_footer'>
             <span>{datePosted}</span>
-            {
-              id !== 'secondStep' && (
-                <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
-              )
-            }
+            {id !== 'secondStep' && (
+              <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
+            )}
           </div>
         </div>
         <div className='project_right_container'>
           <img
             src={image}
+            onClick={this.openModal}
             className='project_image'
-            alt='project image'
+            alt='individual project'
           />
         </div>
         {modalIsOpen && (
-          <ProjectModal blog={this.props.blog} closeModal={this.closeModal} />
+          <ProjectModal
+            blog={this.props.blog}
+            closeModal={this.closeModal}
+          />
         )}
       </div>
     );

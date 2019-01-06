@@ -6,12 +6,13 @@
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: #24334b;
+  background-color: #1D252E;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.185);
   z-index: 3;
 }
 
 .sidebar_header {
-  background: linear-gradient(#1C1C1C, #9198e5);
+  background: $fadedTextColor;
   color: $whiteColor;
   text-align: center;
   h2 {
@@ -73,15 +74,9 @@
 
 .sidebar_li {
   color: $whiteColor;
-  cursor: pointer;
   padding: 25px 10px;
-  &:hover {
-    transition-duration: $transitionDuration;
-    color: $fadedTextColor;
-    .sidebar_link {
-      transition-duration: $transitionDuration;
-      color: $fadedTextColor;
-    }
+  @media screen and (max-height: 670px) {
+    padding: 10px;
   }
 }
 
@@ -93,14 +88,28 @@
   transition-duration: 200ms;
   text-decoration: none;
   color: $whiteColor;
+  padding: 5px 0;
   font-weight: 100;
   margin-left: 10px;
   font-size: $smallMediumFontSize;
+  cursor: pointer;
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
+  }
+  @media screen and (max-height: 670px) {
+    padding: 0;
+  }
 }
 
 .dropdown_icon {
+  cursor: pointer;
   margin-top: 2px;
   float: right;
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
+  }
 }
 
 .sidebar_hyper {

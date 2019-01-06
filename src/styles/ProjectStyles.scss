@@ -2,7 +2,7 @@
 
 .project_list {
   padding: 100px 30px;
-  background: linear-gradient(rgb(27, 27, 27), #2A184D, rgb(27, 27, 27));
+  background: #F8F8F8;
   @media screen and (max-width: $mediumDevices) {
     padding: 100px 10px;
   }
@@ -11,7 +11,7 @@
 .project {
   display: flex;
   max-width: 1130px;
-  color: $whiteColor;
+  color: $blackColor;
   margin: 0 auto 100px;
   box-sizing: border-box;
   @media screen and (max-width: $mediumDevices) {
@@ -27,7 +27,7 @@
     font-size: $LargeFontSize;
   }
   p {
-    font-size: $smallFontSize;
+    font-size: $smallMediumFontSize;
     font-weight: $fontWeightThin;
     margin-bottom: 80px;
   }
@@ -36,6 +36,15 @@
     h1 {
       font-size: $mediumFontSize;
       white-space: normal;
+    }
+    p {
+      font-size: $smallFontSize;
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (max-width: $smallDevices) {
+    h1 {
+      font-size: 25px;
     }
   }
 }
@@ -56,6 +65,7 @@
 .project_image {
   width: 100%;
   max-width: 400px;
+  cursor: pointer;
   @media screen and (max-width: $mediumDevices) {
     max-width: 600px;
   }
@@ -63,7 +73,7 @@
 
 .btns_container {
   button {
-    border: none;
+    border: 2px solid transparent;
     cursor: pointer;
     padding: $buttonPadding;
     color: $whiteColor;
@@ -76,12 +86,17 @@
   @media screen and (max-width: $mediumDevices) {
     display: flex;
   }
+  @media screen and (max-width: 340px) {
+    // margin-left: -20px;
+    // margin-right: -15px;
+  }
 }
 
 .view_btn {
   background-color: $blueColor;
   &:hover {
-    color: $blueColor;
+    color: $blackColor;
+    border-color: $blueColor;
     background-color: $whiteColor;
   }
 }
@@ -90,8 +105,15 @@
   background-color: $greenColor;
   margin-left: 20px;
   &:hover {
-    color: $greenColor;
+    color: $blackColor;
+    border-color: $greenColor;
     background-color: $whiteColor;
+  }
+  @media screen and (max-width: 360px) {
+    margin-left: 10px;
+  }
+  @media screen and (max-width: 340px) {
+    display: none;
   }
 }
 
@@ -99,8 +121,12 @@
   background: $redColor;
   margin-left: 20px;
   &:hover {
-    color: $redColor;
+    color: $blackColor;
+    border-color: $redColor;
     background-color: $whiteColor;
+  }
+  @media screen and (max-width: 360px) {
+    margin-left: 10px;
   }
 }
 

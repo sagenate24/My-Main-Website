@@ -21,6 +21,8 @@ class Contact extends Component {
   }
 
   componentDidMount() {
+    document.querySelector('.nav_container').style.position = 'fixed';
+    document.querySelector('.nav_container').style.background = '#1D252E';
     window.scrollTo(0, 0);
   }
 
@@ -112,7 +114,7 @@ class Contact extends Component {
 
     return (
       <div className='contact'>
-        <SectionTitle padding='60px 0 20px' color='#f8f8f8'>Contact Me</SectionTitle>
+        <SectionTitle padding='60px 0 20px' color='#000'>Contact Me</SectionTitle>
         <h2>Leave your name, email and a message and i will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
         <form className='contact_form' onSubmit={this.handleSubmit}>
           <input

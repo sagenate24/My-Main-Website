@@ -11,6 +11,7 @@
 .hero-image {
   width: 100vw;
   opacity: 0.7;
+  background-image: url("../Images/needle-3.jpg");
   height: 100vh;
   background-size: cover;
 }
@@ -41,13 +42,17 @@
     text-shadow: 1px 1px $fadedTextColor;
     @media screen and (max-width: $largeDevices) {
       margin: 10px 0;
+      text-align: center;
     }
     @media screen and (max-width: $mediumDevices) {
       font-size: 38px;
     }
+    @media screen and (max-width: $smallDevices){
+      white-space: normal;
+    }
   }
   @media screen and (max-width: $largeDevices) {
     flex-direction: column;
-    left: 20%;
+    left: 23%;
   }
 }

@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   z-index: 4;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   @include animation('fade_in 400ms forwards');
 }
 
@@ -23,6 +23,9 @@
   top: 8%;
   left: 50%;
   transform: translate(-50%, -8%);
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 }
 
 .modal_footer {
@@ -41,6 +44,11 @@
     color: gray;
     font-size: $smallFontSize;
   }
+  @media screen and (max-width: $smallDevices) {
+    h2 {
+      font-size: $smallMediumFontSize;
+    }
+  }
 }
 
 .modal_footer_bottom {
@@ -51,7 +59,6 @@
 
 .modal_view_button {
   transition: 100ms ease-in;
-  background: $redColor;
   cursor: pointer;
   padding: $buttonPadding;
   display: flex;
@@ -65,8 +72,36 @@
   }
   &:hover {
     background: $whiteColor;
-    color: $redColor;
+    color: $blackColor;
+  }
+  @media screen and (max-width: 375px) {
+    padding: 8px 10px 8px 10px;
+  }
+}
+
+.modal_regular_button {
+  background: $redColor;
+  &:hover {
     border: 2px solid $redColor;
+  }
+}
+
+.modal_mobile_buttons {
+  display: flex;
+}
+
+.apple_button {
+  background: $blueColor;
+  &:hover {
+    border: 2px solid $blueColor;
+  }
+}
+
+.google_button {
+  background: $greenColor;
+  margin-left: 20px;
+  &:hover {
+    border: 2px solid $greenColor;
   }
 }
 
@@ -75,7 +110,7 @@
 }
 
 .modal_close_icon {
-  transition: 100ms ease-in;
+  transition: color 150ms linear;
   font-size: $LargeFontSize;
   color: $blackColor;
   cursor: pointer;
@@ -85,7 +120,6 @@
 }
 
 // contact modal
-
 .contact_modal {
   position: fixed;
   top: 0;

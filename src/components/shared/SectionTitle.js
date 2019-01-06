@@ -1,14 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../../styles/App.scss';
 
 export const SectionTitle = (props) => {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: `${props.padding ? props.padding : '60px 0'}`,
-    }}>
+    <div className='section_title_container'>
       <h1
         style={{
           color: `${props.color ? props.color : '#3A3A3A'}`,
@@ -19,7 +14,7 @@ export const SectionTitle = (props) => {
       >{props.children}</h1>
       <div
         style={{
-          width: '80px',
+          width: `${props.lineWidth ? props.lineWidth : '80px'}`,
           height: '5px',
           background: `${props.color ? props.color : '#3A3A3A'}`
         }} />

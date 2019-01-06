@@ -1,7 +1,8 @@
+@import '_Animations';
 @import '_Base';
 
 .nav_container {
-  padding: 15px 15px 5px;
+  padding: 15px 15px 10px;
   color: $whiteColor;
   z-index: 3;
   text-align: center;
@@ -9,14 +10,10 @@
   top: 0;
   right: 0;
   left: 0;
-
+  transition: all 150ms linear;
   a {
     color: inherit;
   }
-}
-
-.nav_absolute {
-  position: absolute;
 }
 
 .nav_title_container {
@@ -40,6 +37,10 @@
   font-size: $iconSize;
   transition-duration: $transitionDuration;
   padding: 5px;
+
+  &:hover {
+    color: $fadedTextColor;
+  }
 }
 
 .first_logo {

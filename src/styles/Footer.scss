@@ -3,7 +3,7 @@
 .footer_container {
   width: 100%;
   box-sizing: border-box;
-  background-color: $blackColor;
+  background-color: #1D252E;
   color: $fadedTextColor;
   padding: 100px 60px;
   display: flex;
@@ -101,9 +101,10 @@
 .footer_icon {
   font-size: 23px;
   transition-duration: $transitionDuration;
+  color: #8b8b8b !important;
   cursor: pointer;
   &:hover {
-    color: $whiteColor;
+    color: $whiteColor !important;
   }
 }
 
