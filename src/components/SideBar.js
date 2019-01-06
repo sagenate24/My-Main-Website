@@ -5,7 +5,7 @@ import * as resumePdf from '../Images/Resume/NathanSageResume.pdf'
 import { IoMdMenu } from 'react-icons/io'
 import { MdOpenInNew } from 'react-icons/md'
 import { Link } from 'react-scroll';
-import '../styles/SideBar.css';
+import '../styles/SideBar.scss';
 
 class SideBar extends Component {
   constructor(props) {
@@ -23,10 +23,20 @@ class SideBar extends Component {
     const sideBar = this.sidebarContainer.current;
     sideBar.classList.remove('slideOut')
     sideBar.classList.add('slidein')
+<<<<<<< HEAD
+
+    if (window.location.pathname !== '/') {
+      document.querySelector('.dropdown_icon').style.display = 'none';
+    } else {
+      document.querySelector('.dropdown_icon').style.display = 'initial';
+    }
+=======
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
   }
 
   animateOut = () => {
     const { closeSideBar } = this.props;
+
     const sideBar = this.sidebarContainer.current;
     sideBar.classList.remove('slidein')
     sideBar.classList.add('slideOut')
@@ -39,24 +49,21 @@ class SideBar extends Component {
     const node = this.dropDown.current;
     const { showHypes } = this.state;
 
-    if (!showHypes) {
-      node.classList.remove('dropDownClose');
-      node.classList.add('dropDownOpen');
-      this.setState({ showHypes: true });
-    } else {
-      node.classList.remove('dropDownOpen');
-      node.classList.add('dropDownClose');
-      this.setState({ showHypes: false });
+    if (window.location.pathname === '/') {
+      if (!showHypes) {
+        node.classList.remove('dropDownClose');
+        node.classList.add('dropDownOpen');
+        this.setState({ showHypes: true });
+      } else {
+        node.classList.remove('dropDownOpen');
+        node.classList.add('dropDownClose');
+        this.setState({ showHypes: false });
+      }
     }
   }
 
-  handleNavigation = (route) => {
-    this.props.history.push(route);
-    if (route === '/') {
-      this.showDropDown();
-    } else {
-      setTimeout(() => { this.animateOut() }, 500);
-    }
+  awaitAnimateOut = () => {
+    setTimeout(() => { this.animateOut() }, 500);
   }
 
   render() {
@@ -74,14 +81,19 @@ class SideBar extends Component {
           </div>
         </div>
         <ul className='sidebar_ul'>
+<<<<<<< HEAD
+          <li className='sidebar_li'>
+            <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/' exact activeClassName='active'>
+=======
           <li className='sidebar_li' onClick={() => this.handleNavigation('/')}>
             <NavLink className='sidebar_link' to='/' exact activeClassName='active'>
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
               Projects
               </NavLink>
             <div className='dropdown_icon'>
               {showHypes
-                ? <ion-icon name="arrow-dropup"></ion-icon>
-                : <ion-icon name="arrow-dropdown"></ion-icon>
+                ? <ion-icon name="arrow-dropup" onClick={this.showDropDown}></ion-icon>
+                : <ion-icon name="arrow-dropdown" onClick={this.showDropDown}></ion-icon>
               }
             </div>
           </li>
@@ -105,6 +117,15 @@ class SideBar extends Component {
               ))}
             </ul>
           </nav>
+<<<<<<< HEAD
+          <li className='sidebar_li'>
+            <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/about' exact activeClassName='active'>
+              About Me
+            </NavLink>
+          </li>
+          <li className='sidebar_li'>
+            <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/contact' exact activeClassName='active'>
+=======
           <li className='sidebar_li' onClick={() => this.handleNavigation('/about')}>
             <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
               About Me
@@ -112,6 +133,7 @@ class SideBar extends Component {
           </li>
           <li className='sidebar_li' onClick={() => this.handleNavigation('/contact')}>
             <NavLink onClick={this.checkLocation} className='sidebar_link' to='/contact' exact activeClassName='active'>
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
               Contact
             </NavLink>
           </li>

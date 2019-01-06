@@ -1,0 +1,184 @@
+@import '_Animations';
+@import '_Base';
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #1D252E;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.185);
+  z-index: 3;
+}
+
+.sidebar_header {
+  background: $fadedTextColor;
+  color: $whiteColor;
+  text-align: center;
+  h2 {
+    margin: 0;
+    font-weight: 400;
+    padding-top: 5px;
+  }
+  ion-icon {
+    transition-duration: $transitionDuration;
+    cursor: pointer;
+    padding: 5px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.125);
+    }
+  }
+  span {
+    &:hover {
+      color: $redColor;
+      background-color: $whiteColor;
+    }
+  }
+}
+
+.sidebar_title {
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  padding: 10px 0 40px;
+  font-size: $smallMediumFontSize;
+}
+
+.sidebar_head {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.sidebar_logo {
+  cursor: pointer;
+  font-size: $mediumFontSize;
+  transition-duration: $transitionDuration;
+  padding: 5px;
+}
+
+.sidebar_menu {
+  float: right;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.sidebar_ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar_li {
+  color: $whiteColor;
+  padding: 25px 10px;
+  @media screen and (max-height: 670px) {
+    padding: 10px;
+  }
+}
+
+.sidebar_icon {
+  color: $whiteColor;
+}
+
+.sidebar_link {
+  transition-duration: 200ms;
+  text-decoration: none;
+  color: $whiteColor;
+  padding: 5px 0;
+  font-weight: 100;
+  margin-left: 10px;
+  font-size: $smallMediumFontSize;
+  cursor: pointer;
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
+  }
+  @media screen and (max-height: 670px) {
+    padding: 0;
+  }
+}
+
+.dropdown_icon {
+  cursor: pointer;
+  margin-top: 2px;
+  float: right;
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
+  }
+}
+
+.sidebar_hyper {
+  background-color: #1c1c1c;
+  height: 0;
+  overflow: hidden;
+}
+
+.sidebar_hyper_ul {
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10px 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.hyper_link {
+  transition-duration: $transitionDuration;
+  text-decoration: none;
+  color: $whiteColor;
+  &:hover {
+    transition-duration: $transitionDuration;
+    text-decoration: none;
+    color: $fadedTextColor;
+  }
+}
+
+.bottom_section {
+  bottom: 20px;
+}
+
+.slidein {
+  @include animation('slide_in 200ms forwards');
+}
+
+.slideOut {
+  @include animation('slide_out 200ms forwards');
+}
+
+.dropDownOpen {
+  @include animation('drop_down_open 200ms forwards');
+}
+
+.dropDownClose {
+  @include animation('drop_down_close 200ms forwards');
+}
+
+.resume_container {
+  display: flex;
+  align-items: center;
+  color: $whiteColor;
+  padding: 25px 0 25px 20px;
+  font-size: $smallMediumFontSize;
+  cursor: pointer;
+  text-decoration: none;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    transition: 200ms ease-in-out;
+    color: $redColor;
+  }
+}
+
+.download_icon {
+  font-size: 26px;
+  margin-left: auto;
+  margin-right: 10px;
+}

@@ -1,0 +1,173 @@
+@import '_Animations';
+@import '_Base';
+.about {
+  background: $whiteColor;
+}
+
+.about_intro {
+  height: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  background: url('../Images/aboutBackground.jpg');
+  justify-content: center;
+  align-items: center;  
+}
+
+.about_title_container {
+  text-align: center;
+  padding: 13px;
+  font-size: $mediumFontSize;
+  color: $blackColor;
+  @media screen and (max-width: $mediumDevices) {
+    h1 {
+      padding: 13px 10px;
+      font-size: $mediumFontSize;
+    }
+  }
+}
+
+.about_title {
+  @include animation('scale_in 300ms forwards 300ms');
+  transform: scale(0);
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.about_title_underline {
+  height: 5px;
+  width: 0;
+  background: $blackColor;
+  margin: 0 auto;
+  @include animation('animate_line 300ms forwards 600ms');
+}
+
+.about_background_content {
+  padding: 160px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  @media screen and (max-width: $mediumDevices) {
+    flex-direction: column;
+    padding: 60px;
+  }
+}
+
+.about_me_in_mexico {
+  border-radius: 5px;
+  width: 50%;
+  height: auto;
+  @media screen and (max-width: $mediumDevices) {
+    display: none;
+  }
+}
+
+.about_me_desc {
+  font-weight: $fontWeightThin;
+  line-height: 40px;
+  font-size: $mediumLargeFontSize;
+  margin-left: 100px;
+  @media screen and (max-width: $largeDevices) {
+    line-height: 30px;
+    font-size: $buttonFontSize;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    line-height: 40px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.my_work_container {
+  box-sizing: border-box;
+  background: url('../Images/aboutBackground.jpg');
+  text-align: center;
+  padding: 100px 0 100px;
+}
+
+.my_work_cards_container {
+  color: $whiteColor;
+  display: flex;
+  flex-wrap: wrap;
+  div:last-child {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.my_work_card {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 0 22%;
+  padding: 80px 20px;
+  margin: 0 30px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  h1 {
+    color: $blackColor;
+    margin-top: 30px;
+  }
+  p {
+    max-width: 300px;
+    font-size: $buttonFontSize;
+    color: $fadedTextColor;
+    margin: 0;
+  }
+  @media screen and (max-width: $largeDevices) {
+    margin: 0 15px;
+    h1 {
+      font-size: $mediumFontSize;
+    }
+  }
+  @media screen and (max-width: $mediumDevices) {
+    flex: 1 1 100%;
+    margin: 0 30px 30px;
+    padding: 25px 20px;
+  }
+}
+
+.my_work_img {
+  height: 180px;
+  @media screen and (max-width: $largeDevices) {
+    height: 150px;
+  }
+  @media screen and (max-width: $mediumDevices) {
+    height: 180px;
+  }
+}
+
+.my_skills_container {
+  box-sizing: border-box;
+  width: 80%;
+  background: $whiteColor;
+  margin: 0 auto;
+  padding: 100px 0 160px;
+  box-shadow: 3px 0 rgba(28, 28, 28, 0.075), -3px 0 0 rgba(28, 28, 28, 0.075);
+  @media screen and (max-width: $mediumDevices) {
+    width: 100%;
+    padding: 100px 0;
+  }
+}
+
+.my_skills_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my_skills_card {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 1 25%;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: $mediumDevices) {
+    h2 {
+      font-size: 20px;
+      white-space: nowrap;
+    }
+  }
+}

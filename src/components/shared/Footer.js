@@ -3,7 +3,7 @@ import { IoMdPhonePortrait, IoMdMail, IoLogoGithub, IoLogoLinkedin } from 'react
 import { NavLink, withRouter } from 'react-router-dom';
 import * as pdfAndIcon from '../../Images/pdfAndIcon.png';
 import * as resumePdf from '../../Images/Resume/NathanSageResume.pdf'
-import '../../styles/Footer.css';
+import '../../styles/Footer.scss';
 
 class Footer extends Component {
   render() {
@@ -24,8 +24,8 @@ class Footer extends Component {
           <div className='footer_right_body'>
             <div className='footer_rb_content'>
               <p>Let's Connect</p>
-              <a onClick={() => this.props.openLink('tel:1-360-349-6448')}>+1 (360) 349-6448</a>
-              <a onClick={() => this.props.openLink('tel:1-360-349-6448')}>sagenate24@gmail.com</a>
+              <a href='tel:1-360-349-6448'>+1 (360) 349-6448</a>
+              <a href='mailto:sagenate24@gmail.com'>sagenate24@gmail.com</a>
             </div>
             <div className='footer_rb_content'>
               <p>Recent Projects</p>
@@ -44,10 +44,15 @@ class Footer extends Component {
             </div>
             <div className='footer_rb_content'>
               <div className='footer_rb_content_links'>
+
                 <IoLogoLinkedin className='footer_icon' onClick={() => this.props.openLink('https://www.linkedin.com/in/nathan-sage-689296163/')} />
-                <IoMdMail className='footer_icon' onClick={() => this.props.openLink('mailto:sagenate24@gmail.com')} />
+                <a className='footer_icon' href='mailto:sagenate24@gmail.com'>
+                  <IoMdMail />
+                </a>
                 <IoLogoGithub className='footer_icon' onClick={() => this.props.openLink('https://github.com/sagenate24')} />
-                <IoMdPhonePortrait className='footer_icon' onClick={() => this.props.openLink('tel:1-360-349-6448')} />
+                <a className='footer_icon' href='tel:1-360-349-6448'>
+                  <IoMdPhonePortrait />
+                </a>
               </div>
             </div>
           </div>

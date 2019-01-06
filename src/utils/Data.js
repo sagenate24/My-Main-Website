@@ -3,14 +3,16 @@ import * as cfc1 from '../Images/cfc1.jpeg';
 import * as cfc2 from '../Images/cfc2.jpeg';
 import * as cfc3 from '../Images/cfc3.jpeg';
 import * as flashImg from '../Images/flashcardsphones.png';
+import * as flashCards1 from '../Images/flashCards1.jpg'
+import * as flashCards2 from '../Images/flashCards2.jpeg'
 import * as wyrImg from '../Images/wyr.png';
 import * as wyr1 from '../Images/wyr1.jpeg';
 import * as wyr2 from '../Images/wyr2.jpeg';
 import * as wyr3 from '../Images/wyr3.jpeg';
 import * as myReadsImg from '../Images/myreads.png';
-import * as myReads1 from '../Images/myReads1.jpeg';
-import * as myReads2 from '../Images/myReads2.jpeg';
-import * as myReads3 from '../Images/myReads3.jpeg';
+import * as myReads1 from '../Images/myReads1.png';
+import * as myReads2 from '../Images/myReads2.png';
+import * as myReads3 from '../Images/myReads3.png';
 import * as jammingImg from '../Images/jamming.png';
 import * as jamming1 from '../Images/jamming1.jpeg';
 import * as jamming2 from '../Images/jamming2.jpeg';
@@ -20,9 +22,6 @@ import * as devour1 from '../Images/devour1.jpeg';
 import * as devour2 from '../Images/devour2.jpeg';
 import * as devour3 from '../Images/devour3.jpeg';
 
-import * as flashcardsImg1 from '../Images/flashcards1.jpeg';
-import * as flashcardsImg2 from '../Images/flashcards2.png';
-
 const posts = [
   {
     id: 'secondStep',
@@ -31,12 +30,12 @@ const posts = [
     datePosted: '3 Months',
     image: ssImg,
     shortDescripion: 'Front End Developer for the CFC helping re-brand their new website Second Step.',
-    description: '',
+    description: 'Worked as a Front End Developer on the Committee For Children’s react team, tasked with rewriting their existing website into a React application.',
     link: 'https://www.secondstep.org/',
     images: [
       {
         id: 1,
-        imageUrl: cfc1,
+        imageUrl: cfc3,
         alt: 'second step 1'
       },
       {
@@ -46,7 +45,7 @@ const posts = [
       },
       {
         id: 3,
-        imageUrl: cfc3,
+        imageUrl: cfc1,
         alt: 'second step 3'
       },
     ],
@@ -55,12 +54,11 @@ const posts = [
   {
     id: 'flashCards',
     name: 'Flash Cards',
-    type: 'MOBILE APPLICATION',
+    type: 'Academic / Personal Project',
     datePosted: 'September 25, 2018',
     image: flashImg,
     shortDescripion: 'Mobile application built in React Native that allows users to study collections of flashcards and more!',
-    description: 'Mobile application built in React Native that allows users to study collections of flashcards and more!',
-    techUsed: 'React, React Native, Redux, JavaScript, Babel, HTML5, CSS3, Expo, Xcode.',
+    description: 'Mobile application that allows users to study collections of flashcards and more! Built in React, React Native, and Redux',
     links: [
       { store: 'Apple', url: 'https://itunes.apple.com/us/app/flashcards-study-more/id1436666696?ls=1&mt=8' },
       { store: 'Android', url: 'https://play.google.com/store/apps/details?id=org.nathansage.flashcards' }
@@ -68,18 +66,13 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashcardsImg1,
-        alt: 'google play store'
+        imageUrl: flashCards1,
+        alt: 'Apple screen shots of app'
       },
       {
         id: 2,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
-      },
-      {
-        id: 3,
-        imageUrl: flashcardsImg2,
-        alt: 'home page of app'
+        imageUrl: flashCards2,
+        alt: 'Android screen shots of app'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/Flash-Cards',
@@ -87,11 +80,11 @@ const posts = [
   {
     id: 'wouldYouRather',
     name: 'Would You Rather',
+    type: 'Academic / Personal Project',
     datePosted: 'July 26, 2018',
     image: wyrImg,
     shortDescripion: 'Choose your best answer in Would You Rather',
-    description: 'Decide between one of two difficult scenarios in th asked in the form of option one or option two. The app starts off at the sign in screen where they are asked to choose a character to log in as. Once the character is chosen, they get redirected to their unanswered polls. Each poll links to a specific question where they can choose which answer they feel is best. All questions that have been answered will display results from all users answers. The user can also view previous results at the answered polls section on the homepage. These are just a few features. Go check it out!',
-    techUsed: 'React, Redux, JavaScript, Babel, Webpack, HTML5, CSS3, AWS S3.',
+    description: 'Fun and interactive game posing questions in the form of "would you rather". Built in React, JavaScript(es6), and Redux.',
     link: 'http://wouldyourathergame.s3-website.us-east-2.amazonaws.com/#/',
     images: [
       {
@@ -115,11 +108,11 @@ const posts = [
   {
     id: 'MyReads',
     name: 'MyReads',
+    type: 'Academic / Personal Project',
     datePosted: 'June 20, 2018',
     image: myReadsImg,
     shortDescripion: 'Book tracking made easy with MyReads',
-    description: "MyReads, an app that lets you track books you've read, books you are currently reading, and want to read! Awesome right? This web application consists of three shelve categories labeled as ‘Currently Reading’, ‘Want To Read’, and ‘Read’. When you have finished a book that you have on your ‘Currently Reading’ shelf, there’s a drop down icon that allows you to move that book into any of the other two shelves provided, as well as an option to delete the book entirely. To access the search page click the search icon in the bottom right corner. Search results show up automatically as the as you type.",
-    techUsed: 'React, JavaScript, Babel, HTML5, CSS3, Udacity’s custom api, AWS S3.',
+    description: 'Book tracker application using a custom API provided by Udacity. Built in React and Javascript(es6), and CSS3',
     link: 'http://www.myreadswebsite.com1.s3-us-west-2.amazonaws.com/index.html#/',
     images: [
       {
@@ -143,11 +136,11 @@ const posts = [
   {
     id: 'Jamming',
     name: 'Jamming',
+    type: 'Academic / Personal Project',
     datePosted: 'May 8, 2018',
     image: jammingImg,
     shortDescripion: 'Create new playlists for your Spotify account',
-    description: 'Jamming is used with the Spotify API. To use this app you will need to login with your spotify account. The first feature you will see is the search input field where you can type in a name of an artist or song to get a list of songs from Spotify. You can add songs to the ‘new playlist’ feature, give that playlist a name, and save it directly to your Spotify account. Further down the page shows all your current playlists and songs on Spotify. Every track has an audio feature to play a thirty second preview. All you have to do is click on the image! Songs that do not contain audio will show a disabled icon on hover. Enjoy!',
-    techUsed: 'React, JavaScript, Babel, Webpack, HTML5, CSS3, Spotify Web API, AWS S3.',
+    description: 'Music application that allows you to add playlist directly to your Spotify account and more. Built in React using Spotify\'s Web API',
     link: 'http://jamming.nathansageprojects.com.s3-website.us-east-2.amazonaws.com/#/',
     images: [
       {
@@ -171,11 +164,11 @@ const posts = [
   {
     id: 'devour',
     name: 'devour',
+    type: 'Academic / Personal Project',
     datePosted: 'April 28, 2018',
     image: devourImg,
     shortDescripion: 'Hungry?... Use devour to find great resturaunts near you',
-    description: 'devour’ lets you search for businesses using the Yelp API. The first search field is for the name of a company, type of company, or general input such as ‘food near me’. The second search field is for the desired location. Search results show all relevant businesses with their cover photo, name, street address, business type, overall ratings on Yelp, number of reviews, and the overall price based on how many cash emojis are presented. If you are trying to find something local, researching the best eats, or even looking for a fun interactive experience, then look no further! You will find everything you desire in this web application!',
-    techUsed: 'React, JavaScript, Babel, Webpack, HTML5, CSS3, Yelp Web API, AWS S3.',
+    description: 'Search for restaurants and businesses around the world. Built in React and Javascript with data provided by Yelp',
     link: 'http://devour.nathansageprojects.com.s3-website.us-east-2.amazonaws.com/',
     images: [
       {
@@ -199,5 +192,5 @@ const posts = [
 ];
 
 export function getPosts() {
-  return new Promise((res) => res({posts: posts}));
+  return new Promise((res) => res({ posts: posts }));
 }

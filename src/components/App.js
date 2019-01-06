@@ -1,6 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import ProgressBar from "react-progress-bar-plus";
+<<<<<<< HEAD
+import "../styles/reactProgressBar.min.css";
+import { getPosts } from '../utils/Data';
+import "../styles/App.scss";
+
+import NavBar from "./NavBar";
+import About from "./About";
+import ProjectList from "./ProjectList";
+=======
 import "react-progress-bar-plus/lib/progress-bar.css";
 import { getPosts } from '../utils/Data';
 import "../styles/App.css";
@@ -8,6 +17,7 @@ import "../styles/App.css";
 import NavBar from "./NavBar";
 import About from "./About";
 import BlogList from "./BlogList";
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
 import Contact from "./Contact";
 import SideBar from "./SideBar";
 import IntroLanding from "./IntroLanding";
@@ -24,7 +34,10 @@ class App extends Component {
   componentDidMount() {
     getPosts()
       .then(results => {
+<<<<<<< HEAD
+=======
         console.log(results)
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
         this.setState({ data: results });
       })
       .then(() => {
@@ -69,9 +82,13 @@ class App extends Component {
           {this.showLoading()}
           {!loading ? (
             <div>
+<<<<<<< HEAD
+              <NavBar openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick} />
+=======
               <div className="app_header_container">
                 <NavBar location={currentPath} openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick}/>
               </div>
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
               <div className="app_content">
                 {showSideBar ? (
                   <SideBar
@@ -87,9 +104,15 @@ class App extends Component {
                     render={() => (
                       <div className='home_container'>
                         <div className='introLandingWrapper'>
+<<<<<<< HEAD
+                          <IntroLanding />
+                        </div>
+                        <ProjectList blogs={data.posts} />
+=======
                         <IntroLanding />
                         </div>
                         <BlogList blogs={data.posts} location={currentPath}/>
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
                       </div>
                     )}
                   />
@@ -97,12 +120,23 @@ class App extends Component {
                     path="/about"
                     render={() => (
                       <div className='about_container'>
+<<<<<<< HEAD
+                        <About aboutMe={data.aboutMe} langs={data.languages} />
+=======
                         <About aboutMe={data.aboutMe} langs={data.languages} location={currentPath}/>
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
                       </div>
                     )}
                   />
                   <Route
                     path="/contact"
+<<<<<<< HEAD
+                    render={() => <Contact contact={data.contactInfo} />}
+                  />
+                </Switch>
+              </div>
+              <Footer openLink={(href) => this.openLink(href)} />
+=======
                     render={() => <Contact contact={data.contactInfo} location={currentPath}/>}
                   />
                 </Switch>
@@ -112,6 +146,7 @@ class App extends Component {
                 location={this.props.location}
                 history={this.props.history}
               />
+>>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
             </div>
           ) : null}
         </div>
