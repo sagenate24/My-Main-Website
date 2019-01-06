@@ -9,7 +9,7 @@ import * as wyrImg from '../Images/wyr.png';
 import * as wyr1 from '../Images/wyr1.jpeg';
 import * as wyr2 from '../Images/wyr2.jpeg';
 import * as wyr3 from '../Images/wyr3.jpeg';
-import * as myReadsImg from '../Images/myreads.png';
+import * as myReadsImg from '../Images/myReads.png';
 import * as myReads1 from '../Images/myReads1.png';
 import * as myReads2 from '../Images/myReads2.png';
 import * as myReads3 from '../Images/myReads3.png';

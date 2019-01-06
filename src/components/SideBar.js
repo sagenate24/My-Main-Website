@@ -66,7 +66,6 @@ class SideBar extends Component {
   render() {
     const { showHypes } = this.state;
     const { blogs } = this.props;
-    console.log(blogs[0].id)
 
     return (
       <div className='sidebar' ref={this.sidebarContainer}>
