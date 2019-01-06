@@ -1,0 +1,46 @@
+@import '_Animations';
+@import '_Base';
+
+.loader_container {
+  opacity: 0;
+  @include animation('fade_in 200ms forwards');
+  animation-delay: 200ms;
+  align-self: flex-end;
+  margin-top: -45px;
+  margin-right: 70px;
+  padding: 5.5px 0;
+}
+
+.loader {
+  background: transparent !important;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-right: -8px;
+  border-radius: 100%;
+  border: 2px solid;
+  border-color: $whiteColor;
+  border-bottom-color: transparent;
+  display: block;
+  @include animation('rotate 500ms 0s infinite linear both');
+  align-self: flex-end;
+}
+
+.checkmark {
+  background: #689f38;
+  width: 6px;
+  height: 4px;
+  margin: 15px 5px 15px 0;
+  transform: rotate(45deg);
+  @include animation('checkmark_width 150ms linear forwards');
+  &:after {
+    background: #689f38;
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 0;
+    @include animation('checkmark_height 150ms linear 150ms forwards');
+  }
+}

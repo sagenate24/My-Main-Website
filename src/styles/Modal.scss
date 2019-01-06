@@ -1,0 +1,173 @@
+@import '_Animations';
+@import '_Base';
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.8);
+  @include animation('fade_in 400ms forwards');
+}
+
+.fade_out_modal {
+  @include animation('fade_out 400ms forwards');
+}
+
+.modal_container {
+  position: fixed;
+  background: $whiteColor;
+  width: 700px;
+  height: auto;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -8%);
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.modal_footer {
+  padding: 20px 30px;
+}
+
+.modal_footer_header {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.301);
+  padding: 10px 0;
+  h2 {
+    margin: 10px 0;
+    color: $blackColor;
+    font-size: $mediumFontSize;
+  }
+  span {
+    color: gray;
+    font-size: $smallFontSize;
+  }
+  @media screen and (max-width: $smallDevices) {
+    h2 {
+      font-size: $smallMediumFontSize;
+    }
+  }
+}
+
+.modal_footer_bottom {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+
+.modal_view_button {
+  transition: 100ms ease-in;
+  cursor: pointer;
+  padding: $buttonPadding;
+  display: flex;
+  align-items: center;
+  color: $whiteColor;
+  justify-content: center;
+  border: 2px solid transparent;
+  span {
+    font-size: $buttonFontSize;
+    margin-left: 6px;
+  }
+  &:hover {
+    background: $whiteColor;
+    color: $blackColor;
+  }
+  @media screen and (max-width: 375px) {
+    padding: 8px 10px 8px 10px;
+  }
+}
+
+.modal_regular_button {
+  background: $redColor;
+  &:hover {
+    border: 2px solid $redColor;
+  }
+}
+
+.modal_mobile_buttons {
+  display: flex;
+}
+
+.apple_button {
+  background: $blueColor;
+  &:hover {
+    border: 2px solid $blueColor;
+  }
+}
+
+.google_button {
+  background: $greenColor;
+  margin-left: 20px;
+  &:hover {
+    border: 2px solid $greenColor;
+  }
+}
+
+.modal_open_icon {
+  font-size: 20px;
+}
+
+.modal_close_icon {
+  transition: color 150ms linear;
+  font-size: $LargeFontSize;
+  color: $blackColor;
+  cursor: pointer;
+  &:hover {
+    color: $redColor;
+  }
+}
+
+// contact modal
+.contact_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.6);
+  @include animation('fade_in 300ms forwards');
+}
+
+.close_contact_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.6);
+  @include animation('fade_out 300ms forwards');
+}
+
+.contact_modal_main {
+  position: fixed;
+  background: $whiteColor;
+  width: 460px;
+  box-sizing: border-box;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h2 {
+    color: $blackColor !important;
+    text-align: center;
+  }
+  @media only screen and (max-width: 520px) {
+    width: calc(100% - 60px);
+  }
+}
+
+.party_popper_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.party_popper {
+  width: 150px;
+  margin: 0 0 20px;
+}

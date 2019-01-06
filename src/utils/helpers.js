@@ -1,18 +1,14 @@
-import { getMe, getPosts, getContactInfo, getEducationData } from './Data';
-import { getLanguagesInfo } from './LangData';
+export const isPassive = () => {
+  let supportsPassive = false;
 
-export const handleInitialData = () => {
- return Promise.all([
-   getMe(),
-   getPosts(),
-   getContactInfo(),
-   getLanguagesInfo(),
-   getEducationData(),
- ]).then(([aboutMe, posts, contactInfo, languages, education]) => ({
-   aboutMe,
-   posts,
-   contactInfo,
-   languages,
-   education,
- }));
+    try {
+      var opts = Object.defineProperty({}, 'passive', {
+        get: function () {
+          supportsPassive = true;
+        }
+      });
+      window.addEventListener("test", null, opts);
+    } catch (e) { }
+
+    return supportsPassive;
 }

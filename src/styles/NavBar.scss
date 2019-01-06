@@ -1,0 +1,52 @@
+@import '_Animations';
+@import '_Base';
+
+.nav_container {
+  padding: 15px 15px 10px;
+  color: $whiteColor;
+  z-index: 3;
+  text-align: center;
+  max-width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: all 150ms linear;
+  a {
+    color: inherit;
+  }
+}
+
+.nav_title_container {
+  font-size: $smallFontSize;
+}
+
+.nav_title {
+  display: inline-block;
+  margin: 7px 0 0 75px;
+  text-align: left;
+  cursor: pointer;
+
+  @media screen and (max-width: $mediumDevices) {
+    display: none;
+  }
+}
+
+.nav_logo {
+  display: block;
+  cursor: pointer;
+  font-size: $iconSize;
+  transition-duration: $transitionDuration;
+  padding: 5px;
+
+  &:hover {
+    background: $fadedTextColor;
+  }
+}
+
+.first_logo {
+  float: left;
+}
+
+.last_logo {
+  float: right;
+}
