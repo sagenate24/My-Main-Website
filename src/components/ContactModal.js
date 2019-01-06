@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import * as party from '../Images/partypopper.png'
-<<<<<<< HEAD
 import '../styles/Modal.scss'
-=======
-import '../styles/ContactModal.css'
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
 
 class ContactModal extends Component {
   state = {

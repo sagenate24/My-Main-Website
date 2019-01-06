@@ -16,9 +16,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/src/utils/SecuredData.js
 /package-lock.json
-secret.js
 
 npm-debug.log*
 yarn-debug.log*

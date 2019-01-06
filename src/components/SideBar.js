@@ -23,15 +23,12 @@ class SideBar extends Component {
     const sideBar = this.sidebarContainer.current;
     sideBar.classList.remove('slideOut')
     sideBar.classList.add('slidein')
-<<<<<<< HEAD
 
     if (window.location.pathname !== '/') {
       document.querySelector('.dropdown_icon').style.display = 'none';
     } else {
       document.querySelector('.dropdown_icon').style.display = 'initial';
     }
-=======
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
   }
 
   animateOut = () => {
@@ -81,13 +78,8 @@ class SideBar extends Component {
           </div>
         </div>
         <ul className='sidebar_ul'>
-<<<<<<< HEAD
           <li className='sidebar_li'>
             <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/' exact activeClassName='active'>
-=======
-          <li className='sidebar_li' onClick={() => this.handleNavigation('/')}>
-            <NavLink className='sidebar_link' to='/' exact activeClassName='active'>
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
               Projects
               </NavLink>
             <div className='dropdown_icon'>
@@ -117,7 +109,6 @@ class SideBar extends Component {
               ))}
             </ul>
           </nav>
-<<<<<<< HEAD
           <li className='sidebar_li'>
             <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/about' exact activeClassName='active'>
               About Me
@@ -125,15 +116,6 @@ class SideBar extends Component {
           </li>
           <li className='sidebar_li'>
             <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/contact' exact activeClassName='active'>
-=======
-          <li className='sidebar_li' onClick={() => this.handleNavigation('/about')}>
-            <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
-              About Me
-            </NavLink>
-          </li>
-          <li className='sidebar_li' onClick={() => this.handleNavigation('/contact')}>
-            <NavLink onClick={this.checkLocation} className='sidebar_link' to='/contact' exact activeClassName='active'>
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
               Contact
             </NavLink>
           </li>

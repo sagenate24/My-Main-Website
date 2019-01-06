@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { SectionTitle } from './shared/SectionTitle'
 import Loader from './shared/loader'
 import ContactModal from './ContactModal'
-<<<<<<< HEAD
 import '../styles/Contact.scss';
-=======
-import '../styles/Contact.css';
-import axios from 'axios'
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
 
 class Contact extends Component {
   constructor(props) {
@@ -26,11 +21,8 @@ class Contact extends Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
     document.querySelector('.nav_container').style.position = 'fixed';
     document.querySelector('.nav_container').style.background = '#1D252E';
-=======
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
     window.scrollTo(0, 0);
   }
 
@@ -38,7 +30,6 @@ class Contact extends Component {
     this.setState({ [e.target.name]: e.target.value })
     if (this.state.emailInvalid) {
       this.checkEmail(e);
-<<<<<<< HEAD
     }
   }
 
@@ -78,42 +69,6 @@ class Contact extends Component {
     }
   }
 
-=======
-    }
-  }
-
-  handleSubmit = async (e) => {
-    e.preventDefault()
-
-    const { name, email, message } = this.state;
-    const button = this.button.current;
-
-    if (button.classList.contains('show_button')) {
-      button.classList.replace('show_button', 'remove_button');
-    } else {
-      button.classList.add('remove_button');
-    }
-
-    this.setState({ loading: true });
-
-    const form = await axios.post('/api/form', {
-      name,
-      email,
-      message
-    }).then(() => {
-      document.querySelector('.loader').classList.replace('loader', 'checkmark');
-
-      setTimeout(() => {
-        this.openModal()
-      }, 500)
-    })
-      .catch((error) => {
-        alert('Sorry, your message did not go through ☹️. Please try again!')
-        this.resetElements(true)
-      })
-  }
-
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
   checkEmail = (e) => {
     if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) {
       this.setState({ emailInvalid: false })
@@ -159,11 +114,7 @@ class Contact extends Component {
 
     return (
       <div className='contact'>
-<<<<<<< HEAD
         <SectionTitle padding='60px 0 20px' color='#000'>Contact Me</SectionTitle>
-=======
-        <SectionTitle padding='60px 0 20px' color='#f8f8f8'>Contact Me</SectionTitle>
->>>>>>> bd3285eaf8a64d2a1f9e5f4eba3d1c5320b81282
         <h2>Leave your name, email and a message and i will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
         <form className='contact_form' onSubmit={this.handleSubmit}>
           <input

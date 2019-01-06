@@ -52,7 +52,7 @@ class Project extends React.Component {
           <div className='project_footer'>
             <span>{datePosted}</span>
             {id !== 'secondStep' && (
-              <IoLogoGithub className='github_icon' onClick={() => this.props.openLink(gitHubLink)} />
+              <IoLogoGithub className='github_icon' onClick={() => this.imageLinkToProject(gitHubLink)} />
             )}
           </div>
         </div>

@@ -146,6 +146,7 @@
   transition-duration: $transitionDuration;
   font-size: 20px;
   margin-left: 10px;
+  border-radius: 10px;
   cursor: pointer;
   &:hover {
     transition-duration: $transitionDuration;
