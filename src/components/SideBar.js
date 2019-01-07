@@ -54,7 +54,7 @@ class SideBar extends Component {
       scrollToElement(elemId, -80);
     }
 
-    this.awaitAnimateOut();
+    this.animateOut();
   }
 
   routeChangeWithoutHas = () => {
