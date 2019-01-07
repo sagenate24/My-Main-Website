@@ -37,11 +37,8 @@ class Contact extends Component {
     const { name, email, message } = this.state;
     const button = this.button.current;
 
-    if (button.classList.contains('show_button')) {
-      button.classList.replace('show_button', 'remove_button');
-    } else {
-      button.classList.add('remove_button');
-    }
+    button.classList.remove('show_button');
+    button.classList.add('remove_button');
 
     this.setState({ loading: true });
 
@@ -98,7 +95,8 @@ class Contact extends Component {
   }
 
   resetElements = (err) => {
-    this.button.current.classList.replace('remove_button', 'show_button');
+    this.button.current.classList.remove('remove_button');
+    this.button.current.classList.add('show_button');
     if (!err) document.querySelector('.checkmark').classList.replace('checkmark', 'loader')
 
     this.setState({

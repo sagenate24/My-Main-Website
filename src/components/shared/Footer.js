@@ -20,7 +20,7 @@ class Footer extends Component {
           <p onClick={() => this.props.openLink(resumePdf)} className='footer_resume_text'>Nathans Resume (PDF)</p>
         </div>
         <div className='footer_right'>
-          <p className='footer_outro_text'>As a developer, I have a passion for creating new and exciting experiences.<br /> Lets get together!</p>
+          <p className='footer_outro_text'>As a developer, I have a passion for creating new and exciting experiences.<br /> Let's get together!</p>
           <div className='footer_right_body'>
             <div className='footer_rb_content'>
               <p>Let's Connect</p>

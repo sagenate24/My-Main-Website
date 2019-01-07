@@ -8,7 +8,9 @@ class ProjectList extends Component {
     if (window.location.hash.length) {
       const projectId = window.location.hash.replace('#', '');
 
-      scrollToElement(projectId, -80);
+      setTimeout(() => {
+        scrollToElement(projectId, -80);
+      }, 300)
     }
   }
 
