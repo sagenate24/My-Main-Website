@@ -35,6 +35,15 @@ class App extends Component {
   }
 
   handleMenuClick = () => {
+    if (this.state.showSideBar) {
+      document.querySelector('.sidebar').classList.remove('slidein')
+      document.querySelector('.sidebar').classList.add('slideOut')
+      document.querySelector('.sidebar_overlay').style.display = 'none';
+    } else {
+      document.querySelector('.sidebar').classList.remove('slideOut')
+      document.querySelector('.sidebar').classList.add('slidein')
+      document.querySelector('.sidebar_overlay').style.display = 'initial';
+    }
     this.setState(prevState => ({
       showSideBar: !prevState.showSideBar
     }));
@@ -59,7 +68,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, showSideBar, data } = this.state;
+    const { loading, data } = this.state;
 
     return (
       <Fragment>
@@ -69,13 +78,11 @@ class App extends Component {
             <div>
               <NavBar openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick} />
               <div className="app_content">
-                {showSideBar ? (
-                  <SideBar
-                    blogs={data.posts}
-                    contact={data.contactInfo}
-                    closeSideBar={this.handleMenuClick}
-                  />
-                ) : null}
+                <SideBar
+                  blogs={data.posts}
+                  contact={data.contactInfo}
+                  closeSideBar={this.handleMenuClick}
+                />
                 <Switch>
                   <Route
                     path="/"

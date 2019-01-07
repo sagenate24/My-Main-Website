@@ -75,7 +75,6 @@
   border: 2px solid transparent;
   span {
     font-size: $buttonFontSize;
-    margin-left: 6px;
   }
   &:hover {
     background: $whiteColor;
@@ -88,6 +87,9 @@
 
 .modal_regular_button {
   background: $redColor;
+  span {
+    margin-left: 6px;
+  }
   &:hover {
     border: 2px solid $redColor;
   }

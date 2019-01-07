@@ -4,7 +4,7 @@ import * as me from '../Images/me.png';
 import * as resumePdf from '../Images/Resume/NathanSageResume.pdf'
 import { IoMdMenu } from 'react-icons/io'
 import { MdOpenInNew } from 'react-icons/md'
-import { Link } from 'react-scroll';
+import { scrollToElement } from '../utils/scroller';
 import '../styles/SideBar.scss';
 
 class SideBar extends Component {
@@ -20,15 +20,7 @@ class SideBar extends Component {
   }
 
   componentDidMount() {
-    const sideBar = this.sidebarContainer.current;
-    sideBar.classList.remove('slideOut')
-    sideBar.classList.add('slidein')
-
-    if (window.location.pathname !== '/') {
-      document.querySelector('.dropdown_icon').style.display = 'none';
-    } else {
-      document.querySelector('.dropdown_icon').style.display = 'initial';
-    }
+    document.querySelector('.sidebar_overlay').style.display = 'none';
   }
 
   animateOut = () => {
@@ -46,21 +38,28 @@ class SideBar extends Component {
     const node = this.dropDown.current;
     const { showHypes } = this.state;
 
-    if (window.location.pathname === '/') {
-      if (!showHypes) {
-        node.classList.remove('dropDownClose');
-        node.classList.add('dropDownOpen');
-        this.setState({ showHypes: true });
-      } else {
-        node.classList.remove('dropDownOpen');
-        node.classList.add('dropDownClose');
-        this.setState({ showHypes: false });
-      }
+    if (!showHypes) {
+      node.classList.remove('dropDownClose');
+      node.classList.add('dropDownOpen');
+      this.setState({ showHypes: true });
+    } else {
+      node.classList.remove('dropDownOpen');
+      node.classList.add('dropDownClose');
+      this.setState({ showHypes: false });
     }
   }
 
-  awaitAnimateOut = () => {
-    setTimeout(() => { this.animateOut() }, 500);
+  handleHyperLinks = (elemId) => {
+    if (window.location.pathname === '/') {
+      scrollToElement(elemId, -80);
+    }
+
+    this.awaitAnimateOut();
+  }
+
+  routeChangeWithoutHas = () => {
+    window.scrollTo(0, 0);
+    this.animateOut();
   }
 
   render() {
@@ -79,13 +78,13 @@ class SideBar extends Component {
           </div>
           <ul className='sidebar_ul'>
             <li className='sidebar_li'>
-              <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/' exact activeClassName='active'>
+              <NavLink onClick={this.routeChangeWithoutHas} className='sidebar_link' to='/' exact activeClassName='active'>
                 Projects
               </NavLink>
-              <div className='dropdown_icon'>
+              <div className='dropdown_icon' onClick={this.showDropDown}>
                 {showHypes
-                  ? <ion-icon name="arrow-dropup" onClick={this.showDropDown}></ion-icon>
-                  : <ion-icon name="arrow-dropdown" onClick={this.showDropDown}></ion-icon>
+                  ? <ion-icon name="arrow-dropup"></ion-icon>
+                  : <ion-icon name="arrow-dropdown"></ion-icon>
                 }
               </div>
             </li>
@@ -93,31 +92,22 @@ class SideBar extends Component {
               <ul className='sidebar_hyper_ul'>
                 {blogs.map(item => (
                   <li key={item.id}>
-                    <Link
-                      onClick={() => {
-                        setTimeout(() => { this.animateOut() }, 1000);
-                      }}
-                      href={`#${item.id}`}
-                      className='hyper_link'
-                      to={item.id}
-                      spy={true}
-                      smooth={true}
-                      offset={-80}
-                      duration={600}
-                    >{item.name}</Link>
+                    <NavLink onClick={() => this.handleHyperLinks(item.id)} className='hyper_link' to={`/#${item.id}`} exact activeClassName='active'>
+                      {item.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
             </nav>
-            <li className='sidebar_li'>
-              <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/about' exact activeClassName='active'>
+            <li className='sidebar_li' onClick={this.routeChangeWithoutHas}>
+              <NavLink className='sidebar_link' to='/about' exact activeClassName='active'>
                 About Me
-            </NavLink>
+              </NavLink>
             </li>
-            <li className='sidebar_li'>
-              <NavLink onClick={this.awaitAnimateOut} className='sidebar_link' to='/contact' exact activeClassName='active'>
+            <li className='sidebar_li' onClick={this.routeChangeWithoutHas}>
+              <NavLink className='sidebar_link' to='/contact' exact activeClassName='active'>
                 Contact
-            </NavLink>
+              </NavLink>
             </li>
             <a className='resume_container' href={resumePdf} target="_blank" rel="noopener noreferrer">
               <p>Resume (pdf)</p>

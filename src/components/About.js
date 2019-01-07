@@ -8,7 +8,6 @@ class About extends React.PureComponent {
   componentDidMount() {
     document.querySelector('.nav_container').style.background = '#1D252E';
     document.querySelector('.nav_container').style.position = 'fixed';
-    window.scrollTo(0, 0);
   }
 
   render() {

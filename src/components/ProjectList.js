@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Project from './Project';
 import '../styles/ProjectStyles.scss';
+import { scrollToElement } from '../utils/scroller';
 
 class ProjectList extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    if (window.location.hash.length) {
+      const projectId = window.location.hash.replace('#', '');
+
+      scrollToElement(projectId, -80);
+    }
   }
 
   render() {

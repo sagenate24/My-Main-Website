@@ -10,6 +10,10 @@ class ProjectModal extends Component {
     this.props.closeModal();
   }
 
+  openLink = (url) => {
+    window.open(url, '_blank');
+  }
+
   render() {
     const { blog } = this.props;
 
@@ -35,15 +39,15 @@ class ProjectModal extends Component {
             <div className='modal_footer_bottom'>
               {blog.links ? (
                 <div className='modal_mobile_buttons'>
-                  <div className='modal_view_button apple_button' onClick={() => { }}>
+                  <div className='modal_view_button apple_button' onClick={() => { this.openLink(blog.links[0].url) }}>
                     <span>App Store</span>
                   </div>
-                  <div className='modal_view_button google_button' onClick={() => { }}>
+                  <div className='modal_view_button google_button' onClick={() => { this.openLink(blog.links[0].url) }}>
                     <span>Play Store</span>
                   </div>
                 </div>
               ) : (
-                  <div className='modal_view_button modal_regular_button' onClick={() => { }}>
+                  <div className='modal_view_button modal_regular_button' onClick={() => { this.openLink(blog.link) }}>
                     <IoMdOpen className='modal_open_icon' />
                     <span>VIEW</span>
                   </div>

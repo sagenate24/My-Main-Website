@@ -27,9 +27,6 @@
   h2 {
     color: $whiteColor;
   }
-  p {
-    color: $fadedTextColor;
-  }
   @media screen and (max-width: $largeDevices) {
     margin: 0 100px 0 0;
     white-space: nowrap;
@@ -129,6 +126,12 @@
 
 .footer_resume_text {
   margin: 0;
+  color: $whiteColor;
+  transition: color 200ms linear;
+  cursor: pointer;
+  &:hover {
+    color: $fadedTextColor;
+  }
 }
 
 .quick_links {

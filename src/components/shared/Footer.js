@@ -17,7 +17,7 @@ class Footer extends Component {
             onClick={() => this.props.openLink(resumePdf)}
             src={pdfAndIcon}
             alt='resume pdf and icon' />
-          <p className='footer_resume_text'>Nathans Resume (PDF)</p>
+          <p onClick={() => this.props.openLink(resumePdf)} className='footer_resume_text'>Nathans Resume (PDF)</p>
         </div>
         <div className='footer_right'>
           <p className='footer_outro_text'>As a developer, I have a passion for creating new and exciting experiences.<br /> Lets get together!</p>
@@ -38,9 +38,9 @@ class Footer extends Component {
             </div>
             <div className='footer_rb_content'>
               <p>Quick Links</p>
-              <NavLink to='/' exact className='quick_links'>Projects</NavLink>
-              <NavLink to='/about' exact className='quick_links'>About Me</NavLink>
-              <NavLink to='/contact' exact className='quick_links'>Contact</NavLink>
+              <NavLink onClick={() => window.scrollTo(0, 0)} to='/' exact className='quick_links'>Projects</NavLink>
+              <NavLink onClick={() => window.scrollTo(0, 0)} to='/about' exact className='quick_links'>About Me</NavLink>
+              <NavLink onClick={() => window.scrollTo(0, 0)} to='/contact' exact className='quick_links'>Contact</NavLink>
             </div>
             <div className='footer_rb_content'>
               <div className='footer_rb_content_links'>

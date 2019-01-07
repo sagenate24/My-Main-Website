@@ -87,8 +87,18 @@
 .sidebar_li {
   color: $whiteColor;
   padding: 25px 10px;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
   @media screen and (max-height: 670px) {
     padding: 15px 10px;
+  }
+  &:hover {
+    .sidebar_link {
+      transition-duration: $transitionDuration;
+      color: $fadedTextColor;
+    }
   }
 }
 
@@ -101,13 +111,13 @@
   text-decoration: none;
   color: $whiteColor;
   padding: 5px 0;
+  box-sizing: border-box;
+  width: 100%;
   font-weight: 100;
   margin-left: 10px;
   font-size: $smallMediumFontSize;
-  cursor: pointer;
-  &:hover {
-    transition-duration: $transitionDuration;
-    color: $fadedTextColor;
+  a {
+    width: 100%;
   }
 }
 
@@ -115,6 +125,9 @@
   cursor: pointer;
   margin-top: 2px;
   float: right;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  align-self: center;
   &:hover {
     transition-duration: $transitionDuration;
     color: $fadedTextColor;

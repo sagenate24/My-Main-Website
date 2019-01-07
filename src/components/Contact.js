@@ -22,7 +22,6 @@ class Contact extends Component {
   componentDidMount() {
     document.querySelector('.nav_container').style.position = 'fixed';
     document.querySelector('.nav_container').style.background = '#1D252E';
-    window.scrollTo(0, 0);
   }
 
   handleChange = (e) => {
@@ -58,6 +57,9 @@ class Contact extends Component {
       if (status === 'success') {
         document.querySelector('.loader').classList.replace('loader', 'checkmark');
         setTimeout(() => { this.openModal() }, 500);
+      } else if (status === 'error') {
+        alert('Sorry, your message did not go through ☹️. Please try again!')
+        this.resetElements(true)
       }
     }
 
@@ -117,7 +119,7 @@ class Contact extends Component {
           <h1 className='contact_title' >Contact Me</h1>
           <div className='contact_title_underline' />
         </div>
-        <h2>Leave your name, email and a message and i will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
+        <h2>Leave your name, email and a message and I will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
         <form className='contact_form' onSubmit={this.handleSubmit}>
           <input
             value={name}

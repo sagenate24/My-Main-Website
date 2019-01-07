@@ -2,6 +2,7 @@ import React from 'react';
 import { IoLogoGithub } from 'react-icons/io'
 import '../styles/ProjectStyles.scss';
 import '../styles/_Animations.scss';
+import { Element } from 'react-scroll'
 
 import ProjectModal from './ProjectModal';
 
@@ -16,14 +17,18 @@ class Project extends React.Component {
 
   openModal = () => {
     const body = document.body;
+    const html = document.querySelector('html');
     body.style.overflow = 'hidden';
+    html.style.overflow = 'hidden';
 
     this.setState({ modalIsOpen: true });
   }
 
   closeModal = () => {
     const body = document.body;
+    const html = document.querySelector('html');
     body.style.overflow = 'auto';
+    html.style.overflow = 'auto';
 
     setTimeout(() => {
       this.setState({ modalIsOpen: false });
@@ -35,7 +40,7 @@ class Project extends React.Component {
     const { modalIsOpen } = this.state;
 
     return (
-      <div className='project' name={name} id={id}>
+      <Element className='project' name={id} id={id}>
         <div className='project_left_container'>
           <h1>{name}</h1>
           <p>{shortDescripion}</p>
@@ -70,7 +75,7 @@ class Project extends React.Component {
             closeModal={this.closeModal}
           />
         )}
-      </div>
+      </Element>
     );
   }
 }
