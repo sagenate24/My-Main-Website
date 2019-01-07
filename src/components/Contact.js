@@ -155,7 +155,9 @@ class Contact extends Component {
             ref={this.button}
             disabled={name === '' || email === '' || message === '' || loading === true}
           >Send</button>
-          <Loader loading={this.state.loading} />
+          <div className='loader-container'>
+            <Loader loading={this.state.loading} />
+          </div>
         </form>
         {modalIsOpen && (
           <ContactModal />
