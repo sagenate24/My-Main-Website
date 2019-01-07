@@ -39,6 +39,7 @@ class Contact extends Component {
 
     button.classList.remove('show_button');
     button.classList.add('remove_button');
+    button.style.display = 'none';
 
     this.setState({ loading: true });
 
@@ -97,6 +98,7 @@ class Contact extends Component {
   resetElements = (err) => {
     this.button.current.classList.remove('remove_button');
     this.button.current.classList.add('show_button');
+    this.button.current.style.display = 'initial';
     if (!err) document.querySelector('.checkmark').classList.replace('checkmark', 'loader')
 
     this.setState({
