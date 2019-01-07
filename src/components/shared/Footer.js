@@ -11,13 +11,13 @@ class Footer extends Component {
       <div className='footer_container'>
         <div className='footer_left'>
           <h2>Nathan Sage</h2>
-          <p>Front End Developer.</p>
+          <p>Front End Developer</p>
           <img
             className='footer_resume_image'
             onClick={() => this.props.openLink(resumePdf)}
             src={pdfAndIcon}
             alt='resume pdf and icon' />
-          <p onClick={() => this.props.openLink(resumePdf)} className='footer_resume_text'>Nathans Resume (PDF)</p>
+          <p onClick={() => this.props.openLink(resumePdf)} className='footer_resume_text'>Nathan's Resume (PDF)</p>
         </div>
         <div className='footer_right'>
           <p className='footer_outro_text'>As a developer, I have a passion for creating new and exciting experiences.<br /> Let's get together!</p>

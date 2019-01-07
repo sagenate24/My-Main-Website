@@ -16,6 +16,11 @@
       color: $fadedTextColor;
     }
   }
+  p {
+    @media screen and (max-width: $mediumDevices) {
+      text-align: center;
+    }
+  }
   @media screen and (max-width: $mediumDevices) {
     flex-direction: column;
   }
@@ -26,6 +31,7 @@
   white-space: nowrap;
   h2 {
     color: $whiteColor;
+    text-align: center;
   }
   @media screen and (max-width: $largeDevices) {
     margin: 0 100px 0 0;

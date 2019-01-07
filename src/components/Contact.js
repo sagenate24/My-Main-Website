@@ -117,7 +117,7 @@ class Contact extends Component {
           <h1 className='contact_title' >Contact Me</h1>
           <div className='contact_title_underline' />
         </div>
-        <h2>Leave your name, email and a message and I will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span>.</h2>
+        <h2>Leave your name, email and a message and I will get back to you as soon as I can <span role='img' aria-label='happy emoji'>😄</span></h2>
         <form className='contact_form' onSubmit={this.handleSubmit}>
           <input
             value={name}

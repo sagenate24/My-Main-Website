@@ -196,12 +196,12 @@
   }
   &:hover {
     transition: 200ms ease-in-out;
-    color: $redColor;
+    color: $fadedTextColor;
   }
 }
 
 .download_icon {
   font-size: 26px;
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 20px;
 }

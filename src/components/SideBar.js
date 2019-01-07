@@ -72,7 +72,9 @@ class SideBar extends Component {
           <div className='sidebar_header'>
             <IoMdMenu className='sidebar_logo sidebar_menu' onClick={() => this.animateOut()} />
             <div className='sidebar_title'>
-              <img alt='funny head' className='sidebar_head' src={me} />
+              <NavLink onClick={this.routeChangeWithoutHas} to='/' exact>
+                <img alt='funny head' className='sidebar_head' src={me} />
+              </NavLink>
               <p>Front End Developer</p>
             </div>
           </div>

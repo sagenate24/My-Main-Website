@@ -12,7 +12,7 @@ class NavBar extends Component {
           <h2 className='nav_title'>Nathan Sage</h2>
         </NavLink>
         <IoLogoGithub className='nav_logo last_logo' onClick={() => this.props.openLink('https://github.com/sagenate24')} />
-        <NavLink to='/contact' exact className='nav_logo last_logo'><IoMdMail /></NavLink>
+        <NavLink to='/contact' exact ><IoMdMail className='nav_logo last_logo'/></NavLink>
         <IoLogoLinkedin className='nav_logo last_logo' onClick={() => this.props.openLink('https://www.linkedin.com/in/nathan-sage-689296163/')} />
       </div>
     );
