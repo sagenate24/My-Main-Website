@@ -74,13 +74,13 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: flashCards1,
-        alt: 'Apple screen shots of app'
+        imageUrl: flashCards2,
+        alt: 'Android screen shots of app'
       },
       {
         id: 2,
-        imageUrl: flashCards2,
-        alt: 'Android screen shots of app'
+        imageUrl: flashCards1,
+        alt: 'Apple screen shots of app'
       },
     ],
     gitHubLink: 'https://github.com/sagenate24/Flash-Cards',

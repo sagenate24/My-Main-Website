@@ -108,7 +108,7 @@
 
 .google_button {
   background: $greenColor;
-  margin-left: 20px;
+  margin-left: 20px !important;
   &:hover {
     border: 2px solid $greenColor;
   }

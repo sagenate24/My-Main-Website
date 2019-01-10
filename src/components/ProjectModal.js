@@ -25,6 +25,7 @@ class ProjectModal extends Component {
             showStatus={false}
             showThumbs={false}
             useKeyboardArrows={true}
+            showIndicators={false}
           >
             {blog.images.map(image => (
               <img key={image.id} className='carousel_image' src={image.imageUrl} alt={image.alt} />
