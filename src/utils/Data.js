@@ -1,30 +1,37 @@
 import * as ssImg from '../Images/secondStep.png'
 import * as ssImgSmall from '../Images/secondStep-small.png'
 import * as cfc1 from '../Images/cfc1.jpeg';
+import * as cfcPlaceholder from '../Images/cfc3-min.jpeg';
 import * as cfc2 from '../Images/cfc2.jpeg';
 import * as cfc3 from '../Images/cfc3.jpeg';
 import * as flashImg from '../Images/flashcardsphones.png';
 import * as flashImgSmall from '../Images/flashcardsphones-small.png';
-import * as flashCards1 from '../Images/androidPhone1.jpeg'
-import * as flashCards2 from '../Images/androidPhone2.jpeg'
+import * as flashCards1 from '../Images/flashcards1.jpeg';
+import * as flashCardsPlaceholder from '../Images/flashcards1-min.jpeg'
+import * as flashCards2 from '../Images/androidPhone1.jpeg';
+import * as flashCards3 from '../Images/androidPhone2.jpeg';
 import * as wyrImg from '../Images/wyr.png';
 import * as wyrImgSmall from '../Images/wyr-small.png';
 import * as wyr1 from '../Images/wyr1.jpeg';
+import * as wyrPlaceholder from '../Images/wyr1-min.jpeg';
 import * as wyr2 from '../Images/wyr2.jpeg';
 import * as wyr3 from '../Images/wyr3.jpeg';
 import * as myReadsImg from '../Images/myReads.png';
 import * as myReadsImgSmall from '../Images/myReads-small.png';
 import * as myReads1 from '../Images/myReads1.png';
+import * as myReadsPlaceholder from '../Images/myReads1-min.png';
 import * as myReads2 from '../Images/myReads2.png';
 import * as myReads3 from '../Images/myReads3.png';
 import * as jammingImg from '../Images/jamming.png';
 import * as jammingImgSmall from '../Images/jamming-small.png';
 import * as jamming1 from '../Images/jamming1.jpeg';
+import * as jammingPlaceholder from '../Images/jamming1-min.jpeg';
 import * as jamming2 from '../Images/jamming2.jpeg';
 import * as jamming3 from '../Images/jamming3.jpeg';
 import * as devourImg from '../Images/devour.png';
 import * as devourImgSmall from '../Images/devour-small.png';
 import * as devour1 from '../Images/devour1.jpeg';
+import * as devourPlaceholder from '../Images/devour1-min.jpeg';
 import * as devour2 from '../Images/devour2.jpeg';
 import * as devour3 from '../Images/devour3.jpeg';
 
@@ -44,6 +51,7 @@ const posts = [
       {
         id: 1,
         imageUrl: cfc3,
+        placeholderImage: cfcPlaceholder,
         alt: 'second step 1'
       },
       {
@@ -77,11 +85,17 @@ const posts = [
       {
         id: 1,
         imageUrl: flashCards1,
-        alt: 'Android screen shots of app'
+        placeholderImage: flashCardsPlaceholder,
+        alt: 'Apple app store'
       },
       {
         id: 2,
         imageUrl: flashCards2,
+        alt: 'Android screen shots of app'
+      },
+      {
+        id: 3,
+        imageUrl: flashCards3,
         alt: 'Android screen shots of app'
       },
     ],
@@ -102,6 +116,7 @@ const posts = [
       {
         id: 1,
         imageUrl: wyr1,
+        placeholderImage: wyrPlaceholder,
         alt: 'would you rather 1'
       },
       {
@@ -118,7 +133,7 @@ const posts = [
     gitHubLink: 'https://github.com/sagenate24/Would-You-Rather',
   },
   {
-    id: 'MyReads',
+    id: 'myReads',
     name: 'MyReads',
     type: 'Academic / Personal Project',
     datePosted: 'June 20, 2018',
@@ -132,6 +147,7 @@ const posts = [
       {
         id: 1,
         imageUrl: myReads1,
+        placeholderImage: myReadsPlaceholder,
         alt: 'my reads 1'
       },
       {
@@ -148,7 +164,7 @@ const posts = [
     gitHubLink: 'https://github.com/sagenate24/My-Reads-Project',
   },
   {
-    id: 'Jamming',
+    id: 'jamming',
     name: 'Jamming',
     type: 'Academic / Personal Project',
     datePosted: 'May 8, 2018',
@@ -162,6 +178,7 @@ const posts = [
       {
         id: 1,
         imageUrl: jamming1,
+        placeholderImage: jammingPlaceholder,
         alt: 'jamming 1'
       },
       {
@@ -192,6 +209,7 @@ const posts = [
       {
         id: 1,
         imageUrl: devour1,
+        placeholderImage: devourPlaceholder,
         alt: 'devour 1'
       },
       {

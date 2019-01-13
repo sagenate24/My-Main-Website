@@ -68,6 +68,7 @@ class Project extends React.Component {
               title={name}
               onClick={this.openModal}
               className='project_image'
+              onLoad={() => this.props.handleImageLoad(id)}
               alt={alt}
             />
           ) : (
@@ -76,6 +77,7 @@ class Project extends React.Component {
                 title={name}
                 onClick={this.openModal}
                 className='project_image'
+                onLoad={() => this.props.handleImageLoad(id)}
                 alt={alt}
               />
             )}

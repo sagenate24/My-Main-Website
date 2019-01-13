@@ -4,15 +4,33 @@ import '../styles/ProjectStyles.scss';
 import { scrollToElement } from '../utils/scroller';
 
 class ProjectList extends Component {
+  state = {
+    imagesLoaded: {
+      'secondStep': false,
+      'flashCards': false,
+      'wouldYouRather': false,
+      'myReads': false,
+      'jamming': false,
+      'devour': false
+    }
+  }
   componentDidMount() {
     window.scrollTo(0, 0);
+  }
+
+  handleImageLoad = (id) => {
+    const imagesLoaded = { ...this.state.imagesLoaded }
+    imagesLoaded[id] = true;
+
     if (window.location.hash.length) {
       const projectId = window.location.hash.replace('#', '');
 
-      setTimeout(() => {
+      if (imagesLoaded[projectId] === true) {
         scrollToElement(projectId, -80);
-      }, 300)
+      }
     }
+
+    this.setState({ imagesLoaded })
   }
 
   render() {
@@ -23,7 +41,7 @@ class ProjectList extends Component {
           ?
           blogs.map((blog) => {
             return (
-              <Project key={blog.id} blog={blog} id={blog.id} />
+              <Project handleImageLoad={(id) => this.handleImageLoad(id)} key={blog.id} blog={blog} id={blog.id} />
             );
           })
           : null

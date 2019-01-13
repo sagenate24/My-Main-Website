@@ -176,10 +176,7 @@
 }
 
 .carousel .slide img {
-  /* width: 100%; */
-  /* width: auto; */
   max-width: calc(100% - 120px);
-  /* height: 450px; */
   vertical-align: top;
   border: 0
 }

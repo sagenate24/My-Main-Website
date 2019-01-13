@@ -5,6 +5,11 @@ import "../styles/carousel.min.css";
 import '../styles/Modal.scss';
 
 class ProjectModal extends Component {
+  state = {
+    imagesLoaded: {},
+    imagesAreLoaded: false
+  }
+
   closeModal = () => {
     document.querySelector('.project_modal').classList.add('fade_out_modal');
     this.props.closeModal();
@@ -12,6 +17,32 @@ class ProjectModal extends Component {
 
   openLink = (url) => {
     window.open(url, '_blank');
+  }
+
+  handleImageLoad = (id) => {
+    const imagesLoaded = { ...this.state.imagesLoaded }
+    imagesLoaded[id] = true;
+
+    if (Object.keys(imagesLoaded).length === this.props.blog.images.length) {
+      const lazyImages = [].slice.call(document.querySelectorAll(".lazy_image"));
+      const image = lazyImages[1];
+
+      let downloadingImage = new Image();
+      downloadingImage.onload = () => {
+        if (!this.state.imagesAreLoaded && image.src !== image.dataset.src) {
+          lazyImages.forEach((entry) => {
+            entry.src = entry.dataset.src;
+            entry.classList.remove('lazy_image');
+          });
+          this.setState({ imagesAreLoaded: true });
+        }
+      };
+      if (image) {
+        downloadingImage.src = image.dataset.src;
+      }
+    }
+
+    this.setState({ imagesLoaded });
   }
 
   render() {
@@ -22,13 +53,21 @@ class ProjectModal extends Component {
         <div className='modal_container'>
           <Carousel
             infiniteLoop={true}
+            showArrows={this.state.imagesAreLoaded}
             showStatus={false}
             showThumbs={false}
-            useKeyboardArrows={true}
+            useKeyboardArrows={this.state.imagesAreLoaded}
             showIndicators={false}
           >
             {blog.images.map(image => (
-              <img key={image.id} src={image.imageUrl} alt={image.alt} />
+              <img
+                onLoad={() => this.handleImageLoad(image.id)}
+                className={image.placeholderImage && 'lazy_image'}
+                key={image.id}
+                data-src={image.imageUrl}
+                src={image.placeholderImage ? image.placeholderImage : image.imageUrl}
+                alt={image.alt}
+              />
             ))}
           </Carousel>
           <div className='modal_footer'>

@@ -1,5 +1,12 @@
 @import '_Animations';
 @import '_Base';
+.lazy_image {
+  filter: blur(20px);
+}
+
+.remove_blur {
+  @include animation('blur_out 1ms linear forwards')
+}
 
 .project_modal {
   @include animation('fade_in 400ms forwards');

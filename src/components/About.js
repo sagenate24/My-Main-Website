@@ -20,7 +20,7 @@ class About extends React.PureComponent {
           </div>
         </div>
         <div className='about_background_content'>
-          <img className='about_me_in_mexico' src={meInMexico} alt='Me in mexico' />
+          <img className='about_me_in_mexico lazy_image' src={meInMexico} alt='Me in mexico' />
           <span className='about_me_desc'>Hello there! Nice to meet you <span role='img' aria-label='happy emoji'>😁</span>, I am a Front End Developer based out of Seattle Washington with a passion for web and mobile development. I have worked for The Creative Group and the Committee For Children as a Front End Developer. I have many hobbies such as hiking, playing music and of course development! I am always looking to grow my skills as well as helping others grow through great relationships, collaboration and positivity.</span>
         </div>
         <div className='my_work_container'>
