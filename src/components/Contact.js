@@ -125,6 +125,7 @@ class Contact extends Component {
             value={name}
             type='text'
             name='name'
+            aria-label='Name'
             placeholder='Name'
             className='contact_input_fields'
             onChange={this.handleChange}
@@ -133,6 +134,7 @@ class Contact extends Component {
             value={email}
             type='email'
             name='email'
+            aria-label='Email'
             ref={this.emailInput}
             onBlur={this.checkEmail}
             placeholder='Email'
@@ -145,6 +147,7 @@ class Contact extends Component {
           <textarea
             value={message}
             name='message'
+            aria-label='Mesage'
             placeholder='Message'
             className='contact_textarea'
             onChange={this.handleChange}
@@ -153,7 +156,7 @@ class Contact extends Component {
             type='submit'
             className='send_button'
             ref={this.button}
-            disabled={name === '' || email === '' || message === '' || loading === true}
+            disabled={name === '' || email === '' || message === '' || loading}
           >Send</button>
           <div className='loader-container'>
             <Loader loading={this.state.loading} />

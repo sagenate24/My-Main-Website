@@ -28,7 +28,7 @@ class ProjectModal extends Component {
             showIndicators={false}
           >
             {blog.images.map(image => (
-              <img key={image.id} className='carousel_image' src={image.imageUrl} alt={image.alt} />
+              <img key={image.id} src={image.imageUrl} alt={image.alt} />
             ))}
           </Carousel>
           <div className='modal_footer'>

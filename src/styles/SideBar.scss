@@ -9,6 +9,7 @@
   background: transparent;
   z-index: 2;
 }
+
 .sidebar {
   position: fixed;
   cursor: default;
@@ -91,15 +92,8 @@
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  cursor: pointer;
   @media screen and (max-height: 670px) {
     padding: 15px 10px;
-  }
-  &:hover {
-    .sidebar_link {
-      transition-duration: $transitionDuration;
-      color: $fadedTextColor;
-    }
   }
 }
 
@@ -117,8 +111,13 @@
   font-weight: 100;
   margin-left: 10px;
   font-size: $smallMediumFontSize;
+  cursor: pointer;
   a {
     width: 100%;
+  }
+  &:hover {
+    transition-duration: $transitionDuration;
+    color: $fadedTextColor;
   }
 }
 
@@ -150,6 +149,10 @@
   flex-direction: column;
   text-decoration: none;
   list-style-type: none;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    justify-content: space-around;
+  }
 }
 
 .hyper_link {

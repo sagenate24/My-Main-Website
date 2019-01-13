@@ -80,6 +80,7 @@
 }
 
 .btns_container {
+  display: flex;
   button {
     border: 2px solid transparent;
     cursor: pointer;
@@ -92,7 +93,6 @@
     }
   }
   @media screen and (max-width: $mediumDevices) {
-    display: flex;
     justify-content: center;
   }
 }

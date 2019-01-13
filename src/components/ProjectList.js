@@ -5,6 +5,7 @@ import { scrollToElement } from '../utils/scroller';
 
 class ProjectList extends Component {
   componentDidMount() {
+    window.scrollTo(0, 0);
     if (window.location.hash.length) {
       const projectId = window.location.hash.replace('#', '');
 

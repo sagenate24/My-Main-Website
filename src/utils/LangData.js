@@ -4,7 +4,7 @@ import * as reduxImg from '../Images/redux.png';
 import * as htmlImg from '../Images/html.png';
 import * as cssImg from '../Images/css.png';
 import * as nodeImg from '../Images/node.png';
-import * as awsImg from '../Images/aws.png';
+import * as sassImg from '../Images/sass.png';
 import * as responsive from '../Images/responsive.png';
 import * as performance from '../Images/performance.png';
 import * as design from '../Images/design.png';
@@ -21,7 +21,7 @@ export const myWork = [
     id: 2,
     title: 'Performance',
     imageUrl: performance,
-    alt: 'speedometer fast',
+    alt: 'Scaling performance bars',
     text: 'Creating fast apps to make my users happy is my highest priority.',
   },
   {
@@ -37,7 +37,7 @@ export const mySkills = [
   {
     id: 1,
     imageUrl: javaScriptImg,
-    alt: 'Javascript Icon',
+    alt: 'JavaScript Icon',
     text: 'JavaScript'
   },
   {
@@ -78,8 +78,8 @@ export const mySkills = [
   },
   {
     id: 8,
-    imageUrl: awsImg,
-    alt: 'Amazon Web Services Icon',
-    text: 'AWS'
+    imageUrl: sassImg,
+    alt: 'Syntactically Awesome Style Sheets Icon',
+    text: 'Sass/Scss'
   },
 ]

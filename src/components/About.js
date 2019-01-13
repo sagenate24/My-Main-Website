@@ -28,7 +28,7 @@ class About extends React.PureComponent {
           <div className='my_work_cards_container'>
             {myWork.map(card => (
               <div className='my_work_card' key={card.id}>
-                <img className='my_work_img' src={card.imageUrl} alt={card.alt} />
+                <img className='my_work_img' title={card.alt} src={card.imageUrl} alt={card.alt} />
                 <h1>{card.title}</h1>
                 <p>{card.text}</p>
               </div>
@@ -40,7 +40,7 @@ class About extends React.PureComponent {
           <div className='my_skills_cards_container'>
             {mySkills.map(card => (
               <div className='my_skills_card' key={card.id}>
-                <img style={{ height: '120px' }} src={card.imageUrl} alt={card.alt} />
+                <img title={card.alt} src={card.imageUrl} alt={card.alt} />
                 <h2>{card.text}</h2>
               </div>
             ))}

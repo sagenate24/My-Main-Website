@@ -36,7 +36,7 @@ class Project extends React.Component {
   }
 
   render() {
-    const { datePosted, image, smallImage, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
+    const { alt, datePosted, image, smallImage, link, name, shortDescripion, gitHubLink, id } = this.props.blog;
     const { modalIsOpen } = this.state;
 
     return (
@@ -65,16 +65,18 @@ class Project extends React.Component {
           {window.innerWidth < 600 ? (
             <img
               src={smallImage}
+              title={name}
               onClick={this.openModal}
               className='project_image'
-              alt='individual project'
+              alt={alt}
             />
           ) : (
               <img
                 src={image}
+                title={name}
                 onClick={this.openModal}
                 className='project_image'
-                alt='individual project'
+                alt={alt}
               />
             )}
 

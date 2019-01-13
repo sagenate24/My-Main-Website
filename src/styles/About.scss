@@ -10,7 +10,7 @@
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  background: url('../Images/aboutBackground.jpg');
+  background: url('../Images/aboutBackground.png');
   justify-content: center;
   align-items: center;  
 }
@@ -66,6 +66,7 @@
 }
 
 .about_me_desc {
+  width: 50%;
   font-weight: $fontWeightThin;
   line-height: 40px;
   font-size: $mediumLargeFontSize;
@@ -75,6 +76,7 @@
     font-size: $buttonFontSize;
   }
   @media screen and (max-width: $mediumDevices) {
+    width: 100%;
     line-height: 40px;
     margin-left: 0;
     text-align: center;
@@ -83,7 +85,7 @@
 
 .my_work_container {
   box-sizing: border-box;
-  background: url('../Images/aboutBackground.jpg');
+  background: url('../Images/aboutBackground.png');
   text-align: center;
   padding: 100px 0 100px;
 }

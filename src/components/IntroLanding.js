@@ -73,6 +73,7 @@ class IntroLanding extends Component {
         </div>
         <div className='go_to_projects'>
           <Link
+            aria-label='Auto scroll to main projects'
             onClick={this.removeAnimation}
             href='project_list'
             className='hyper_link'
