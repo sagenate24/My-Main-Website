@@ -156,7 +156,7 @@ class Contact extends Component {
             type='submit'
             className='send_button'
             ref={this.button}
-            disabled={name === '' || email === '' || message === '' || loading}
+            disabled={name === '' || email === '' || message === '' || loading || emailInvalid}
           >Send</button>
           <div className='loader-container'>
             <Loader loading={this.state.loading} />
