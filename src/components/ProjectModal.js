@@ -5,11 +5,6 @@ import "../styles/carousel.min.css";
 import '../styles/Modal.scss';
 
 class ProjectModal extends Component {
-  state = {
-    imagesLoaded: {},
-    imagesAreLoaded: false
-  }
-
   closeModal = () => {
     document.querySelector('.project_modal').classList.add('fade_out_modal');
     this.props.closeModal();
