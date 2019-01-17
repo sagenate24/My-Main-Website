@@ -19,32 +19,6 @@ class ProjectModal extends Component {
     window.open(url, '_blank');
   }
 
-  handleImageLoad = (id) => {
-    const imagesLoaded = { ...this.state.imagesLoaded }
-    imagesLoaded[id] = true;
-
-    if (Object.keys(imagesLoaded).length === this.props.blog.images.length) {
-      const lazyImages = [].slice.call(document.querySelectorAll(".lazy_image"));
-      const image = lazyImages[1];
-
-      let downloadingImage = new Image();
-      downloadingImage.onload = () => {
-        if (!this.state.imagesAreLoaded && image.src !== image.dataset.src) {
-          lazyImages.forEach((entry) => {
-            entry.src = entry.dataset.src;
-            entry.classList.remove('lazy_image');
-          });
-          this.setState({ imagesAreLoaded: true });
-        }
-      };
-      if (image) {
-        downloadingImage.src = image.dataset.src;
-      }
-    }
-
-    this.setState({ imagesLoaded });
-  }
-
   render() {
     const { blog } = this.props;
 
@@ -53,19 +27,15 @@ class ProjectModal extends Component {
         <div className='modal_container'>
           <Carousel
             infiniteLoop={true}
-            showArrows={this.state.imagesAreLoaded}
             showStatus={false}
             showThumbs={false}
-            useKeyboardArrows={this.state.imagesAreLoaded}
+            useKeyboardArrows={true}
             showIndicators={false}
           >
             {blog.images.map(image => (
               <img
-                onLoad={() => this.handleImageLoad(image.id)}
-                className={image.placeholderImage && 'lazy_image'}
                 key={image.id}
-                data-src={image.imageUrl}
-                src={image.placeholderImage ? image.placeholderImage : image.imageUrl}
+                src={image.imageUrl}
                 alt={image.alt}
               />
             ))}
