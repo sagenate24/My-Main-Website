@@ -1,0 +1,121 @@
+@import '_Animations';
+@import '_Base';
+.sidebar_link {
+  transition-duration: 200ms;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  font-weight: 100;
+  font-size: 18px;
+  a {
+    min-width: 100%;
+    height: 100%;
+  }
+}
+
+.side-nav__content {
+  padding-top: 32px;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  >li {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    line-height: 48px;
+    padding: 0 16px;
+    text-align: left;
+    color: #F8F8F8;
+    background: #1E242D;
+    &:hover {
+      background: rgb(39, 46, 58);
+      cursor: pointer;
+    }
+  }
+}
+
+html.can-touch .side-nav__content li:hover {
+  background: #1E242D;
+  cursor: initial;
+}
+
+.sidebar_hyper_ul {
+  width: 100%;
+  transition: height 0.23s cubic-bezier(0, 0, 0.3, 1);
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  >li {
+    width: 100%;
+    display: flex;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    text-align: left;
+    color: rgb(173, 173, 173);
+    &:hover {
+      background: rgb(39, 46, 58);
+      cursor: pointer;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 35px;
+  }
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    justify-content: space-around;
+  }
+}
+
+html.can-touch .sidebar_hyper_ul li:hover {
+  background: none;
+  cursor: initial;
+}
+
+
+.resume_container {
+  color: $whiteColor;
+  font-size: $smallMediumFontSize;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  font-weight: 100;
+  font-size: 18px;
+  p {
+    margin: 0;
+  }
+}
+
+.download_icon {
+  font-size: 20px;
+  align-self: center;
+}
+
+.sidebar_arrow_down {
+  width: 30px;
+  height: 30px;
+  background-image: url('../Images/dropdown.png');
+  transition: transform 0.23s cubic-bezier(0, 0, 0.3, 1);
+  background-size: cover;
+  align-self: center;
+}
+
+.rotate_arrow {
+  transform: rotate(180deg);
+}

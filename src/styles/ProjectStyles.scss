@@ -87,14 +87,25 @@
     padding: $buttonPadding;
     color: $whiteColor;
     font-size: $buttonFontSize;
-    transition-duration: $transitionDuration;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    transition: all ease-in-out 200ms;
+    @media screen and (max-width: $mediumDevices) {
+      box-shadow: none;
+    }
     &:hover {
-      transition-duration: $transitionDuration;
+      // transition-duration: $transitionDuration;
+      box-shadow: 0px 27px 20px -15px rgba(0,0,0,0.2);
+      transform: translate(0px, -2px) scale(1.02);
     }
   }
   @media screen and (max-width: $mediumDevices) {
     justify-content: center;
   }
+}
+
+html.can-touch .btns_container button:hover{
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+  transform: none;
 }
 
 .view_btn {
@@ -104,6 +115,12 @@
     border-color: $blueColor;
     background-color: $whiteColor;
   }
+}
+
+html.can-touch .view_btn:hover{
+  color: $whiteColor;
+  border-color: transparent;
+  background-color: $blueColor;
 }
 
 .view_btn_android {
@@ -122,6 +139,12 @@
   }
 }
 
+html.can-touch .view_btn_android:hover{
+  color: $whiteColor;
+  border-color: transparent;
+  background-color: $greenColor;
+}
+
 .learn_more_btn {
   background: $redColor;
   margin-left: 20px;
@@ -133,6 +156,12 @@
   @media screen and (max-width: 360px) {
     margin-left: 10px;
   }
+}
+
+html.can-touch .learn_more_btn:hover{
+  color: $whiteColor;
+  border-color: transparent;
+  background-color: $redColor;
 }
 
 .project_footer {
@@ -154,8 +183,12 @@
   margin-left: 10px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all ease-in-out 200ms;
   &:hover {
-    transition-duration: $transitionDuration;
-    background-color: $iconHoverBGColor;
+    transform: translate(0px, -2px) scale(1.02);
   }
+}
+
+html.can-touch .github_icon:hover{
+  transform: none;
 }

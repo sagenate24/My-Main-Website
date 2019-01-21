@@ -26,6 +26,10 @@
   }
 }
 
+html.can-touch .footer_container a:hover {
+  color: $whiteColor;
+}
+
 .footer_left {
   margin: 0 100px 0 40px;
   white-space: nowrap;
@@ -87,6 +91,7 @@
     color: $whiteColor;
     text-decoration: none;
     transition-duration: 200ms;
+    height: 25px;
   }
   @media screen and (max-width: $smallDevices) {
     flex: none;
@@ -104,16 +109,27 @@
 
 .footer_icon {
   font-size: 23px;
-  transition-duration: $transitionDuration;
+  transition: all ease-in-out 200ms;
   color: #8b8b8b !important;
   cursor: pointer;
   &:hover {
     color: $whiteColor !important;
+    transform: translate(0px, -2px) scale(1.06);
+  }
+  &:nth-child(-n+3) {
+    margin-right: 8px;
+    @media screen and (max-width: $mediumDevices) {
+      margin-right: 0px;
+    }
+  }
+  @media screen and (max-width: $mediumDevices) {
+    margin: 0 8px;
   }
 }
 
-.footer_icon:nth-child(-n+3) {
-  margin-right: 8px;
+html.can-touch .footer_icon:hover {
+  color: #8b8b8b !important;
+  transform: none;
 }
 
 .footer_resume_image {
@@ -122,9 +138,6 @@
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   transition: opacity 200ms ease-in-out;
-  &:hover {
-    opacity: 0.5;
-  }
   @media screen and (max-width: $mediumDevices) {
     margin: 15px 0 0 15px;
   }
@@ -140,10 +153,14 @@
   }
 }
 
+html.can-touch .footer_resume_text:hover {
+  color: $whiteColor;
+}
+
 .quick_links {
-  transition-duration: $transitionDuration; 
+  transition-duration: $transitionDuration;
 }
 
 .quick_links:hover {
- color: $fadedTextColor;
+  color: $fadedTextColor;
 }

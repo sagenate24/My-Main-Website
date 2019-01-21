@@ -1,13 +1,5 @@
 @import '_Animations';
 @import '_Base';
-.lazy_image {
-  filter: blur(20px);
-}
-
-.remove_blur {
-  @include animation('blur_out 1ms linear forwards')
-}
-
 .project_modal {
   @include animation('fade_in 400ms forwards');
   z-index: 4;
@@ -49,13 +41,14 @@
 .modal_footer_header {
   border-bottom: 2px solid rgba(128, 128, 128, 0.301);
   padding: 10px 0;
+  box-sizing: border-box;
   h2 {
     margin: 10px 0;
     color: $blackColor;
     font-size: $mediumFontSize;
   }
   span {
-    color: gray;
+    color: rgb(173, 173, 173);
     font-size: $smallFontSize;
   }
   @media screen and (max-width: $smallDevices) {
@@ -72,19 +65,17 @@
 }
 
 .modal_view_button {
-  transition: 100ms ease-in;
   cursor: pointer;
   padding: $buttonPadding;
   display: flex;
   align-items: center;
   color: $whiteColor;
   justify-content: center;
-  border: 2px solid transparent;
+  box-sizing: border-box;
   span {
-    font-size: $buttonFontSize;
+    font-size: 19px;
   }
   &:hover {
-    background: $whiteColor;
     color: $blackColor;
   }
   @media screen and (max-width: 375px) {
@@ -92,14 +83,27 @@
   }
 }
 
+html.can-touch .modal_view_button:hover {
+  color: $whiteColor;
+}
+
 .modal_regular_button {
-  background: $redColor;
+  border: 2px solid $redColor;
+  background: linear-gradient(to left, $redColor 50%, #f8f8f8 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 200ms ease-in-out;
+  width: 113px;
   span {
-    margin-left: 6px;
+    margin-right: 6px;
   }
   &:hover {
-    border: 2px solid $redColor;
+    background-position: left bottom;
   }
+}
+
+html.can-touch .modal_regular_button:hover {
+  background-position: right bottom;
 }
 
 .modal_mobile_buttons {
@@ -107,18 +111,35 @@
 }
 
 .apple_button {
-  background: $blueColor;
+  border: 2px solid $blueColor;
+  background: linear-gradient(to left, $blueColor 50%, #f8f8f8 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 200ms ease-in-out;
   &:hover {
-    border: 2px solid $blueColor;
+    background-position: left bottom;
   }
 }
 
+html.can-touch .apple_button:hover {
+  background-position: right bottom;
+}
+
 .google_button {
+  border: 2px solid $greenColor;
   background: $greenColor;
   margin-left: 20px !important;
+  background: linear-gradient(to left, $greenColor 50%, #f8f8f8 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 200ms ease-in-out;
   &:hover {
-    border: 2px solid $greenColor;
+    background-position: left bottom;
   }
+}
+
+html.can-touch .google_button:hover {
+  background-position: right bottom;
 }
 
 .modal_open_icon {
@@ -126,12 +147,13 @@
 }
 
 .modal_close_icon {
-  transition: color 150ms linear;
   font-size: $LargeFontSize;
   color: $blackColor;
   cursor: pointer;
+  transition: all ease-in-out 200ms;
+  margin-top: 2px; 
   &:hover {
-    color: $redColor;
+    transform: translate(0px, -2px) scale(1.08);
   }
 }
 

@@ -34,12 +34,14 @@ class IntroLanding extends Component {
       if (window.pageYOffset < window.innerHeight && this.heroChildren.current !== null) {
         document.querySelector('.nav_container').style.position = 'absolute';
         document.querySelector('.nav_container').style.background = 'none';
+        document.querySelector('.nav_container').style.boxShadow = 'none';
         const setTranslate = (yPos) => {
           this.heroChildren.current.style.transform = "translate(0, " + yPos + "px)";
           this.heroChildren.current.style.transition = "transform 50ms";
         }
 
         let yScrollPos;
+        
         yScrollPos = window.pageYOffset * -0.3;
         yScrollPos = yScrollPos.toFixed(3);
 
@@ -47,6 +49,7 @@ class IntroLanding extends Component {
       } else {
         document.querySelector('.nav_container').style.position = 'fixed';
         document.querySelector('.nav_container').style.background = '#1D252E';
+        document.querySelector('.nav_container').style.boxShadow = '0 1px 3px gray';
       }
     })
   }

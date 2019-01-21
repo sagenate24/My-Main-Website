@@ -1,23 +1,21 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
+import { getPosts } from '../utils/Data';
 import ProgressBar from "react-progress-bar-plus";
 import "../styles/reactProgressBar.min.css";
-import { getPosts } from '../utils/Data';
 import "../styles/App.scss";
 
 import NavBar from "./NavBar";
 import About from "./About";
 import ProjectList from "./ProjectList";
 import Contact from "./Contact";
-import SideBar from "./SideBar";
 import IntroLanding from "./IntroLanding";
-import Footer from "./shared/Footer";
+import { Footer } from "./shared/Footer";
 
 class App extends Component {
   state = {
     percent: 1,
     loading: true,
-    showSideBar: false,
     data: {}
   };
 
@@ -33,21 +31,6 @@ class App extends Component {
         }, 200);
       });
   }
-
-  handleMenuClick = () => {
-    if (this.state.showSideBar) {
-      document.querySelector('.sidebar').classList.remove('slidein')
-      document.querySelector('.sidebar').classList.add('slideOut')
-      document.querySelector('.sidebar_overlay').style.display = 'none';
-    } else {
-      document.querySelector('.sidebar').classList.remove('slideOut')
-      document.querySelector('.sidebar').classList.add('slidein')
-      document.querySelector('.sidebar_overlay').style.display = 'initial';
-    }
-    this.setState(prevState => ({
-      showSideBar: !prevState.showSideBar
-    }));
-  };
 
   openLink = (href) => {
     window.open(href, "_blank");
@@ -68,53 +51,47 @@ class App extends Component {
   }
 
   render() {
-    const { loading, data } = this.state;
-
     return (
-      <Fragment>
-        <div className="app">
-          {this.showLoading()}
-          {!loading ? (
-            <div>
-              <NavBar openLink={(href) => this.openLink(href)} handleMenuClick={this.handleMenuClick} />
-              <div className="app_content">
-                <SideBar
-                  blogs={data.posts}
-                  contact={data.contactInfo}
-                  closeSideBar={this.handleMenuClick}
+      <div className="app">
+        {this.showLoading()}
+        {!this.state.loading ? (
+          <div>
+            <NavBar openLink={(href) => this.openLink(href)} />
+            <div className="app_content">
+              <Switch>
+                <Route
+                  path="/"
+                  exact
+                  render={() => (
+                    <div className='home_container'>
+                      <div className='introLandingWrapper'>
+                        <IntroLanding />
+                      </div>
+                      <ProjectList
+                        openLink={(href) => this.openLink(href)}
+                        blogs={this.state.data.posts}
+                      />
+                    </div>
+                  )}
                 />
-                <Switch>
-                  <Route
-                    path="/"
-                    exact
-                    render={() => (
-                      <div className='home_container'>
-                        <div className='introLandingWrapper'>
-                          <IntroLanding />
-                        </div>
-                        <ProjectList blogs={data.posts} />
-                      </div>
-                    )}
-                  />
-                  <Route
-                    path="/about"
-                    render={() => (
-                      <div className='about_container'>
-                        <About aboutMe={data.aboutMe} langs={data.languages} />
-                      </div>
-                    )}
-                  />
-                  <Route
-                    path="/contact"
-                    render={() => <Contact contact={data.contactInfo} />}
-                  />
-                </Switch>
-              </div>
-              <Footer openLink={(href) => this.openLink(href)} />
+                <Route
+                  path="/about"
+                  render={() => (
+                    <div className='about_container'>
+                      <About />
+                    </div>
+                  )}
+                />
+                <Route
+                  path="/contact"
+                  render={() => <Contact />}
+                />
+              </Switch>
             </div>
-          ) : null}
-        </div>
-      </Fragment>
+            <Footer openLink={(href) => this.openLink(href)} />
+          </div>
+        ) : null}
+      </div>
     );
   }
 }

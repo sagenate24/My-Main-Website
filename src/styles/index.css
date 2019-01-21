@@ -14,3 +14,11 @@ img, button {
 button {
   font-family: 'Futura', 'Helvetica', sans-serif;
 }
+
+#modal-root {
+  z-index: 6;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+

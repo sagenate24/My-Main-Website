@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as party from '../Images/partypopper.png'
 import '../styles/Modal.scss'
 
+import Modal from './ModalContructor';
+
 class ContactModal extends Component {
   state = {
     modalClass: 'contact_modal',
@@ -12,7 +14,7 @@ class ContactModal extends Component {
       this.setState({
         modalClass: 'close_contact_modal'
       })
-    }, 2000)
+    }, 2500)
   }
 
   componentWillUnmount() {
@@ -23,16 +25,18 @@ class ContactModal extends Component {
 
   render() {
     return (
-      <div className={this.state.modalClass}>
-        <div className='contact_modal_main'>
-          <div>
-            <h2>Looking forward to speaking with you! <span role='img' aria-label='happy and thumb emoji'>👍😁</span></h2>
-            <div className='party_popper_container'>
-              <img className='party_popper' src={party} alt='party popper' />
+      <Modal>
+        <div className={this.state.modalClass}>
+          <div className='contact_modal_main'>
+            <div>
+              <h2>Looking forward to speaking with you! <span role='img' aria-label='happy and thumb emoji'>👍😁</span></h2>
+              <div className='party_popper_container'>
+                <img className='party_popper' src={party} alt='party popper' />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Modal>
     );
   }
 }

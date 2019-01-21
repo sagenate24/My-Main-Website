@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
   <meta name="theme-color" content="#000000">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
@@ -12,7 +12,14 @@
 
 <body>
   <div id="root"></div>
-  <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+  <div id="modal-root"></div>
+
+  <script>
+    document.addEventListener('touchstart', function addtouchclass(e) { // first time user touches the screen
+      document.documentElement.classList.add('can-touch') // add "can-touch" class to document root using classList API
+      document.removeEventListener('touchstart', addtouchclass, false) // de-register touchstart event
+    }, false)
+  </script>
 </body>
 
 </html>

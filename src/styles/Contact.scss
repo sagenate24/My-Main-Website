@@ -113,6 +113,12 @@
   }
 }
 
+html.can-touch .send_button:hover {
+  color: $whiteColor;
+  background: $redColor;
+  border-color: transparent;
+}
+
 .show_button {
   @include animation('partial_fade_in 200ms');
   &:disabled {

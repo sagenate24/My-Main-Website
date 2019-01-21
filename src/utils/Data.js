@@ -1,39 +1,43 @@
 import * as ssImg from '../Images/secondStep.png'
 import * as ssImgSmall from '../Images/secondStep-small.png'
-import * as cfc1 from '../Images/cfc1.jpeg';
-import * as cfcPlaceholder from '../Images/cfc3-min.jpeg';
-import * as cfc2 from '../Images/cfc2.jpeg';
-import * as cfc3 from '../Images/cfc3.jpeg';
+import * as cfc1 from '../Images/secondstep1.jpeg';
+import * as cfc2 from '../Images/secondstep2.jpeg';
+import * as cfc3 from '../Images/secondstep3.jpeg';
 import * as flashImg from '../Images/flashcardsphones.png';
 import * as flashImgSmall from '../Images/flashcardsphones-small.png';
 import * as flashCards1 from '../Images/flashcards1.jpeg';
-import * as flashCardsPlaceholder from '../Images/flashcards1-min.jpeg'
-import * as flashCards2 from '../Images/androidPhone1.jpeg';
-import * as flashCards3 from '../Images/androidPhone2.jpeg';
+import * as flashCards2 from '../Images/flashcards2.jpeg';
+import * as flashCards3 from '../Images/flashcards3.jpeg';
 import * as wyrImg from '../Images/wyr.png';
 import * as wyrImgSmall from '../Images/wyr-small.png';
 import * as wyr1 from '../Images/wyr1.jpeg';
-import * as wyrPlaceholder from '../Images/wyr1-min.jpeg';
-import * as wyr2 from '../Images/wyr2.jpeg';
-import * as wyr3 from '../Images/wyr3.jpeg';
+import * as wyr2 from '../Images/wyr2.jpg';
+import * as wyr3 from '../Images/wyr3.jpg';
 import * as myReadsImg from '../Images/myReads.png';
 import * as myReadsImgSmall from '../Images/myReads-small.png';
-import * as myReads1 from '../Images/myReads1.png';
-import * as myReadsPlaceholder from '../Images/myReads1-min.png';
-import * as myReads2 from '../Images/myReads2.png';
-import * as myReads3 from '../Images/myReads3.png';
+import * as myReads1 from '../Images/myreads1.png';
+import * as myReads2 from '../Images/myreads2.png';
+import * as myReads3 from '../Images/myreads3.png';
 import * as jammingImg from '../Images/jamming.png';
 import * as jammingImgSmall from '../Images/jamming-small.png';
 import * as jamming1 from '../Images/jamming1.jpeg';
-import * as jammingPlaceholder from '../Images/jamming1-min.jpeg';
 import * as jamming2 from '../Images/jamming2.jpeg';
 import * as jamming3 from '../Images/jamming3.jpeg';
 import * as devourImg from '../Images/devour.png';
 import * as devourImgSmall from '../Images/devour-small.png';
-import * as devour1 from '../Images/devour1.jpeg';
-import * as devourPlaceholder from '../Images/devour1-min.jpeg';
-import * as devour2 from '../Images/devour2.jpeg';
-import * as devour3 from '../Images/devour3.jpeg';
+import * as devour1 from '../Images/devour1.png';
+import * as devour2 from '../Images/devour2.png';
+import * as devour3 from '../Images/devour3.png';
+import * as javaScriptImg from '../Images/js.png';
+import * as reactImg from '../Images/react.png';
+import * as reduxImg from '../Images/redux.png';
+import * as htmlImg from '../Images/html.png';
+import * as cssImg from '../Images/css.png';
+import * as nodeImg from '../Images/node.png';
+import * as sassImg from '../Images/sass.png';
+import * as responsive from '../Images/responsive.png';
+import * as performance from '../Images/performance.png';
+import * as design from '../Images/design.png';
 
 const posts = [
   {
@@ -50,8 +54,7 @@ const posts = [
     images: [
       {
         id: 1,
-        imageUrl: cfc3,
-        placeholderImage: cfcPlaceholder,
+        imageUrl: cfc1,
         alt: 'second step 1'
       },
       {
@@ -61,7 +64,7 @@ const posts = [
       },
       {
         id: 3,
-        imageUrl: cfc1,
+        imageUrl: cfc3,
         alt: 'second step 3'
       },
     ],
@@ -85,7 +88,6 @@ const posts = [
       {
         id: 1,
         imageUrl: flashCards1,
-        placeholderImage: flashCardsPlaceholder,
         alt: 'Apple app store'
       },
       {
@@ -116,7 +118,6 @@ const posts = [
       {
         id: 1,
         imageUrl: wyr1,
-        placeholderImage: wyrPlaceholder,
         alt: 'would you rather 1'
       },
       {
@@ -147,7 +148,6 @@ const posts = [
       {
         id: 1,
         imageUrl: myReads1,
-        placeholderImage: myReadsPlaceholder,
         alt: 'my reads 1'
       },
       {
@@ -178,7 +178,6 @@ const posts = [
       {
         id: 1,
         imageUrl: jamming1,
-        placeholderImage: jammingPlaceholder,
         alt: 'jamming 1'
       },
       {
@@ -209,7 +208,6 @@ const posts = [
       {
         id: 1,
         imageUrl: devour1,
-        placeholderImage: devourPlaceholder,
         alt: 'devour 1'
       },
       {
@@ -230,3 +228,109 @@ const posts = [
 export function getPosts() {
   return new Promise((res) => res({ posts: posts }));
 }
+
+export const navContent = [
+  {
+    id: 'home',
+    title: 'Home',
+    pathName: '/',
+    subLinks: [
+      { id: 'secondStep', name: 'Committee For Children' },
+      { id: 'flashCards', name: 'Flash Cards' },
+      { id: 'wouldYouRather', name: 'Would You Rather' },
+      { id: 'myReads', name: 'MyReads' },
+      { id: 'jamming', name: 'Jamming' },
+      { id: 'devour', name: 'devour' },
+    ]
+  },
+  {
+    id: 'aboutMe',
+    title: 'About Me',
+    pathName: '/about',
+    subLinks: [
+      { id: 'background', name: 'Background' },
+      { id: 'myWork', name: 'My Work' },
+      { id: 'mySkills', name: 'My Skills' },
+    ]
+  },
+  {
+    id: 'contact',
+    title: 'Contact',
+    pathName: '/contact'
+  },
+];
+
+export const myWork = [
+  {
+    id: 1,
+    title: 'Responsive',
+    imageUrl: responsive,
+    alt: 'multiple devices',
+    text: 'My applications will work on any device, big or small.',
+  },
+  {
+    id: 2,
+    title: 'Performance',
+    imageUrl: performance,
+    alt: 'Scaling performance bars',
+    text: 'Creating fast apps to make my users happy is my highest priority.',
+  },
+  {
+    id: 3,
+    title: 'Design',
+    imageUrl: design,
+    alt: 'pencil and ruler',
+    text: 'Better user experience drives business revenue.',
+  }
+];
+
+export const mySkills = [
+  {
+    id: 1,
+    imageUrl: javaScriptImg,
+    alt: 'JavaScript Icon',
+    text: 'JavaScript'
+  },
+  {
+    id: 2,
+    imageUrl: reactImg,
+    alt: 'React Icon',
+    text: 'React.JS'
+  },
+  {
+    id: 3,
+    imageUrl: reactImg,
+    alt: 'React Icon',
+    text: 'React Native'
+  },
+  {
+    id: 4,
+    imageUrl: reduxImg,
+    alt: 'Redux Icon',
+    text: 'Redux'
+  },
+  {
+    id: 5,
+    imageUrl: htmlImg,
+    alt: 'HTML5 Icon',
+    text: 'HTML5'
+  },
+  {
+    id: 6,
+    imageUrl: cssImg,
+    alt: 'CSS3 Icon',
+    text: 'CSS/CSS3'
+  },
+  {
+    id: 7,
+    imageUrl: nodeImg,
+    alt: 'Node Icon',
+    text: 'Node.JS'
+  },
+  {
+    id: 8,
+    imageUrl: sassImg,
+    alt: 'Syntactically Awesome Style Sheets Icon',
+    text: 'Sass/Scss'
+  },
+];
