@@ -58,6 +58,10 @@ class SideNavContent extends Component {
   }
 
   routeChangeWithoutHas = () => {
+    setTimeout(() => {
+      this.props.hideSideNav();
+    }, 350)
+
     window.scrollTo(0, 0);
   }
 
@@ -102,8 +106,8 @@ class SideNavContent extends Component {
             <p>Resume</p>
           </a>
           <MdOpenInNew
-          onClick={() => this.props.openLink(resumePdf)}
-          className='download_icon'
+            onClick={() => this.props.openLink(resumePdf)}
+            className='download_icon'
           />
         </li>
       </ul>
