@@ -10,6 +10,7 @@ import About from "./About";
 import ProjectList from "./ProjectList";
 import Contact from "./Contact";
 import IntroLanding from "./IntroLanding";
+import PageNotFound from './PageNotFound'
 import { Footer } from "./shared/Footer";
 
 class App extends Component {
@@ -86,6 +87,7 @@ class App extends Component {
                   path="/contact"
                   render={() => <Contact />}
                 />
+                <Route component={PageNotFound} />
               </Switch>
             </div>
             <Footer openLink={(href) => this.openLink(href)} />
